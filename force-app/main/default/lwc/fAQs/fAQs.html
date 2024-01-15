@@ -1,0 +1,25 @@
+<template>
+    <div class="faq">
+<template if:true={selectedEventId}>
+
+    <div class="faq-container ">
+        <div class="faqSec">
+            <div class="faqSec_inner">
+                <div class="faqSec_inner_info">
+                    <template if:true={faqList}>
+                        <h1 style="">{faqLabel}</h1>
+                        <div>
+                        <template for:each={faqList} for:item="faq">
+                            <div class="faq-box slds-col" key={faq.Id} >
+                            <c-expandable-component question-header={faq.question} answer-body={faq.answer}> </c-expandable-component>
+                            </div>
+                        </template>
+                        </div>
+                        </template>
+                </div>
+            </div>
+        </div>
+        </div>
+</template>
+    </div>
+</template>

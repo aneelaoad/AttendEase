@@ -1,0 +1,29 @@
+/* expandableComponent.css */
+
+.expandable-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.header {
+    background-color: #81ecec;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: none;
+
+}
+
+.expanded {
+    max-height: 500px; /* Adjust the maximum height as needed */
+	padding: 10px;
+    display: inline-block;
+
+}

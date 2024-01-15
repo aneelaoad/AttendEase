@@ -1,0 +1,39 @@
+.sectionSession_outer{ background-color: #f8f8f8; width: 100%; padding: 70px 0px;}
+.sectionSession {max-width: 1240px; margin: auto; width: 100%; padding: 0px 20px;}
+
+.sectionSession ul { display: flex; flex-wrap: wrap;}
+
+.sectionSession ul li { width: 33.33%; padding: 10px 10px;}
+
+.card_info { background-color: #fff; width: 100%; border-radius: 6px; box-shadow: 0px 0px 3px #cccccc8c; padding: 25px 20px;}
+
+
+.card_info p {    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0px;}
+
+
+.sectionSession .view-all {  font-size: 12px; border-radius: 6px; padding: 12px 25px; 
+    text-align: center;max-width: 175px; margin: auto; display: block;  
+    color: #fff; margin-top: 30px;
+    background-color: #143058;}
+
+.sectionSession { padding-bottom: 0px;}
+
+.sessionModel  .card_info { margin: 12px 0px;}
+
+.card_info span { padding-bottom: 20px; display: block;}
+
+.sectionSession h1{ text-align: center; padding-bottom: 25px; margin: 0px;}
+
+@media only screen and (max-width:767px) {
+.sectionSession ul { display: block;}
+.sectionSession ul li { width: 100%; padding: 10px 10px;}
+.sectionSession_outer{  padding: 55px 0px;}
+
+
+}
+.section { scroll-margin-top: 80px;}
+
+.sldClose .slds-icon-utility-close span svg {fill: #fff;}

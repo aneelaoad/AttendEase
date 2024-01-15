@@ -1,0 +1,11 @@
+<template>
+    <div class="expandable-container">
+        <div class="header" onclick={toggleExpansion}>
+            <span>{questionHeader}</span>
+        </div>
+        <div class={contentClass}>
+                <p if:true={answerBody}> {answerBody}</p>
+              
+        </div>
+    </div>
+</template>

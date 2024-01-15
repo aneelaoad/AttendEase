@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>COPYRIGHT</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>COPYRIGHT</shortDescription>
+        <value>Copyright © | All rights reserved.</value>
+    </labels>
+    <labels>
+        <fullName>FAQ_LABEL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>FAQ LABEL</shortDescription>
+        <value>FAQ</value>
+    </labels>
+    <labels>
+        <fullName>RSVP_LABEL</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>RSVP LABEL</shortDescription>
+        <value>RSVP</value>
+    </labels>
+</CustomLabels>

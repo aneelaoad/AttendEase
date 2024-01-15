@@ -1,0 +1,61 @@
+<template >
+    <template if:true={selectedEventId} >
+    <div class="sectionSession_outer section">
+        <div class="sectionSession">
+            <h1>Sessions</h1>
+            <ul>
+     <template for:each={threesessionInformation} for:item="session"  >
+                <li  key={session.Id}   data-section="Sessions" class="session-info cardDiv">
+                <div class="card">
+                                <div class="card_info">
+                                    <h3 class="heading">{session.sessionTitle}</h3>
+                                    <lightning-formatted-rich-text value={session.sessionDescription}></lightning-formatted-rich-text>
+                                    <p><strong>Start Date:</strong>     {session.sessionStartDate}</p>
+                                    <p><strong>End Date:</strong>     {session.sessionEndDate}</p>
+                                    <p><strong>Start Time: </strong>   {session.sessionStartTime}</p>
+                                    <p><strong>End Time:</strong>     {session.sessionEndTime}</p>
+                                    <p><strong>Total Duration:</strong>  {session.sessionDuration}</p>
+                                </div>
+                            </div>
+                </li>
+        </template>
+    </ul>
+            <button class="view-all" onclick={handleViewAllClick}>View All Sessions</button>
+            <template if:true={showAllSession}>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+                <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <button class="slds-button sldClose slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close" class="slds-icon-standard-textbox"></lightning-icon>
+                            </button>
+                            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">All Sessions</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium sessionModel">
+                            <template for:each={sessionInformation} for:item="session"  >
+                                <div key={session.Id}   data-section="Sessions" class="session-info">
+                                    
+                                    <div class="card">
+                                        <div class="card_info">
+                                            <h3 class="heading">{session.sessionTitle}</h3>
+                                            <lightning-formatted-rich-text value={session.sessionDescription}></lightning-formatted-rich-text>
+                                            <p><strong>Start Date:</strong>     {session.sessionStartDate}</p>
+                                            <p><strong>End Date:</strong>     {session.sessionEndDate}</p>
+                                            <p><strong>Start Time: </strong>   {session.sessionStartTime}</p>
+                                            <p><strong>End Time:</strong>     {session.sessionEndTime}</p>
+                                            <p><strong>Total Duration:</strong>  {session.sessionDuration}</p>
+                                        </div>
+                                    </div>
+                            
+                                </div>
+                                
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </div>
+</template>
+</template>

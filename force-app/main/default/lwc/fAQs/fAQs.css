@@ -1,0 +1,15 @@
+.faq-container{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+
+.faqSec { width: 100%; background-color: #f8f8f8;}
+
+.faqSec_inner { width: 100%; max-width: 800px; margin: auto; }
+
+.faqSec_inner_info { width: 100%;padding: 50px 0px;}
+
+.faqSec_inner_info h1 { text-align: center; padding-bottom: 15px;}

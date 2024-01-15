@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+      <types>
+      
+        <members>Event__c</members>
+        <members>Speaker__c</members>
+        <members>Sponsor__c</members>
+        <members>Attendee__c</members>
+        <members>Question__c</members>
+        <members>Question_Response__c</members>
+        <members>Session__c</members>
+        <members>Question_Option__c</members>
+        <members>Session_Speaker__c</members>
+        <members>Event_Speaker__c</members>
+        <members>FAQ__c</members>
+        <members>Navigation_Control__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+    <members>Event__c</members>
+    <members>Navigation_Control__c</members>
+    <name>CustomTab</name>
+ </types>
+    <types>
+        <members>Event__c-Event Layout</members>
+        <members>FAQ__c-FAQ Layout</members>
+        <members>Account-Account Layout</members>
+        <members>Speaker__c-Speaker Layout</members>
+        <members>Sponsor__c-Sponsor Layout</members>
+        <members>Attendee__c-Attendee Layout</members>
+        <members>Question__c-Question Layout</members>
+        <members>Question_Response__c-Question Response Layout</members>
+        <members>Session__c-Session Layout</members>
+        <members>Question_Option__c-Question Option Layout</members>
+        <members>Session_Speaker__c-Session Speaker Layout</members>
+        <members>Event_Speaker__c-Event Speaker Layout</members>
+        <members>Navigation_Control__c-Navigation Control Layout</members>
+        <members>Navigation_Control__c-Navigation Footer Menu</members>
+       
+
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Navigation_Control__c.Footer_Navigation</members>
+        <members>Navigation_Control__c.Header_Navigation</members>
+        <name>RecordType</name>
+    </types>
+    <types>
+    <members>Event__c</members>
+    <name>CustomTab</name>
+ </types>
+	 <types>
+        <members>Account.Logo__c</members>
+        <members>Account.About_Us_Description__c</members>
+        <members>Event__c.Event_Description__c</members>
+        <members>Event__c.Event_End_Date_and_Time__c</members>
+        <members>Event__c.Event_Start_Date_and_Time__c</members>
+        <members>Event__c.Event_Charges__c</members>
+        <members>Event__c.Event_Organizer_Company__c</members>
+        <members>Event__c.Event_Type__c</members>
+        <members>Event__c.Event_Address__c	</members>
+        <members>Event__c.Event_Total_Duration__c</members>
+        <members>Event__c.Event_Organizer__c</members>
+        <members>Event__c.Event_Title__c</members>
+        <members>Question__c.Question__c</members>
+        <members>Question__c.Event__c</members>
+        <members>Question__c.Priority__c</members>
+        <members>Question__c.Question_Type__c</members>
+        <members>Question_Response__c.Question_Name__c</members>
+        <members>Question_Response__c.Response__c</members>
+        <members>Question_Response__c.Attendee__c</members>  
+        <members>Question_Option__c.Option__c</members>
+        <members>Question_Option__c.Question__c</members>
+        <members>Session__c.Session_Title__c</members>
+        <members>Session__c.Session_Start_Date__c</members>
+        <members>Session__c.Session_End_Date__c</members>
+        <members>Session__c.Session_Start_Time__c</members>
+        <members>Session__c.Session_End_Time__c</members>
+        <members>Session__c.Session_Duration__c</members>
+        <members>Session__c.Session_Description__c</members>
+        <members>Speaker__c.Speaker_Name__c</members>
+        <members>Speaker__c.Speaker_Profile_Image__c</members>
+        <members>Speaker__c.Speaker_Information__c</members>
+        <members>Speaker__c.Email__c</members>
+        <members>Speaker__c.Phone_Number__c</members>
+        <members>Speaker__c.Company_Name__c</members>
+        <members>Sponsor__c.Event__c</members>
+        <members>Sponsor__c.Sponsor__c</members>
+        <members>Attendee__c.Attendee__c</members>
+        <members>Attendee__c.Event__c</members>
+        <members>Attendee__c.Event__c</members>
+        <members>Event_Speaker__c.Event__c</members>
+        <members>Event_Speaker__c.Speaker__c</members>
+        <members>Event_Speaker__c.Duplication_Record_Chk__c</members>
+        <members>Session_Speaker__c.Session__c</members>
+        <members>Session_Speaker__c.Speaker__c</members>
+        <members>FAQ__c.Question__c</members>
+        <members>FAQ__c.Answer__c</members>
+      
+        <members>Navigation_Control__c.Menu_Item_Name__c</members>
+        <members>Navigation_Control__c.Order__c</members>
+        <members>Navigation_Control__c.is_Visible__c</members>
+        <members>Navigation_Control__c.Event__c</members>
+        <members>Navigation_Control__c.Link_URL__c</members>
+        <members>Navigation_Control__c.Social_Media_Type__c</members>
+        <members>Navigation_Control__c.Section__c</members>
+ 
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>Events_Product</members>
+        <name>CustomSite</name>
+    </types>
+
+    <types>
+        <members>cbEvents_Product</members>
+        <name>NetworkBranding</name>
+        </types>
+     <types>
+        <members>Events Product</members> 
+        <name>Network</name>
+        </types>
+    <types>
+        <members>Events_Product1</members>
+        <name>ExperienceBundle</name>
+    </types>
+  
+       <types>
+        <members>attendeesBlankLayout</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+     <types>
+        <members>CommunitiesLanding</members>
+        <name>ApexPage</name>
+    </types>
+
+      <types>
+		<members>navigationBar</members>
+        <members>aboutUs</members>
+        <members>speakerSection</members>
+        <members>sessionSection</members>
+        <members>primaryButton</members>
+        <members>eventHighlight</members>
+        <members>bannerImage</members>
+        <members>fAQs</members>
+        <members>expandableComponent</members>
+        <members>footer</members>
+        <members>setEventId</members>
+        <members>autoOpenModal</members>
+		<name>LightningComponentBundle</name>
+	</types>
+    
+    <types>
+		<members>CommunitiesLandingController</members>
+		<members>CommunitiesLandingControllerTest</members>
+        <members>NavigationControlSelector</members>
+        <members>NavigationbarController</members>
+        <members>DenormalizedNavigationControl</members>
+        <members>DenormalizedEvent</members>
+        <members>EventSelector</members>
+        <members>EventController</members>
+        <members>FAQsSelector</members>
+        <members>DenormalizedFAQs</members>
+        <members>FAQsController</members>
+        <members>DenormalizedSpeaker</members>
+        <members>SpeakerSelector</members>
+        <members>SpeakerController</members>
+        <members>DenormalizedSession</members>
+        <members>SessionSelector</members>
+        <members>SessionController</members>
+        <members>FooterController</members>
+        <members>DenormalizedFooter</members>
+        <members>EventListController</members>
+		<name>ApexClass</name>
+	</types>
+    
+     <types>
+		<members>ScrollMessageChannel</members>
+		<members>EventIDMessageChannel</members>
+		<name>LightningMessageChannel</name>
+	</types>
+    
+        <types>
+		<members>Event_Record_Page</members>
+		<name>FlexiPage</name>
+	</types>
+
+    
+    <types>
+        <members>FAQ_LABEL</members>
+        <members>RSVP_LABEL</members>
+        <members>COPYRIGHT</members>
+        
+        <name>CustomLabel</name>
+    </types>
+
+    <types>
+        <members>ICONS</members>
+        <members>SOCIAL_ICONS</members>
+        
+        <name>StaticResource</name>
+    </types>
+
+     <types>
+        <members>Prevention_Of_Duplication_Of_Speaker_Record</members>
+       <name>Flow</name>
+    </types>
+
+   
+   
+    <version>58.0</version> 
+</Package>

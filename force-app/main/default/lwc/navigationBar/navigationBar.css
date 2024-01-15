@@ -1,0 +1,62 @@
+/* :root {
+  --primarycolor: #2980b9; 
+} */
+.myStickyHeader{
+       transition: background-color 0.3s ease;
+}
+.navigation-bar {
+   background-color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation-bar .logo{
+    flex: 2;
+}
+.navigation-bar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+.navigation-bar ul li {
+    cursor: pointer;
+    padding: 10px 6px;
+    font-size: 14px;
+    font-weight: 400;
+
+}
+.navigation-bar ul li:hover {
+    color: #0984e3;
+}
+.companyLogo{
+    flex: 2;
+}
+.companyLogo img{
+    width: 80px;
+    height: 80px;
+}
+
+.sticky {
+  top: 0;
+  left: -1px;
+  right: 0px;
+  width: 100%;
+  z-index: 9899999999999;
+}
+
+.myStickyHeader { z-index: 22 !important;}
+
+
+
+@media only screen and (max-width:767px) {
+	.navigation-bar { flex-flow: column;}
+	.navigation-bar  li {     cursor: pointer;
+        padding: 10px 6px;
+        font-size: 14px; 
+    }
+	
+	}

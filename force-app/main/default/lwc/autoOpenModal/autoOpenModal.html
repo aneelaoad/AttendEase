@@ -1,0 +1,20 @@
+<template>
+	<div class="modal-container">
+		<div class="modal-content">
+			<h2 style="font-size:30px">Select your Event</h2>
+			<lightning-combobox name="eventSelection" 
+            label="Select Event" 
+            value={selectedEvent} 
+            options={eventOptions}
+			onchange={handleEventChange}>
+			</lightning-combobox>
+
+			<div class="modal-footer">
+				<lightning-button variant="neutral" label="Submit" title="Submit" onclick={publishEventId}>
+				</lightning-button>
+			</div>
+
+		</div>
+	</div>
+
+</template>

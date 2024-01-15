@@ -1,0 +1,21 @@
+.footer { width: 100%; background-color: #000;}
+
+
+.footerDetail { padding: 15px 20px; max-width: 1240px; margin: auto; color: #fff; display: flex; justify-content: space-between; align-items: center;}
+
+.socialInfo { width: auto; display: flex;}
+
+.socialInfo .social-media-icons { width: auto; margin: 0px 10px;}
+.socialInfo .social-media-icons a img{ width: 24px; height: 24px; display: block; }
+
+
+
+
+
+
+
+@media only screen and (max-width:767px) {
+	.footerDetail { flex-flow: column;}
+	.socialInfo { padding-top: 10px;}
+	
+	}

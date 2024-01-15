@@ -1,0 +1,17 @@
+/* bannerImage.css */
+.mainBanner img{
+    width: 100%; 
+    height: auto;
+    max-height: 450px; 
+    object-fit: cover; 
+    margin-top: 0; 
+}
+
+.slds-card__body {
+    margin-bottom: 0px;
+}
+
+
+
+
+.slds-card__header { padding: 0px !important;}

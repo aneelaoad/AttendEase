@@ -1,0 +1,63 @@
+<template>
+    <template if:true={selectedEventId}>
+     <div class="sectionSpeaker">
+        <div class="sectionSpeaker_inner">
+            <div class="sectionSpeaker_info">
+                <h1>Our Speakers</h1>
+                <ul>
+                        <template for:each={threespeakerInformation} for:item="speaker"  >
+
+                    <li key={speaker.Id}   data-section="Speakers" class="speaker-info">        
+                                    
+                                    <div class="card_info">
+                                        <img src={speaker.speakerImage} alt="Speaker Profile Image" />
+                                            
+                                            <h3 class="heading">{speaker.speakerName}</h3>
+                                            <lightning-formatted-rich-text value={speaker.speakerInformation}></lightning-formatted-rich-text>
+                                            <p><strong>Email:</strong> {speaker.speakerEmail}</p>
+                                            <p><strong>Contact Number: </strong>{speaker.speakerContactNumber}</p>
+                                        
+                                    </div>
+                            </li>
+                        </template>
+
+                        </ul>
+            
+                <button class="view-all" onclick={handleViewAllClick}>View All Speakers</button>
+            </div>
+        </div>
+        <template if:true={showAllSpeakers}>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" class="slds-icon-standard-textbox"></lightning-icon>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">All Speakers</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium speakerModel">
+                        <template for:each={speakerInformation} for:item="speaker"  >
+                               <div key={speaker.Id}   data-section="Speakers" class="speaker-info">
+                                   
+                                <div class="card_info">
+                                    <img src={speaker.speakerImage} alt="Speaker Profile Image" />
+                                        
+                                        <h3 class="heading">{speaker.speakerName}</h3>
+                                        <lightning-formatted-rich-text value={speaker.speakerInformation}></lightning-formatted-rich-text>
+                                        <p><strong>Email:</strong> {speaker.speakerEmail}</p>
+                                        <p><strong>Contact Number: </strong>{speaker.speakerContactNumber}</p>
+                                    
+                                </div>
+                           
+                               </div>
+                              
+                           </template>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </div>
+</template>
+</template>
