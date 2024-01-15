@@ -26,10 +26,10 @@ git init
 ```
 #### Step 5: Add a Remote Repository
 Create a new repository on a platform like GitHub, GitLab, or Bitbucket. In our case it is the GitLab.
-Copy the repository URL. In our case: ```https://gitlab.com/cloud1.developer/attendees.git ```. 
+Copy the repository URL. In our case: ```https://github.com/aneelaoad/AttendEase.git```. 
 Run the following command to add the remote repository:
 ```
-git remote add origin https://gitlab.com/cloud1.developer/attendees.git
+git remote add origin https://github.com/aneelaoad/AttendEase.git
 ```
 ## Following are the main steps
 ### Step 1: Create a Pull from the Remote Branch 'develop'
