@@ -1,4 +1,4 @@
-public class EventListController {
+public without sharing class EventListController {
 
      @AuraEnabled(cacheable=true)
     public static List<Event__c> getEvents() {

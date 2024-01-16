@@ -1,7 +1,7 @@
 # Attendees System - Development Workflow Document
 
 ## Purpose:
- 
+
 This document outlines the step-by-step process for collaborating on a Salesforce development project using Git version control and Salesforce DX (SFDX) for managing Salesforce metadata.
 
 ### Following are the prerequisite steps:
@@ -26,10 +26,10 @@ git init
 ```
 #### Step 5: Add a Remote Repository
 Create a new repository on a platform like GitHub, GitLab, or Bitbucket. In our case it is the GitLab.
-Copy the repository URL. In our case: ```https://github.com/aneelaoad/AttendEase.git```. 
+Copy the repository URL. In our case: ```https://gitlab.com/cloud1.developer/attendees.git ```. 
 Run the following command to add the remote repository:
 ```
-git remote add origin https://github.com/aneelaoad/AttendEase.git
+git remote add origin https://gitlab.com/cloud1.developer/attendees.git
 ```
 ## Following are the main steps
 ### Step 1: Create a Pull from the Remote Branch 'develop'

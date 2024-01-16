@@ -1,4 +1,4 @@
-public  class EventSelector {
+public without sharing class EventSelector {
 
     public static List<Event__c> getEvents(String eventId) {
         String query = 'SELECT Name, Id, Event_Description__c, Event_Title__c, Event_Organizer_Company__c, '

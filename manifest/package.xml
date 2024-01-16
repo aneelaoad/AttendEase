@@ -17,8 +17,18 @@
         <name>CustomObject</name>
     </types>
     <types>
-    <members>Event__c</members>
-    <members>Navigation_Control__c</members>
+     <members>Event__c</members>
+        <members>Speaker__c</members>
+        <members>Sponsor__c</members>
+        <members>Attendee__c</members>
+        <members>Question__c</members>
+        <members>Question_Response__c</members>
+        <members>Session__c</members>
+        <members>Question_Option__c</members>
+        <members>Session_Speaker__c</members>
+        <members>Event_Speaker__c</members>
+        <members>FAQ__c</members>
+        <members>Navigation_Control__c</members>
     <name>CustomTab</name>
  </types>
     <types>
@@ -182,6 +192,7 @@
     
         <types>
 		<members>Event_Record_Page</members>
+		<members>AttendEase_UtilityBar</members>
 		<name>FlexiPage</name>
 	</types>
 
@@ -206,7 +217,10 @@
        <name>Flow</name>
     </types>
 
-   
+    <types>
+        <members>AttendEase</members>
+        <name>CustomApplication</name>
+    </types>
    
     <version>58.0</version> 
 </Package>

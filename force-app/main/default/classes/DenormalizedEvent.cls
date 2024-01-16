@@ -1,4 +1,4 @@
-public with sharing class DenormalizedEvent {
+public without sharing  class DenormalizedEvent {
   @AuraEnabled public String eventDescription;
   @AuraEnabled public String aboutUsDescription;
    @AuraEnabled public String bannerImage;
