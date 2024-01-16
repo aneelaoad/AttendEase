@@ -1,10 +1,54 @@
-# Attendees System - Development Workflow Document
+# AttendEase Plus: Elevating Event Experiences
 
+<<<<<<< HEAD
 ## Purpose:
 
 This document outlines the step-by-step process for collaborating on a Salesforce development project using Git version control and Salesforce DX (SFDX) for managing Salesforce metadata.
+=======
+>>>>>>> cadc56f0797dc7ca4534ca7a77f44d2e39db59d7
 
-### Following are the prerequisite steps:
+## Introduction:
+AttendEase is a comprehensive event registration and management software designed to streamline the entire event process, from registration to information dissemination. This document outlines key features and benefits of AttendEase.
+
+### 1. Effortless Registration:
+
+Intuitive Registration Interface: Attendees can easily register for events through a user-friendly interface.
+Quick Registration: Fast and efficient registration process ensures a smooth experience for attendees.
+Customizable Forms: Tailor registration forms to capture specific attendee information.
+### 2. Detailed Event Information:
+
+Speaker Profiles: Display detailed information about event speakers, enhancing attendee engagement.
+Session Details: Provide a comprehensive schedule with session details, ensuring attendees are well-informed.
+Sponsor Highlights: Showcase event sponsors to acknowledge their support and enhance brand visibility.
+### 3. Attendee Management:
+
+Attendee Directory: Create a centralized directory of attendees for networking opportunities.
+Check-In System: Streamline on-site check-in processes for a hassle-free experience.
+Attendee Communication: Facilitate communication between event organizers and attendees.
+### 4. FAQs and Support:
+
+Frequently Asked Questions: Address common queries through a dedicated FAQ section.
+Support System: Offer assistance to attendees through a built-in support system.
+### 5. Engaging Experiences:
+
+Networking Features: Foster networking opportunities among attendees.
+Interactive Features: Incorporate interactive elements to keep attendees engaged.
+Gamification Options: Introduce gamification to enhance the overall event experience.
+### 6. Analytics and Insights:
+
+Data Analytics: Provide organizers with valuable insights into attendee behavior and preferences.
+Reporting Tools: Generate comprehensive reports for post-event analysis and improvement.
+### 7. User-Friendly Admin Panel:
+
+Easy Configuration: Simplify the setup and configuration process for event organizers.
+Real-Time Updates: Enable organizers to make real-time updates to event information.
+### 8. Mobile Responsiveness:
+
+Mobile App Compatibility: Ensure AttendEase is accessible and functional on various devices.
+Mobile Notifications: Send timely updates and notifications to attendees via mobile.
+
+
+## Following are the prerequisite steps:
 #### Step 1: Install NodeJS and Salesforce CLI 
 Ensure Salesforce CLI is installed on your local machine. If not, download and install it from the official Salesforce CLI website.
 #### Step 2: Create a Salesforce Project
