@@ -18,6 +18,10 @@
                 <behavior>Required</behavior>
                 <field>Speaker_Profile_Image__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Required</behavior>
+                <field>Email__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -27,10 +31,6 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Speaker_Information__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Required</behavior>
-                <field>Email__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
@@ -101,7 +101,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1m000002g88E</masterLabel>
+        <masterLabel>00h1y000003XAWP</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

@@ -1,0 +1,10 @@
+{
+  "activeViewId" : "98acba58-a107-409b-a659-0ac61e748250",
+  "appPageId" : "dfb6d148-efb7-4fc4-8582-99807b0aa8aa",
+  "configurationTags" : [ ],
+  "id" : "7e418250-bf77-40e9-bc0f-bad15d8b597d",
+  "label" : "User Settings",
+  "routeType" : "usersettings",
+  "type" : "route",
+  "urlPrefix" : "settings"
+}

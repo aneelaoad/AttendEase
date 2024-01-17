@@ -119,24 +119,29 @@
     </types>
     <types>
         <members>Events_Product</members>
+        <members>AttendEasePlus</members>
         <name>CustomSite</name>
     </types>
 
     <types>
         <members>cbEvents_Product</members>
+        <members>cbAttendEasePlus</members>
         <name>NetworkBranding</name>
         </types>
      <types>
         <members>Events Product</members> 
+        <members>AttendEasePlus</members> 
         <name>Network</name>
         </types>
     <types>
         <members>Events_Product1</members>
+        <members>AttendEasePlus1</members> 
         <name>ExperienceBundle</name>
     </types>
   
        <types>
         <members>attendeesBlankLayout</members>
+        <members>EventRegistrationLayout</members>
         <name>AuraDefinitionBundle</name>
     </types>
      <types>
@@ -149,7 +154,6 @@
         <members>aboutUs</members>
         <members>speakerSection</members>
         <members>sessionSection</members>
-        <members>primaryButton</members>
         <members>eventHighlight</members>
         <members>bannerImage</members>
         <members>fAQs</members>
@@ -157,6 +161,7 @@
         <members>footer</members>
         <members>setEventId</members>
         <members>autoOpenModal</members>
+        <members>attendeeRegistrationForm</members>
 		<name>LightningComponentBundle</name>
 	</types>
     
@@ -181,6 +186,7 @@
         <members>FooterController</members>
         <members>DenormalizedFooter</members>
         <members>EventListController</members>
+        <members>AttendeeRegistrationController</members>
 		<name>ApexClass</name>
 	</types>
     

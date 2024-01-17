@@ -46,10 +46,10 @@
   left: -1px;
   right: 0px;
   width: 100%;
-  z-index: 9899999999999;
+  z-index: 2;
 }
 
-.myStickyHeader { z-index: 22 !important;}
+.myStickyHeader { z-index: 3 !important;}
 
 
 
