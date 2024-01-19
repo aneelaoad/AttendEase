@@ -187,6 +187,8 @@
         <members>DenormalizedFooter</members>
         <members>EventListController</members>
         <members>AttendeeRegistrationController</members>
+        <members>DenormalizedQuestion</members>
+        <members>QuestionSelector</members>
 		<name>ApexClass</name>
 	</types>
     
