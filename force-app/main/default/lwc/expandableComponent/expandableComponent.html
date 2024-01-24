@@ -4,8 +4,7 @@
             <span>{questionHeader}</span>
         </div>
         <div class={contentClass}>
-                <p if:true={answerBody}> {answerBody}</p>
-              
+                <lightning-formatted-rich-text value={answerBody}></lightning-formatted-rich-text>              
         </div>
     </div>
 </template>

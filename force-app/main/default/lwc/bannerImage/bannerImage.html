@@ -1,16 +1,19 @@
-<template> 
-    <template if:true={selectedEventId}>
-    <lightning-card >
-        <template if:true={bannerImages}>
-            <template for:each={bannerImages} for:item="banner" >
-               <div key={banner.bannerImage}  class="mainBanner">
-                    <img src={banner.bannerImage} alt=" Image is Not available"/>
+<template>
+	<template if:true={selectedEventId}>
+		<div class="bannerImage-container">
+			<template if:true={bannerImage}>
+				<div class="bannerImage">
+
+					<img src={bannerImage} alt=" Banner Image"/>
                 </div>
-             </template>
-        </template>
-        <template if:false={bannerImages}>
-            <p>No banner images available</p>
-        </template>
-    </lightning-card>
-</template>
+			</template>
+
+			<template if:false={bannerImage}>
+				<div class="bannerImage">
+					<img src={bannerImageWarning} alt=" Image is Not available"/>
+              </div>
+			</template>
+
+		</div>
+	</template>
 </template>

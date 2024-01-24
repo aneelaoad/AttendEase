@@ -1,9 +1,7 @@
 :host{
     --primary: #81ecec;
 }
-.RSVP-button{
 
-}
 .event-highlight{
     display: flex;
     justify-content: space-around;
@@ -13,13 +11,13 @@
 }
 .event-highlight .when-where{
     display: flex;
-    /* justify-content: space-around; */
     flex-wrap: wrap;
     align-items: center;
     width: 100%; max-width: 800px ; margin: auto; margin-bottom: 20px;
 }
 .event-highlight .when-where .box{
     padding: 15px ;
+    height: 100px;
     margin: 15px ;
     background: var(--primary);
     display: flex;
@@ -33,6 +31,10 @@
 .event-dateLoaction{
     margin-left:20px ;
 }
+.inner-box{
+    display: flex;
+    justify-content: space-evenly;
+}
 
 
 
@@ -40,7 +42,7 @@
 
 .highlighsSection_inner { width: 100%; max-width: 1240px; margin: auto; padding: 0px 20px;}
 
-.highlighsSection_detail { width: 100%; padding: 70px 0px;}
+.highlighsSection_detail { width: 100%; padding: 10px 0px;}
 
 
 .highlighsSection_detail .event-title { text-align: center; padding-bottom: 15px;}
@@ -54,3 +56,27 @@
     text-align: center;max-width: 175px; margin: auto; display: block;  
     color: #fff; margin-top: 30px;
     background-color: #143058 !important;}
+
+
+    .warning-message {
+    position: relative;
+    background-color: #f8d7da; /* Bootstrap's red background color for warnings */
+    border: 1px solid #f5c6cb; /* Bootstrap's red border color for warnings */
+    color: #721c24; /* Bootstrap's dark red text color for warnings */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    animation: fadeInUp 2s ease-out; /* Fade-in animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

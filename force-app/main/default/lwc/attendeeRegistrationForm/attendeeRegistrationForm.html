@@ -1,6 +1,6 @@
 <template>
 
-	<div class="slds-p-around_medium">
+	<div style=" height: 200px; overflow-y: auto;  padding:10px 15px">
 		<!-- Button to open the modal -->
 		<lightning-button label="RSVP" onclick={openModal}></lightning-button>
 
@@ -12,7 +12,7 @@
 				<div class="slds-modal__container">
 
 
-					<body>
+					<section style="overflow: auto;">
 						<!-- Modal Header -->
 						<header class="slds-modal__header">
 							<h2 id="modal-heading-01" class="slds-modal__title">Attendee Registration</h2>
@@ -32,16 +32,43 @@
 									<hr />
 									<!-- ----questionaire starts from here---- -->
 									<div class="questionaire-section">
-										<template if:true={questionOptions}>
+										<template if:true={questionsList}>
 											<div class="slds-p-around_medium">
-												<template for:each={questionOptions} for:item="question">
+												<template for:each={questionsList} for:item="question">
 													<div key={question.questionId}>{question.questionName}
-														<lightning-textarea name="reponse" value={response}
-															label="Enter Your Response">
-														</lightning-textarea>
+														<template if:true={question.showTextOptions}>
+															<lightning-textarea name="reponse" value={textAreaValue}
+																label=""
+																onchange={handleTextAreaChange}
+																data-questionid={question.questionId}>
+															</lightning-textarea>
+														</template>
+														<template if:true={question.showSingleSelectOptions}>
+
+															<div class="slds-form-element__control">
+																<lightning-radio-group name="options"
+																	label="" options={question.options}
+																	onchange={handleRadioChange}
+																	data-questionid={question.questionId}
+																	>
+																</lightning-radio-group>
+															</div>
+
+														</template>
+
+														<template if:true={question.showMultiSelectOptions}>
+															<lightning-checkbox-group name="checkboxGroup"
+																label="Checkbox Group" options={question.options} 
+																onchange={handleCheckboxChange}
+																value=''
+																data-questionid={question.questionId}
+																 >
+															</lightning-checkbox-group>
+														</template>
 													</div>
+
 												</template>
-												
+
 											</div>
 										</template>
 									</div>
@@ -58,7 +85,7 @@
 
 							</div>
 						</lightning-card>
-					</body>
+					</section>
 
 				</div>
 			</div>

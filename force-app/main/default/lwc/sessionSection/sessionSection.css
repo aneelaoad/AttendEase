@@ -12,7 +12,11 @@
     display: flex;
     justify-content: space-between;
     padding: 3px 0px;}
-
+    .card_info h4 {    font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        padding: 3px 0px;}
+    
 
 .sectionSession .view-all {  font-size: 12px; border-radius: 6px; padding: 12px 25px; 
     text-align: center;max-width: 175px; margin: auto; display: block;  

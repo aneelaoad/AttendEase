@@ -1,20 +1,26 @@
 <template>
 	<template if:true={selectedEventId}>
 		<header class="myStickyHeader sticky">
-			<div class="navigation-bar">
-				<div class="companyLogo">
-					<img src={companyLogo} alt="logo" srcset="">
-            </div>
-					<ul class="nav-menu">
-						<template for:each={navigationItems} for:item="navItem">
-							<li onclick={handleNavItemClick} data-section={navItem.section} key={navItem.DeveloperName}>
-								{navItem.menuTab} </li>
-						</template>
+			<template if:false={isNavbarMissing}>
+				<div class="navigation-bar">
+					<div class="companyLogo">
+						<img src={companyLogo} alt="logo" srcset="">
+         			</div>
+						<ul class="nav-menu">
+							<template for:each={navigationItems} for:item="navItem">
+								<li onclick={handleNavItemClick} data-section={navItem.section}
+									key={navItem.DeveloperName}>
+									{navItem.menuTab} </li>
+							</template>
 
-					</ul>
-				</div>
+						</ul>
+					</div>
+			</template>
+			<template if:true={isNavbarMissing}>
+				<c-navbar-warning-message is-navbar-missing={isNavbarMissing}></c-navbar-warning-message>
 
+			</template>
 		</header>
-	</template>
 
+	</template>
 </template>

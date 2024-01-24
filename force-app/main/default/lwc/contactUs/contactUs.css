@@ -1,0 +1,62 @@
+.mainForm_outer{
+    width:100%;
+    position: relative;
+    padding: 70px 20px; background-color: #f8f8f887;
+}
+.mainForm{
+    width:100%;
+    max-width: 470px;
+    margin: auto;
+    padding: 35px 25px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px #cccccc5e; background-color: #fff;
+}
+.mainForm_outer h2{
+text-align: center;
+padding-bottom: 20px;
+}
+.mainForm ul li{
+width:100%;
+padding: 10px 0px;
+}
+.mainForm_col{
+    width:100%;
+    position: relative;
+}
+.mainForm_col label{
+display: block;
+padding-bottom: 10px;
+font-size: 14px;
+
+}
+.mainForm_field{
+    width:100%;
+    position: relative;
+}
+.mainForm_field input{
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f8f8f88c;
+    font-size: 14px;border: 1px solid #cccccc85;
+    color:black;
+    
+}
+.mainForm_field textarea{
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f8f8f88c;
+    font-size: 14px;
+    color:black; border: 1px solid #cccccc85;
+    min-height: 80px;
+    resize:none;
+}
+.mainFormSubmit{
+    width: 100%;
+}
+.mainFormSubmit input {  font-size: 12px; border-radius: 6px; padding: 12px 25px; 
+    text-align: center;max-width: 175px; margin: auto; display: block;  
+    color: #fff; margin-top: 0px;
+    background-color: #143058;}
+    .mainForm_outer { scroll-margin-top: 115px;}

@@ -1,0 +1,21 @@
+<template >
+    <template if:true={selectedEventId} >
+    <div class="sectionSponser_outer section">
+        <div class="sectionSponser">
+            <h1>Sponsors</h1>
+            <ul>
+                <template for:each={sponsorInformation} for:item="sponsor"  >
+                    <div key={sponsor.Id}   data-section="Sponsors" class="sponser-info">
+                       <li> 
+                            <div class="card_sponsr">
+                                <!-- <h3 class="heading">{sponsor.sponsorName}</h3> -->
+                                <img src={sponsor.sponsorImage} alt="Sponsor Image" />
+                                </div> 
+                            </li> 
+                     </div>
+                 </template>
+             </ul>
+         </div>
+     </div>
+   </template>  
+</template>

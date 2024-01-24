@@ -7,7 +7,7 @@ import { publish, subscribe, MessageContext } from 'lightning/messageService';
 
 export default class FAQs extends LightningElement {
   faqLabel = FAQ_LABEL
-  faqList = []
+  faqList;
   selectedEventId
 
 
@@ -26,8 +26,10 @@ export default class FAQs extends LightningElement {
   handleEventId(eventMessage) {
     this.selectedEventId = eventMessage.eventId;
     getFAQs({ eventId: this.selectedEventId }).then(data => {
-      if (data) {
-        this.faqList = data
+     
+        if (data) {
+          this.faqList = data
+        
       } else if (error) {
         console.error('wiredGetFAQs Error:', error);
       }

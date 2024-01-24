@@ -2,7 +2,8 @@ import { LightningElement, wire, track } from 'lwc';
 import getNavigationItems from '@salesforce/apex/NavigationbarController.getNavigationItems';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import EVENT_ID_LMS from '@salesforce/messageChannel/EventIDMessageChannel__c';
-import { publish,subscribe,  MessageContext } from 'lightning/messageService';
+import { publish, subscribe, MessageContext } from 'lightning/messageService';
+import NAVBAR_MISSING_MESSAGE from '@salesforce/label/c.NAVBAR_MISSING_MESSAGE';
 
 export default class NavigationBar extends LightningElement {
     navigationItems = []
@@ -11,54 +12,60 @@ export default class NavigationBar extends LightningElement {
     selectedEventId;
     sectionSelected;
     contentPadding = 'padding-top:10px';
+    menuTab;
+    isNavbarMissing = false;
+    warningClass = '';
+    warningMessage = NAVBAR_MISSING_MESSAGE
 
-menuTab
+
+
+
 
     @wire(MessageContext)
     messageContext;
 
-   subscribeToMessageChannel() {
+    subscribeToMessageChannel() {
         this.subscription = subscribe(this.messageContext, EVENT_ID_LMS, (eventMessage) => this.handleMessage(eventMessage))
     }
 
     handleMessage(eventMessage) {
         this.selectedEventId = eventMessage.eventId;
-       
-        getNavigationItems( { recordType: 'Header_Navigation', eventId: this.selectedEventId })
-        .then(data => {
-            data.forEach(navItem => {
-                this.companyLogo = navItem.companyLogo;                
+
+        getNavigationItems({ recordType: 'Header_Navigation', eventId: this.selectedEventId })
+
+            .then((data) => {
+                data.forEach(navItem => {
+                    this.companyLogo = navItem.companyLogo;
+
+                });
+                if (data && data.length > 0) {
+
+                    this.companyLogo = data[0].companyLogo;
+                    this.navigationItems = data;
+                } else {
+
+                    this.isNavbarMissing = true;
+                }
+
+                this.navigationItems = data;
+            }).catch((err) => {
+                this.isNavbarMissing = true;
             });
-            
-            this.navigationItems = data;
-        });
 
     }
 
 
     handleNavItemClick(event) {
-       const section = event.target.dataset.section;
-        const payload = { section: section};
+        const section = event.target.dataset.section;
+        const payload = { section: section };
         publish(this.messageContext, SCROLL_MESSAGE, payload);
-        console.log('payload : ',JSON.stringify(payload));
+        console.log('payload : ', JSON.stringify(payload));
     }
 
 
 
-//   @wire(getNavigationItems, { recordType: 'Header_Navigation', eventId: '$selectedEventId' })
-//     wiredNavigationItems({ error, data }) {
-//         if (data) {
-//             data.forEach(navItem => {
-//                 this.companyLogo = navItem.companyLogo
-//             });
-//             this.navigationItems = data;
-//         } else if (error) {
-//             console.error('Error retrieving event names', error);
-//         }
-//     }
 
     renderedCallback() {
-        //this.selectedEventId = sessionStorage.getItem('eventId');
         try {
             window.onscroll = () => {
                 let stickysection = this.template.querySelector('.myStickyHeader');
@@ -78,8 +85,9 @@ menuTab
             console.log('error =>', error);
         }
     }
-connectedCallback() {
-    this.subscribeToMessageChannel();
-    
-  }
+    connectedCallback() {
+        this.subscribeToMessageChannel();
+        
+
+    }
 }

@@ -1,6 +1,5 @@
 import { LightningElement, wire, api, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import CONTACT_OBJECT from '@salesforce/schema/Contact';
 import registerAttendee from '@salesforce/apex/AttendeeRegistrationController.registerAttendee';
 import getEventQuestions from '@salesforce/apex/AttendeeRegistrationController.getEventQuestions';
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
@@ -8,14 +7,24 @@ import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { subscribe, MessageContext } from "lightning/messageService";
 
 export default class AttendeeRegistrationForm extends LightningElement {
-    @track isModalOpen = false;
-    @track contactRecord = {};
-    @api selectedEventId;
+    isModalOpen = false;
 
-    question;
+    // Questionaire data
+    @api selectedEventId;
     questionId;
-    questionOptions = [];
-    @track response = '';
+    questionType;
+    questionOption = [];
+    questionsList = [];
+    questionOptionList = [];
+    responsesWithQuestionIds = [];
+
+    // Attendee form details
+    firstName;
+    lastName;
+    email;
+
+
+
 
     openModal() {
         this.isModalOpen = true;
@@ -26,50 +35,185 @@ export default class AttendeeRegistrationForm extends LightningElement {
         this.resetForm();
     }
 
-    resetForm() {
-    }
-
-
     @wire(MessageContext) messageContext;
-
 
     subscribeToMessageChannel() {
         this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage))
     }
 
-    handleMessage(eventMessage) {
-        this.selectedEventId = eventMessage.eventId;
-        console.log('handleMessage from form: ', this.selectedEventId);
 
-    }
-
-
-    handleFieldChange(e) {
-        this.contactRecord[e.currentTarget.fieldName] = e.target.value;
-    }
     @wire(getEventQuestions, { eventId: '$selectedEventId' })
     wiredEventQuestion({ data, error }) {
         if (data) {
+
             data.forEach(question => {
-                this.questionOptions = data;
-                this.questionId = question.questionId;
+                let optionList = [];
+                // Loop 
+                question.questionOptionList.forEach(option => {
+                    optionList.push({
+                        label: option.option,
+                        value: option.option
+                    });
+                });
+
+                this.questionsList.push({
+                    ...question,
+                    options: optionList
+                });
+
+
+                console.log(' optionList : ', JSON.stringify(optionList));
+                console.log(' this.questionsList : ', JSON.stringify(this.questionsList));
+                // this.questionsList.push(question.map(obj => ({ ...obj, optionList: optionList }))); 
+
             });
-            console.log('getEventQuestions : ', JSON.stringify(data));
+            // this.questionsList = data;
+
+
+            // data.forEach(question => {
+            // this.questionId = question.questionId;
+            //        });
+
+
+            // this.questionsList.forEach(question => {
+            //     const optionsList = question.questionOptionList;
+
+            //     this.questionOptionList = optionsList.map(option => ({
+            //     label: option.Option__c,
+            //     value: option.Option__c
+            // }));
+
+            //   optionsList.map(option => {
+            //       label: option.Option__c,
+            //       value: option.Option__c
+            //         console.log('Options : ', JSON.stringify(option));
+            //     });
+            // console.log('optionsList:::::::: ', JSON.stringify(optionsList.Option__c));
+            //     console.log('this.questionOptionList: ', JSON.stringify(this.questionOptionList));
+            // });
+
+
+            // console.log('this.questionOptionList : ',JSON.stringify(this.questionOptionList));  
+            // this.questionOptionList.forEach(option => {
+            // console.log('Options : ',JSON.stringify(option));       
+            // });     
+
         } else if (error) {
-            // Handle error
+            console.error(error)
         }
     }
+
+
+
+
+
+    handleFieldChange(event) {
+        const fieldName = event.target.fieldName;
+        const value = event.target.value;
+        switch (fieldName) {
+            case 'FirstName':
+                this.firstName = value;
+                break;
+            case 'LastName':
+                this.lastName = value;
+                break;
+            case 'Email':
+                this.email = value;
+                break;
+            default:
+                break;
+        }
+    }
+
+    handleCheckboxChange(event) {
+        const questionId = event.target.dataset.questionid;
+        const responseValue = event.target.value;
+        console.log('responseValue : ',JSON.stringify(responseValue));
+        let stringList = responseValue.join(' ');
+
+
+         console.log('stringList : ',stringList);
+
+         const question = this.questionsList.find(q => q.questionId === questionId);
+
+        if (question) {
+            const existingResponseIndex = this.responsesWithQuestionIds.findIndex(response => response.questionId === questionId);
+            if (existingResponseIndex !== -1) {
+                this.responsesWithQuestionIds[existingResponseIndex].response = stringList;
+            } else {
+                
+                this.responsesWithQuestionIds.push({
+                    questionId: questionId,
+                    response: stringList,
+                });
+            }
+
+        }
+                console.log('Response on CheckBox-->', JSON.stringify(this.responsesWithQuestionIds));
+
+    }
+    handleRadioChange(event) {
+        const questionId = event.target.dataset.questionid;
+        const responseValue = event.target.value;
+
+           const question = this.questionsList.find(q => q.questionId === questionId);
+
+        if (question) {
+            const existingResponseIndex = this.responsesWithQuestionIds.findIndex(response => response.questionId === questionId);
+            if (existingResponseIndex !== -1) {
+                this.responsesWithQuestionIds[existingResponseIndex].response = responseValue;
+            } else {
+                this.responsesWithQuestionIds.push({
+                    questionId: questionId,
+                    response: responseValue,
+                });
+            }
+
+        }
+
+    }
+
+    handleTextAreaChange(event) {
+        const questionId = event.target.dataset.questionid;
+        const responseValue = event.target.value;
+
+        const question = this.questionsList.find(q => q.questionId === questionId);
+
+        if (question) {
+            const existingResponseIndex = this.responsesWithQuestionIds.findIndex(response => response.questionId === questionId);
+            if (existingResponseIndex !== -1) {
+                this.responsesWithQuestionIds[existingResponseIndex].response = responseValue;
+            } else {
+                this.responsesWithQuestionIds.push({
+                    questionId: questionId,
+                    response: responseValue,
+                });
+            }
+
+        }
+    }
+
+
+
+
+
+
     handleRSVP() {
- console.log('clicked : ');
-       this.response = this.template.querySelector("lightning-textarea").value;
-       console.log('response : ',  JSON.stringify(this.response));
-       console.log('this.questionId : ',  this.questionId);
-       console.log('this.selectedEventId, : ',  this.selectedEventId);
-       
-        registerAttendee({ con: { ...this.contactRecord, sobjectType: CONTACT_OBJECT.objectApiName, }, eventId: this.selectedEventId, questionId: this.questionId, response: JSON.stringify(this.response) })
-            .then((contact) => {
-                console.log('contact--> : ', contact);
-                console.log('this.selectedEventId--> : ', this.selectedEventId);
+
+        console.log('Responses-->', JSON.stringify(this.responsesWithQuestionIds));
+
+        let attendeeListObj = {
+            eventId: this.selectedEventId,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            email: this.email,
+            responsesList: this.responsesWithQuestionIds,
+            questionsList: this.questionsList
+   
+        }
+        console.log('attendeeListObj : ', JSON.stringify(attendeeListObj));
+        registerAttendee({ attendeeList: JSON.stringify(attendeeListObj) })
+            .then((attendeeObj) => {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
@@ -82,6 +226,11 @@ export default class AttendeeRegistrationForm extends LightningElement {
 
         this.closeModal()
     }
+
+
+    resetForm() {
+    }
+
     connectedCallback() {
         this.subscribeToMessageChannel();
 

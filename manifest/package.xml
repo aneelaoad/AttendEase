@@ -155,6 +155,7 @@
         <members>speakerSection</members>
         <members>sessionSection</members>
         <members>eventHighlight</members>
+        <members>sponsorSection</members>
         <members>bannerImage</members>
         <members>fAQs</members>
         <members>expandableComponent</members>
@@ -162,6 +163,8 @@
         <members>setEventId</members>
         <members>autoOpenModal</members>
         <members>attendeeRegistrationForm</members>
+        <members>contactUs</members>
+        <members>navbarWarningMessage</members>
 		<name>LightningComponentBundle</name>
 	</types>
     
@@ -189,6 +192,15 @@
         <members>AttendeeRegistrationController</members>
         <members>DenormalizedQuestion</members>
         <members>QuestionSelector</members>
+        <members>DenormalizedResponse</members>
+        <members>DenormalizedAttendee</members>
+        <members>DenormalizedSponsor</members>
+        <members>SponsorController</members>
+         <members>SponsorSelector</members>
+        <members>CompanyInformationController</members>
+        <members>GetCompanyInformation</members>
+         <members>GetCompanyInformationSelector</members>
+       
 		<name>ApexClass</name>
 	</types>
     
@@ -209,6 +221,7 @@
         <members>FAQ_LABEL</members>
         <members>RSVP_LABEL</members>
         <members>COPYRIGHT</members>
+        <members>NAVBAR_MISSING_MESSAGE</members>
         
         <name>CustomLabel</name>
     </types>
@@ -216,7 +229,7 @@
     <types>
         <members>ICONS</members>
         <members>SOCIAL_ICONS</members>
-        
+        <members>IMAGES</members>
         <name>StaticResource</name>
     </types>
 

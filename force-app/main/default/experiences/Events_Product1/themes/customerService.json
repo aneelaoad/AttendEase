@@ -282,8 +282,8 @@
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:aboutUs",
-        "id" : "54ff1a77-7fd0-4dfd-93a9-2243e263dd44",
+        "componentName" : "c:eventHighlight",
+        "id" : "971066bd-3562-47ff-85a9-f6fbc37b05ed",
         "renditionMap" : { },
         "type" : "component"
       } ],
@@ -293,8 +293,8 @@
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:eventHighlight",
-        "id" : "971066bd-3562-47ff-85a9-f6fbc37b05ed",
+        "componentName" : "c:aboutUs",
+        "id" : "d369cdd2-af45-4416-a0c8-6a25102d3bdf",
         "renditionMap" : { },
         "type" : "component"
       } ],
@@ -316,7 +316,7 @@
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:speakerSection",
-        "id" : "867113b8-0c63-4937-b211-a08f43eeb796",
+        "id" : "809854bf-2e18-482f-832a-86718c2296f5",
         "renditionMap" : { },
         "type" : "component"
       } ],
@@ -327,18 +327,31 @@
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:fAQs",
-        "id" : "b83e5d45-dc38-4d85-9fc3-b8884fccd6de",
-        "renditionMap" : { },
-        "type" : "component"
-      }, {
-        "componentAttributes" : { },
-        "componentName" : "c:setEventId",
-        "id" : "1877eff0-7d93-4f58-bb24-65c99a38890f",
+        "id" : "67e71cce-e7be-4de3-b58f-57a9c452f6c4",
         "renditionMap" : { },
         "type" : "component"
       } ],
       "id" : "18d51c0b-6aaf-4f46-9d40-a66b7e422f3e",
       "regionName" : "faq",
+      "type" : "region"
+    }, {
+      "id" : "23e08f8d-16c2-457a-95d9-95d803bda5d6",
+      "regionName" : "contactUs",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:setEventId",
+        "id" : "2d7e7995-75d0-4568-bf6a-aab2e5bfe731",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "6f4835aa-15da-4938-a850-be5d81a15d76",
+      "regionName" : "setEventId",
+      "type" : "region"
+    }, {
+      "id" : "af6d8dfb-91dc-430a-b66f-b9730eb3d758",
+      "regionName" : "Sponsors",
       "type" : "region"
     } ],
     "type" : "view"
