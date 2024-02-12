@@ -13,7 +13,7 @@ export default class FAQs extends LightningElement {
 
   @wire(MessageContext) messageContext;
 
-
+  
   subscribeToEventMessageChannel() {
     this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleEventId(eventMessage))
 

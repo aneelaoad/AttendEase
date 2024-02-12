@@ -5,6 +5,13 @@ import EVENT_ID_LMS from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { publish, subscribe, MessageContext } from 'lightning/messageService';
 import NAVBAR_MISSING_MESSAGE from '@salesforce/label/c.NAVBAR_MISSING_MESSAGE';
 
+
+/**
+* Author: Aneela Oad 
+* @since: 10/12/24
+* Description: Handles the logic and design of Navigation Bar for Site.
+* Last modified by: Aneela Oad 
+*/
 export default class NavigationBar extends LightningElement {
     navigationItems = []
     companyLogo;
@@ -33,6 +40,12 @@ export default class NavigationBar extends LightningElement {
         this.subscription = subscribe(this.messageContext, EVENT_ID_LMS, (eventMessage) => this.handleMessage(eventMessage))
     }
 
+    /**
+    * Author: Aneela Oad 
+    * @since: '20/01/24 '
+    * Description: 'Method handles EVENT LMS '
+    * @param  'eventMessage'
+    */
     handleMessage(eventMessage) {
         this.selectedEventId = eventMessage.eventId;
 
@@ -58,8 +71,12 @@ export default class NavigationBar extends LightningElement {
             });
 
     }
-
-
+    /**
+    * Author: Aneela Oad 
+    * @since: 22/01/24
+    * Description: Method handles the data-target of section and publishes it. 
+    * @param 
+    */
     handleNavItemClick(event) {
         const section = event.target.dataset.section;
         const payload = { section: section };

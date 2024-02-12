@@ -80,3 +80,18 @@
         transform: translateY(0);
     }
 }
+
+@media only screen and (max-width:767px) {
+.event-highlight .when-where .box{ height: auto;margin: 15px 0px;}
+.when-where { display: block !important;}
+
+
+
+
+
+
+
+
+
+
+}

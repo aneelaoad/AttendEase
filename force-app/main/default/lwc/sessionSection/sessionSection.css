@@ -98,13 +98,17 @@
     display: flex;
     margin: 10px auto;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  
 }
 .session-date{
-        background: #8c7ae6;
-    padding: 10px ;
+           display: flex;
+    background: #8c7ae6;
+   padding: 10px;
     color: white;
-    flex: 1;
+    flex: .5;
     text-align: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .session-date h1{
     color: white;
@@ -113,13 +117,16 @@
 .session-intro{
     flex: 2;
     display: flex;
-   
+    padding: 10px;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
 }
 .session-intro .readbutton{
-    float:right;
+    float:right; 
+     display: flex;
+    
+    justify-content: center;
+    align-items: center;
 }
 .readbutton button{
     padding: 5px 10px;
@@ -127,7 +134,7 @@
     background: white;
 }
 .session-intro h3{
-    color: #8c7ae6;
+    color: #8c7ae6; font-size: 17px;
 }
 .card-footer{
     display: flex;
@@ -144,7 +151,7 @@
     flex: 1;
 }
 
-
+.sessionInnerInfo { padding: 0px 20px; max-width: 1140px; margin: auto; width: 100%;}
 
 
 
@@ -153,9 +160,44 @@
 
 
 /* ---media queries--- */
-@media (max-width: 1200px and min-width:760px)  { 
+@media (max-width: 1200px ) and  (min-width:760px)  { 
     .session-container{
+        flex-direction: column !important;
+    }
+    .session-date{
+        padding: 2px ;
+        font-size: 14px;
+    }
+    .session-intro h3{
+        font-size: 16px;
+    }
+    .readbutton button{
+        padding: 5px;
+    }
+    .session-intro{
+         flex-direction: column !important;
+    }
+   
 
+
+
+
+
+ }
+
+
+@media only screen and (max-width:767px) and (min-width:300px) { 
+ 
+
+.Sessions { padding: 60px 20px !important;}
+
+.sessionInnerInfo { padding: 0px;}
+
+.session-intro {flex-direction: column !important;}
+
+.readbutton { margin-top: 15px;}
+ .session-container{
+        flex-direction: column !important;
     }
     .session-date{
         padding: 5px ;
@@ -169,4 +211,6 @@
     .session-intro{
          flex-direction: column !important;
     }
+   
+
  }

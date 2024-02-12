@@ -208,6 +208,13 @@
         <members>ContactSelector</members>
         <members>DenormalizedOption</members>
         <members>RegNavbarSelector</members>
+
+        <members>EventControllerTest</members>
+        <members>NavigationControlSelectorTest</members>
+        <members>NavigationbarControllerTest</members>
+        <members>FAQsControllerTest</members>
+        <members>AttendeeRegistrationControllerTest</members>
+        <members>FooterControllerTest</members>
 		<name>ApexClass</name>
 	</types>
     

@@ -5,6 +5,13 @@ import ICONS from '@salesforce/resourceUrl/ICONS';
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { subscribe, MessageContext } from "lightning/messageService";
 
+
+/**
+* Author: Aneela Oad 
+* @since: 12/12/24
+* Description: Handles the Event details on site
+* Last modified by: Aneela Oad
+*/
 export default class EventHighlight extends LightningElement {
 
 @api selectedEventId;

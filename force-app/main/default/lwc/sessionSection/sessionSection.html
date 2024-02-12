@@ -1,43 +1,44 @@
 <template>
 
 	<template if:true={selectedEventId}>
-		<div class="Sessions section">
+		<div class="Sessions">
 		<h1 style="text-align:center; margin: 30px auto"> Sessions </h1>
-			 
-			<lightning-layout multiple-rows>
-				<template for:each={threesessionInformation} for:item="session">
-					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
-						padding="horizontal-small" key={session.sessionTitle}>
-						<div class="session-container">
-							<div class="session-date">
-								<h1>
-								
-										<lightning-formatted-date-time value={session.sessionStartDate} 
-										 day="2-digit" time-zone="UTC">
+			 <div class="sessionInnerInfo">
+				<lightning-layout multiple-rows>
+					<template for:each={threesessionInformation} for:item="session">
+						<lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6"
+							padding="horizontal-small" key={session.sessionTitle}>
+							<div class="session-container">
+								<div class="session-date">
+									<h1>
+									
+											<lightning-formatted-date-time value={session.sessionStartDate} 
+											day="2-digit" time-zone="UTC">
+											</lightning-formatted-date-time>
+									
+									</h1>
+									<p>
+										<lightning-formatted-date-time value={session.sessionStartDate} month="short"
+											time-zone="UTC">
 										</lightning-formatted-date-time>
-								
-								</h1>
-								<p>
-									<lightning-formatted-date-time value={session.sessionStartDate} month="short"
-										time-zone="UTC">
-									</lightning-formatted-date-time>
-								</p>
-								
-							</div>
-							<div class="session-intro">
-								<h3>{session.sessionTitle}</h3>
-								<div class="readbutton">
-									<button onclick={openModal} data-sessionid={session.sessionTitle} class="readbutton">
-									View Details
-									</button>
+									</p>
+									
 								</div>
+								<div class="session-intro">
+									<h3>{session.sessionTitle}</h3>
+									<div class="readbutton">
+										<button onclick={openModal} data-sessionid={session.sessionTitle} class="readbutton">
+										View Details
+										</button>
+									</div>
 
+								</div>
 							</div>
-						</div>
-						
-					</lightning-layout-item>
-				</template>
-			</lightning-layout>
+							
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+			</div>
 
 
 		<c-popup-modal show-modal={showModal} onclosemodal={closeModal}>
