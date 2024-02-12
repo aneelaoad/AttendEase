@@ -3,20 +3,25 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getCompanyInfo from '@salesforce/apex/CompanyInformationController.getCompanyInfo';
 import { subscribe, MessageContext} from "lightning/messageService";
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
+import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 
 export default class ContactUs extends LightningElement {
     organizationId;
     orgURL;
     pageUrl=window.location.origin +'/eventsproduct/s/';
     subscription = null;
+selectedEventId;
+    //isFormLoaded=false;
     scrlMsg;
     @wire(MessageContext) messageContext;
     subscribeToMessageChannel() {
        this.scrlMsg = subscribe(this.messageContext, SCROLL_MESSAGE, (message) => this.handleScroll(message));
+this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage));
       }
     @wire(getCompanyInfo)
     getAllCompanyInfo({ data, error }) {
         if (data) {
+//this.isFormLoaded=true; 
             // Assuming data is a list, loop through it
             for (let i = 0; i < data.length; i++) {
                 // Access properties for each item in the list
@@ -28,6 +33,7 @@ export default class ContactUs extends LightningElement {
             }
             console.log('organizationId:'+this.organizationId);
             console.log('orgURL:'+this.orgURL);
+             console.log('PageURL:'+this.pageUrl);
         } else if (error) {
             console.error('Error fetching company info:', error);
         }
@@ -61,6 +67,10 @@ export default class ContactUs extends LightningElement {
             this.template.querySelector('.mainForm_outer').scrollIntoView({ behavior: 'smooth' });
          
        }
+
+    }
+    handleMessage(eventMessage) {
+        this.selectedEventId = eventMessage.eventId;
     }
     connectedCallback() {
         this.subscribeToMessageChannel();

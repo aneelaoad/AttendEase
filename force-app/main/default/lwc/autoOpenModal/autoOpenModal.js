@@ -1,25 +1,46 @@
-import { LightningElement, track, wire, api } from 'lwc';
-import getEvents from '@salesforce/apex/EventListController.getEvents';
+import { LightningElement, wire, api } from 'lwc';
+// import getEvents from '@salesforce/apex/EventController.getEvent';
+import getEvents from '@salesforce/apex/EventSelector.getEvents';
 import EVENT_CHANNEL from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { publish, MessageContext } from 'lightning/messageService';
 
+
 export default class AutoOpenModal extends LightningElement {
 
-    @track selectedEvent = '';
-    @track eventOptions = [];
+    selectedEventId = '';
+    eventOptions = [];
+    pageURL
 
     @wire(MessageContext)
     messageContext;
 
 
     handleEventChange(event) {
-        this.selectedEvent = event.detail.value;
+        this.selectedEventId = event.detail.value;
     }
 
+
+
+
+
     publishEventId() {
-        if (this.selectedEvent) {
-            sessionStorage.setItem('eventId', this.selectedEvent);
-            const payload = { eventId: this.selectedEvent };
+        const params = new URLSearchParams();
+     
+        this.pageURL = window.location.origin + '/eventsproduct/s/';
+
+        if (this.selectedEventId) {
+            sessionStorage.setItem('eventId', this.selectedEventId);
+            params.append('eventId', this.selectedEventId);
+            var refresh = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + params.toString();
+            window.history.pushState({ path: refresh }, '', refresh);
+
+
+            if (params.get('eventId') === this.selectedEventId) {
+                this.hideModal();
+                
+            }
+
+            const payload = { eventId: this.selectedEventId };
             publish(this.messageContext, EVENT_CHANNEL, payload);
             this.hideModal();
         }
@@ -27,20 +48,18 @@ export default class AutoOpenModal extends LightningElement {
     }
 
 
-    
 
-  @wire(getEvents)
+
+    @wire(getEvents,{whereClause: ''})
     wiredEvents({ error, data }) {
         if (data) {
             this.eventOptions = data.map(event => ({
                 label: event.Name,
                 value: event.Id
             }));
+        }
 
-            console.log('this.eventOptions : ',JSON.stringify(this.eventOptions));
-        } 
-        
-        
+
         else if (error) {
             console.error('Error fetching events', error);
         }
@@ -59,8 +78,7 @@ export default class AutoOpenModal extends LightningElement {
 
 
 
-
-
+   
     renderedCallback() {
         this.showModal();
     }

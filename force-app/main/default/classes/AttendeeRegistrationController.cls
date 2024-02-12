@@ -1,5 +1,17 @@
+/**
+* @author: Aneela Oad
+* @description: Manages the logic and functionality related to attendee registration.
+* @since: 20/12/23
+* @Last Modified by: Aneela Oad
+*/
 public with sharing class AttendeeRegistrationController {
 
+  /**
+  * @author: Aneela Oad
+  * @description: Manages of fetching question records by eventId
+  * @param  String eventId
+  * @return: `List<DenormalizedQuestion>`
+  */
   @AuraEnabled(cacheable=true)
   public static List<DenormalizedQuestion> getEventQuestions(String eventId) {
       List<DenormalizedQuestion> denormalizedQuestionsList = new List<DenormalizedQuestion>();
@@ -32,88 +44,67 @@ public with sharing class AttendeeRegistrationController {
       return denormalizedQuestionsList;
   }
 
-  //  @AuraEnabled
-  // public static void registerAttendee(String attendeeList) {
-  //     DenormalizedAttendee denormalizedAttendeeInfo = (DenormalizedAttendee) JSON.deserialize(attendeeList, DenormalizedAttendee.class);
-
-  //     List<DenormalizedResponse> responsesList = denormalizedAttendeeInfo.responsesList;
-  //     List<String> responsesWithQuestionIds = new List<String>();
-
-  //     Contact contact = new Contact();
-  //     contact.FirstName = denormalizedAttendeeInfo.firstName;
-  //     contact.LastName = denormalizedAttendeeInfo.lastName;
-  //     contact.email = denormalizedAttendeeInfo.email;
-  //     insert contact;
-
-  //     Attendee__c attendee = new Attendee__c(
-  //         Event__c = denormalizedAttendeeInfo.eventId,
-  //         Attendee__c = contact.Id
-  //     );
-  //     insert attendee;
-
-  //     for (DenormalizedResponse res : responsesList) {
-  //         Question_Response__c response = new Question_Response__c();
-
-  //         response.Question_Name__c = res.questionId;
-  //         response.Response__c = res.response;
-  //         response.Attendee__c = attendee.Id;
-  //         insert response;
-  //     }
-  // }
-
-  @AuraEnabled
-  public static void registerAttendee(String attendeeList) {
-      DenormalizedAttendee denormalizedAttendeeInfo = (DenormalizedAttendee) JSON.deserialize(attendeeList, DenormalizedAttendee.class);
+  /**
+  * @author: Aneela Oad
+  * @description: Handles registration of attendee along with his/her responses
+  * @param  String attendList
+  * @return: void
+  */
+   @AuraEnabled
+  public static void registerAttendee(String attendeeInfo) {
+      DenormalizedAttendee denormalizedAttendeeInfo = (DenormalizedAttendee) JSON.deserialize(attendeeInfo, DenormalizedAttendee.class);
 
       List<DenormalizedResponse> responsesList = denormalizedAttendeeInfo.responsesList;
       List<String> responsesWithQuestionIds = new List<String>();
-        System.debug('attendee Info: '+denormalizedAttendeeInfo.email);
     
-      List<Contact> existingContacts = [SELECT Id, Name FROM Contact WHERE Email =: denormalizedAttendeeInfo.email];
-    // System.debug('existingContact: '+existingContact);
-    System.debug('responsesList: '+responsesList);
-    System.debug('responsesWithQuestionIds: '+responsesWithQuestionIds);
+      List<Contact> existingContacts = ContactSelector.getContacts(denormalizedAttendeeInfo.email);
     Contact existingContact;
 
-    // Check for Contact
-    // if contact does not exists it will create
     Id contactId;
-    
-
-    // for (Contact existingContact : existingContacts) {
-    //   //code_block
-    // }
 
     if (existingContacts.size() == 0 ) {
-      Contact contact = new Contact();
-      contact.FirstName = denormalizedAttendeeInfo.firstName;
-      contact.LastName = denormalizedAttendeeInfo.lastName;
-      contact.email = denormalizedAttendeeInfo.email;
-        insert contact;
-        contactId = contact.id;   
-
-
-    } else {
+        Contact contact = new Contact();
+        contact.FirstName = denormalizedAttendeeInfo.firstName;
+        contact.LastName = denormalizedAttendeeInfo.lastName;
+        contact.email = denormalizedAttendeeInfo.email;
+        if(Schema.sObjectType.Contact.isCreateable()){
+          insert contact;
+        }
+          contactId = contact.id;  
+      
+    } 
+    else {
       existingContact =existingContacts.get(0);
       contactId = existingContact.Id;
     }
-
-        Attendee__c attendee = new Attendee__c(
-          Event__c = denormalizedAttendeeInfo.eventId,
-          Attendee__c = contactId
-      );
+    Attendee__c attendee = new Attendee__c(
+      Event__c = denormalizedAttendeeInfo.eventId,
+      Attendee__c = contactId
+    );
+    if( Schema.sObjectType.Attendee__c.isCreateable()) {
       insert attendee;
-
-
-      for (DenormalizedResponse res : responsesList) {
-          Question_Response__c response = new Question_Response__c();
-
-          response.Question_Name__c = res.questionId;
-          response.Response__c = res.response;
-          response.Attendee__c = attendee.Id;
-          insert response;
-      }
+    }
+      
   
+      
+      List<Question_Response__c> responseListToInsert = new List<Question_Response__c>();
+
+    for (DenormalizedResponse res : responsesList) {
+        Question_Response__c response = new Question_Response__c();
+
+        response.Question_Name__c = res.questionId;
+        response.Response__c = res.response;
+        response.Attendee__c = attendee.Id;
+
+        responseListToInsert.add(response);
+    }
+    if( Schema.sObjectType.Question_Response__c.isCreateable()) {
+      if (!responseListToInsert.isEmpty()) {
+        insert responseListToInsert;
+    } 
+    }
+      
+       
 }
     
   }

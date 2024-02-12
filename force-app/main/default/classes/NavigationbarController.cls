@@ -1,9 +1,22 @@
+/**
+* @author: Aneela Oad
+* @description: Controls the logic and behavior of the navigation bar within the application.
+* @since: 20/01/24
+* @Last Modified by: Aneela Oad
+*/
 public class NavigationbarController {
 
+
+  /**
+  * @author: Aneela Oad
+  * @description: Returns the list of navigation items
+  * @param  String eventId
+  * @return: `List<DenormalizedNavigationControl> `
+  */
   @AuraEnabled(cacheable=true)
-public static List<DenormalizedNavigationControl> getNavigationItems(String recordType, String eventId) {
-     
-         
+public static List<DenormalizedNavigationControl> getNavigationItems( String eventId) {
+
+        String recordType =  Schema.SObjectType.Navigation_Control__c.getRecordTypeInfosByName().get('Header Navigation').getDeveloperName();          
         List<Navigation_Control__c> headerNavigationItemList = NavigationControlSelector.getHeaderNavigationMenu(recordType, eventId);
         List<DenormalizedNavigationControl> denormalizedHeaderNavigationItemsList = new List<DenormalizedNavigationControl>();
  
@@ -21,7 +34,6 @@ public static List<DenormalizedNavigationControl> getNavigationItems(String reco
 
     }
    
-    	System.debug('denormalizedHeaderNavigationItemsList' +denormalizedHeaderNavigationItemsList);
         return denormalizedHeaderNavigationItemsList;
     }
     

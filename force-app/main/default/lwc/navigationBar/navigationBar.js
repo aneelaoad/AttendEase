@@ -16,11 +16,16 @@ export default class NavigationBar extends LightningElement {
     isNavbarMissing = false;
     warningClass = '';
     warningMessage = NAVBAR_MISSING_MESSAGE
+   @track menuOpen = false;
 
+    get menuClass() {
+        return this.menuOpen ? 'menu-open' : '';
+    }
 
-
-
-
+    toggleMenu() {
+        this.menuOpen = !this.menuOpen;
+    }
+    
     @wire(MessageContext)
     messageContext;
 
@@ -31,7 +36,7 @@ export default class NavigationBar extends LightningElement {
     handleMessage(eventMessage) {
         this.selectedEventId = eventMessage.eventId;
 
-        getNavigationItems({ recordType: 'Header_Navigation', eventId: this.selectedEventId })
+        getNavigationItems({ eventId: this.selectedEventId })
 
             .then((data) => {
                 data.forEach(navItem => {
@@ -59,7 +64,7 @@ export default class NavigationBar extends LightningElement {
         const section = event.target.dataset.section;
         const payload = { section: section };
         publish(this.messageContext, SCROLL_MESSAGE, payload);
-        console.log('payload : ', JSON.stringify(payload));
+     
     }
 
 
@@ -82,7 +87,7 @@ export default class NavigationBar extends LightningElement {
                 }
             }
         } catch (error) {
-            console.log('error =>', error);
+            console.error('error =>', error);
         }
     }
     connectedCallback() {

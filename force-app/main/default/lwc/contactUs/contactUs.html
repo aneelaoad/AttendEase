@@ -1,4 +1,5 @@
 <template>
+<template if:true={selectedEventId}>
     <lightning-card>
         <!-- Ensure that the organizationId and orgURL are available before rendering the form -->
         <div class="mainForm_outer " data-section="Contact Us" >
@@ -64,4 +65,5 @@
             </div>
         </div>
     </lightning-card>
+</template>
 </template>

@@ -1,12 +1,28 @@
+/**
+* 
+* @author: Aneela Oad
+* @description: Controls the logic and behavior of Event within the site.
+* @created: 31/01/24
+* @Last Modified by: 31/01/24
+*/
+
 public with sharing class EventController {
+
+
+    /**
+    * @author: Aneela Oad
+    * @description: 
+    * @param String eventId
+    * @return: `DenormalizedEvent`
+    */
     @AuraEnabled(cacheable=true)
-  
-   public static List<DenormalizedEvent> getDenormalizedEvent(String eventId){
-        List<Event__c> eventsList = EventSelector.getEvents(eventId);
-        List<DenormalizedEvent> denormalizedEventList = new List<DenormalizedEvent>();
-              
-         for (Event__c event : eventsList) {
+
+    public static DenormalizedEvent getEvent(String eventId){
+
+        Event__c event = new EventSelector().getEventById(eventId);
+      
         DenormalizedEvent denormalizedEvent = new DenormalizedEvent();
+              
         denormalizedEvent.eventTitle= event.Event_Title__c;
         denormalizedEvent.aboutUsDescription = event.Event_Organizer_Company__r.About_Us_Description__c;
         denormalizedEvent.eventDescription = event.Event_Description__c;
@@ -14,16 +30,13 @@ public with sharing class EventController {
         denormalizedEvent.eventCity = event.Event_Address__City__s;
         denormalizedEvent.eventCountry = event.Event_Address__CountryCode__s;
         denormalizedEvent.eventStreet = event.Event_Address__Street__s;
-        denormalizedEvent.eventDateTime=event.Event_Start_Date_and_Time__c;
-      
+        denormalizedEvent.eventStartDateTime=event.Event_Start_Date_and_Time__c;
+        denormalizedEvent.eventEndDateTime=event.Event_End_Date_and_Time__c; 
      
-
-        denormalizedEventList.add(denormalizedEvent);
-      
-        }
-         System.debug(denormalizedEventList);
-        return denormalizedEventList;
+     
+     
+        return denormalizedEvent;
        
     }
-
+  
 }

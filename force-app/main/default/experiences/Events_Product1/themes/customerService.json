@@ -335,6 +335,13 @@
       "regionName" : "faq",
       "type" : "region"
     }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:contactUs",
+        "id" : "eaa59571-9e26-4816-a473-a3493087a7d3",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "23e08f8d-16c2-457a-95d9-95d803bda5d6",
       "regionName" : "contactUs",
       "type" : "region"

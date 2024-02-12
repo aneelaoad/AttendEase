@@ -1,3 +1,9 @@
+/**
+* @author: Aneela Oad
+* @description: Manages the denormalization of Event data for improved performance.
+* @since: 20/12/23
+* @Last Modified by: Aneela Oad
+*/
 public with sharing  class DenormalizedEvent {
   @AuraEnabled public String eventDescription;
   @AuraEnabled public String aboutUsDescription;
@@ -8,13 +14,20 @@ public with sharing  class DenormalizedEvent {
    @AuraEnabled public String eventCity;
    @AuraEnabled public String eventCountry;
    @AuraEnabled public String eventStreet;
-   @AuraEnabled public DateTime eventDateTime;
+   @AuraEnabled public DateTime eventStartDateTime;
+   @AuraEnabled public DateTime eventEndDateTime;
  
-  @AuraEnabled public String titleWarning = 'Title is missing';
-  @AuraEnabled public String descriptionWarning = 'Description is missing';
-  @AuraEnabled public String dateTimeWarning = 'N/A.';
-  @AuraEnabled public String locationWarning= 'N/A.';
-  @AuraEnabled public String bannerImageWarning= 'Banner image is missing.';
+  @AuraEnabled public String titleWarning;
+  @AuraEnabled public String descriptionWarning;
+  @AuraEnabled public String dateTimeWarning;
+  @AuraEnabled public String locationWarning;
+  @AuraEnabled public String bannerImageWarning;
 
+  public DenormalizedEvent(){
+    titleWarning = 'Title is missing';
+    descriptionWarning = 'Description is missing';
+    dateTimeWarning = 'N/A.';
+    bannerImageWarning= 'Banner image is missing.';
+  }
 
 }

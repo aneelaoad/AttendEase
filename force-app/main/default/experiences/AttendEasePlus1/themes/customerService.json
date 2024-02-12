@@ -247,6 +247,13 @@
       "regionName" : "customRegion",
       "type" : "region"
     }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:regFooter",
+        "id" : "0265a7fb-ffeb-44f8-a66b-b19cb52b37a2",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "9d2fcdf9-6c4f-4791-92cf-09c45700826f",
       "regionName" : "footer",
       "type" : "region"
@@ -259,6 +266,13 @@
       "regionName" : "column2",
       "type" : "region"
     }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:regNavbar",
+        "id" : "6739ac07-5345-4a29-91dd-6ccc638faf62",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "0dd1f3bc-691b-4f9d-829a-955b4b56be11",
       "regionName" : "header",
       "type" : "region"

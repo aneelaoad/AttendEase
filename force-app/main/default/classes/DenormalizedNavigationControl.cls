@@ -1,3 +1,9 @@
+/**
+* @author: Aneela Oad
+* @description: Handles the denormalization process for attendee data.
+* @since: 4/01/24   
+* @Last Modified by: Aneela Oad
+*/
 public class DenormalizedNavigationControl {
 
 @AuraEnabled public String menuTab;
@@ -7,4 +13,8 @@ public class DenormalizedNavigationControl {
 @AuraEnabled public String companyLogo;
 @AuraEnabled public String socialMediaLink;
 @AuraEnabled public String socialMediaType;
+
+public DenormalizedNavigationControl(){
+
+}
 }

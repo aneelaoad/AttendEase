@@ -2,11 +2,12 @@
 	<template if:true={selectedEventId}>
 		<header class="myStickyHeader sticky">
 			<template if:false={isNavbarMissing}>
-				<div class="navigation-bar">
+
+				<div class="navbar">
 					<div class="companyLogo">
 						<img src={companyLogo} alt="logo" srcset="">
          			</div>
-						<ul class="nav-menu">
+					<ul class={menuClass}>
 							<template for:each={navigationItems} for:item="navItem">
 								<li onclick={handleNavItemClick} data-section={navItem.section}
 									key={navItem.DeveloperName}>
@@ -14,7 +15,13 @@
 							</template>
 
 						</ul>
+					<div class="hamburger-icon" onclick={toggleMenu}>
+						<div class="bar"></div>
+						<div class="bar"></div>
+						<div class="bar"></div>
 					</div>
+				</div>
+			
 			</template>
 			<template if:true={isNavbarMissing}>
 				<c-navbar-warning-message is-navbar-missing={isNavbarMissing}></c-navbar-warning-message>

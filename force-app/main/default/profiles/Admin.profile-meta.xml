@@ -104,7 +104,11 @@
         <field>Account.Logo__c</field>
         <readable>true</readable>
     </fieldPermissions>
-
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.About_Us_Description__c	</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Navigation_Control__c.Event__c</field>
@@ -200,12 +204,7 @@
         <field>Event__c.Event_Start_Date_and_Time__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Event__c.Event_Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
+      <fieldPermissions>
         <editable>true</editable>
         <field>Event__c.Event_Total_Duration__c</field>
         <readable>true</readable>
@@ -334,6 +333,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Speaker__c.Speaker_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Speaker__c.Speaker_Title__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

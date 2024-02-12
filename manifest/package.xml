@@ -14,6 +14,7 @@
         <members>Event_Speaker__c</members>
         <members>FAQ__c</members>
         <members>Navigation_Control__c</members>
+        <members>REG_NAVBAR__mdt</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -94,6 +95,7 @@
         <members>Speaker__c.Email__c</members>
         <members>Speaker__c.Phone_Number__c</members>
         <members>Speaker__c.Company_Name__c</members>
+        <members>Speaker__c.Speaker_Title__c</members>
         <members>Sponsor__c.Event__c</members>
         <members>Sponsor__c.Sponsor__c</members>
         <members>Attendee__c.Attendee__c</members>
@@ -104,6 +106,7 @@
         <members>Event_Speaker__c.Duplication_Record_Chk__c</members>
         <members>Session_Speaker__c.Session__c</members>
         <members>Session_Speaker__c.Speaker__c</members>
+        <members>Session_Speaker__c.Duplication_Record_Chk__c</members>
         <members>FAQ__c.Question__c</members>
         <members>FAQ__c.Answer__c</members>
       
@@ -114,7 +117,7 @@
         <members>Navigation_Control__c.Link_URL__c</members>
         <members>Navigation_Control__c.Social_Media_Type__c</members>
         <members>Navigation_Control__c.Section__c</members>
- 
+        
         <name>CustomField</name>
     </types>
     <types>
@@ -165,6 +168,9 @@
         <members>attendeeRegistrationForm</members>
         <members>contactUs</members>
         <members>navbarWarningMessage</members>
+        <members>regNavbar</members>
+        <members>regFooter</members>
+        <members>popupModal</members>
 		<name>LightningComponentBundle</name>
 	</types>
     
@@ -188,7 +194,6 @@
         <members>SessionController</members>
         <members>FooterController</members>
         <members>DenormalizedFooter</members>
-        <members>EventListController</members>
         <members>AttendeeRegistrationController</members>
         <members>DenormalizedQuestion</members>
         <members>QuestionSelector</members>
@@ -198,9 +203,11 @@
         <members>SponsorController</members>
          <members>SponsorSelector</members>
         <members>CompanyInformationController</members>
-        <members>GetCompanyInformation</members>
-         <members>GetCompanyInformationSelector</members>
-       
+        <members>CompanyInformation</members>
+         <members>CompanyInformationSelector</members>
+        <members>ContactSelector</members>
+        <members>DenormalizedOption</members>
+        <members>RegNavbarSelector</members>
 		<name>ApexClass</name>
 	</types>
     
@@ -219,11 +226,19 @@
     
     <types>
         <members>FAQ_LABEL</members>
-        <members>RSVP_LABEL</members>
+        <members>RSVP_LABEL</members> 
         <members>COPYRIGHT</members>
         <members>NAVBAR_MISSING_MESSAGE</members>
         
         <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>REG_NAVBAR.About_Us</members>
+        <members>REG_NAVBAR.Contact_Us</members>
+        <members>REG_NAVBAR.Home</members>
+        <members>REG_NAVBAR.Register_Event</members>
+        <name>CustomMetadata</name>
+
     </types>
 
     <types>
@@ -235,9 +250,17 @@
 
      <types>
         <members>Prevention_Of_Duplication_Of_Speaker_Record</members>
+        <members>Prevention_Duplication_of_Speaker_From_Same_Session</members>
        <name>Flow</name>
     </types>
-
+ <types>
+        <members>Speaker__c.Speaker_Duplicity</members>
+       <name>DuplicateRule</name>
+    </types>
+     <types>
+        <members>Speaker__c.Speaker_Duplicity_matching_rule</members>
+       <name>MatchingRule</name>
+    </types>
     <types>
         <members>AttendEase</members>
         <name>CustomApplication</name>

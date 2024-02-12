@@ -1,4 +1,16 @@
-public class NavigationControlSelector{
+/**
+* @author: Aneela Oad
+* @description: handles the selection of Navigation Control records;
+* @since: 01/12/24
+* @Last Modified by: Aneela Oad
+*/
+public with sharing class NavigationControlSelector{
+    /**
+    * @author: Aneela Oad
+    * @description: Returns the list of header navigation item based on record type and evend id
+    * @param  String recordType, String eventId
+    * @return: `List<Navigation_Control__c> `
+    */
      public static List<Navigation_Control__c> getHeaderNavigationMenu( String recordType, String eventId){
   
         String query = 'SELECT Menu_Item_Name__c,	Link_URL__c, Event__r.Event_Organizer_Company__r.Logo__c, '
@@ -10,7 +22,6 @@ public class NavigationControlSelector{
         + 'ORDER BY Order__c NULLS LAST ';
 
         List<Navigation_Control__c> result = Database.query(String.valueof(query));
-        System.debug(result);
         return result;
     }
 }

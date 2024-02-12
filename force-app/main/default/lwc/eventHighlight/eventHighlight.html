@@ -19,7 +19,7 @@
 							</div>
 
 
-							
+
 							<div class="slds-grid slds-wrap when-where">
 
 
@@ -33,15 +33,33 @@
 									</svg>
 									<div class="event-dateLoaction  "> <span>when:</span>
 										<h3>
-											<template if:false={eventDateTime}>
+											<template if:false={eventStartDateTime}>
 												<div class="">
 													<p>{dateTimeWarning}</p>
 												</div>
 											</template>
-											<template if:true={eventDateTime}>
-												<lightning-formatted-date-time value={eventDateTime} time-zone="UTC">
+											<template if:true={eventStartDateTime}>
+												<lightning-formatted-date-time value={eventStartDateTime}
+													time-zone="UTC">
 												</lightning-formatted-date-time>
+											<span style="margin: 0px 4px">-</span>
+
 											</template>
+
+											<template if:true={eventStartDateTime}>
+												<lightning-formatted-date-time value={eventEndDateTime} time-zone="UTC">
+												</lightning-formatted-date-time>
+												<div style="font-size:12px">
+												<lightning-formatted-date-time value={eventStartDateTime} hour="2-digit"
+													minute="2-digit"> </lightning-formatted-date-time>
+												<span style="margin: 0px 4px">-</span>
+												<lightning-formatted-date-time value={eventEndDateTime} hour="2-digit"
+													minute="2-digit"></lightning-formatted-date-time>
+
+											</div>
+											</template>
+										
+
 										</h3>
 									</div>
 								</div>
@@ -49,31 +67,37 @@
 
 
 
-							
-									<div
-										class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 box">
-										<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12"
-											viewBox="0 0 384 512">
-											<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-											<path
-												d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
-										</svg>
-										<div class="event-dateLoaction "><span>where:</span>
-										<template if:true={eventStreet}><p>{eventStreet}</p></template>
-											<div class="inner-box">
-											<template if:true={eventCity}><h3 > {eventCity},</h3></template>
-											<template if:true={eventCountry}> <h3 style="margin-left:2px"> {eventCountry}</h3></template>
-											</div>
 
-											<template if:false={eventCity}>
-												<div class="">
-													<h3>{locationWarning}</h3>
-												</div>
+								<div
+									class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_6-of-12 box">
+									<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12"
+										viewBox="0 0 384 512">
+										<!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+										<path
+											d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+									</svg>
+									<div class="event-dateLoaction "><span>where:</span>
+										<template if:true={eventStreet}>
+											<p>{eventStreet}</p>
+										</template>
+										<div class="inner-box">
+											<template if:true={eventCity}>
+												<h3> {eventCity},</h3>
 											</template>
-											
+											<template if:true={eventCountry}>
+												<h3 style="margin-left:2px"> {eventCountry}</h3>
+											</template>
 										</div>
+
+										<template if:false={eventCity}>
+											<div class="">
+												<h3>{locationWarning}</h3>
+											</div>
+										</template>
+
 									</div>
-							
+								</div>
+
 							</div>
 
 

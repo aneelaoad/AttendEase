@@ -5,4 +5,5 @@ public with sharing class DenormalizedSpeaker {
    @AuraEnabled public String speakerEmail;
    @AuraEnabled public String speakerContactNumber;
    @AuraEnabled public String speakerImage;
+   @AuraEnabled public String speakerTitle;
 }

@@ -5,91 +5,89 @@
 		<lightning-button label="RSVP" onclick={openModal}></lightning-button>
 
 		<!-- Modal -->
-		<template if:true={isModalOpen}>
-			<div class="slds-backdrop slds-backdrop_open"></div>
-			<div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
-				class="slds-modal slds-fade-in-open slds-modal_medium">
-				<div class="slds-modal__container">
+		
+			<template if:true={isModalOpen}>
+				<div class="slds-backdrop slds-backdrop_open"></div>
+				<div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+					class="slds-modal slds-fade-in-open slds-modal_medium">
+					<div class="slds-modal__container">
 
+						
+						<section style="overflow: auto;">
+							<!-- Modal Header -->
+							<header class="slds-modal__header">
+								<h2 id="modal-heading-01" class="slds-modal__title">Attendee Registration</h2>
+							</header>
+							<lightning-card class="RSVP-form ">
+								<div class="slds-p-around_medium ">
+								
+									<lightning-record-edit-form object-api-name="Contact">
+										<lightning-messages>
+										</lightning-messages>
 
-					<section style="overflow: auto;">
-						<!-- Modal Header -->
-						<header class="slds-modal__header">
-							<h2 id="modal-heading-01" class="slds-modal__title">Attendee Registration</h2>
-						</header>
-						<lightning-card class="RSVP-form ">
-							<div class="slds-p-around_medium ">
-								<lightning-record-edit-form object-api-name="Contact">
-									<lightning-messages>
-									</lightning-messages>
+										<lightning-input-field field-name="FirstName" onchange={handleFieldChange}>
+										</lightning-input-field>
+										<lightning-input-field field-name="LastName" onchange={handleFieldChange}>
+										</lightning-input-field>
+										<lightning-input-field field-name="Email" onchange={handleFieldChange}>
+										</lightning-input-field>
+										<hr />
+										<!-- ----questionaire starts from here---- -->
+										<div class="questionaire-section">
+											<template if:true={questionsList}>
+												<div class="slds-p-around_medium">
+													<template for:each={questionsList} for:item="question">
+														<div key={question.questionId}>{question.questionName}
+															<template if:true={question.showTextOptions}>
+																<lightning-textarea name="reponse" value={textAreaValue}
+																	label="" onchange={handleTextAreaChange}
+																	data-questionid={question.questionId}>
+																</lightning-textarea>
+															</template>
+															<template if:true={question.showSingleSelectOptions}>
 
-									<lightning-input-field field-name="FirstName" onchange={handleFieldChange}>
-									</lightning-input-field>
-									<lightning-input-field field-name="LastName" onchange={handleFieldChange}>
-									</lightning-input-field>
-									<lightning-input-field field-name="Email" onchange={handleFieldChange}>
-									</lightning-input-field>
-									<hr />
-									<!-- ----questionaire starts from here---- -->
-									<div class="questionaire-section">
-										<template if:true={questionsList}>
-											<div class="slds-p-around_medium">
-												<template for:each={questionsList} for:item="question">
-													<div key={question.questionId}>{question.questionName}
-														<template if:true={question.showTextOptions}>
-															<lightning-textarea name="reponse" value={textAreaValue}
-																label=""
-																onchange={handleTextAreaChange}
-																data-questionid={question.questionId}>
-															</lightning-textarea>
-														</template>
-														<template if:true={question.showSingleSelectOptions}>
+																<div class="slds-form-element__control">
+																	<lightning-radio-group name="options" label=""
+																		options={question.options}
+																		onchange={handleRadioChange}
+																		data-questionid={question.questionId}>
+																	</lightning-radio-group>
+																</div>
 
-															<div class="slds-form-element__control">
-																<lightning-radio-group name="options"
+															</template>
+
+															<template if:true={question.showMultiSelectOptions}>
+																<lightning-checkbox-group name="checkboxGroup"
 																	label="" options={question.options}
-																	onchange={handleRadioChange}
-																	data-questionid={question.questionId}
-																	>
-																</lightning-radio-group>
-															</div>
+																	onchange={handleCheckboxChange} value=''
+																	data-questionid={question.questionId}>
+																</lightning-checkbox-group>
+															</template>
+														</div>
 
-														</template>
+													</template>
 
-														<template if:true={question.showMultiSelectOptions}>
-															<lightning-checkbox-group name="checkboxGroup"
-																label="Checkbox Group" options={question.options} 
-																onchange={handleCheckboxChange}
-																value=''
-																data-questionid={question.questionId}
-																 >
-															</lightning-checkbox-group>
-														</template>
-													</div>
+												</div>
+											</template>
+										</div>
+										<!-- ----questionaire ends till here---- -->
 
-												</template>
+										<div class="slds-m-vertical_large">
+											<lightning-button class="slds-m-top_small" variant="brand" name="saveApex"
+												label="RSVP" onclick={handleRSVP}>
+											</lightning-button>
+											<lightning-button label="Cancel" onclick={closeModal}></lightning-button>
 
-											</div>
-										</template>
-									</div>
-									<!-- ----questionaire ends till here---- -->
-
-									<div class="slds-m-vertical_large">
-										<lightning-button class="slds-m-top_small" variant="brand" name="saveApex"
-											label="RSVP" onclick={handleRSVP}>
-										</lightning-button>
-										<lightning-button label="Cancel" onclick={closeModal}></lightning-button>
-
-									</div>
-								</lightning-record-edit-form>
-
-							</div>
-						</lightning-card>
-					</section>
-
+										</div>
+									</lightning-record-edit-form>
+								</div>
+							</lightning-card>
+						</section>
+					
+					</div>
 				</div>
-			</div>
-		</template>
+			</template>
+		
 	</div>
 
 </template>

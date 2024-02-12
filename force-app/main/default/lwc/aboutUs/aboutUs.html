@@ -2,16 +2,16 @@
   <div class="section">
   <template if:true={selectedEventId} >
   <div class="section_about about">
-      <template for:each={eventDescriptionList} for:item="event">
-      <div key={event.Id}  class="main-about">
-          <template if:true={event.aboutUsDescription}>
+      
+      <div   class="main-about">
+          <template if:true={aboutUsDescription}>
             <div>
                 <h1 class="heading">About Us</h1>
-                  <lightning-formatted-rich-text value={event.aboutUsDescription}></lightning-formatted-rich-text>
+                  <lightning-formatted-rich-text value={aboutUsDescription}></lightning-formatted-rich-text>
                   </div>
               </template>
           </div>
-      </template>
+      
   </div>
   </template>
 </div>

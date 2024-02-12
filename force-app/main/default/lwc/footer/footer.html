@@ -1,18 +1,19 @@
 <template>
-<template if:true={linksLoaded}>
-<footer class="footer">
-    <div class="footerDetail">
-    <div class="copyright">
-    <p>{copyRightLabel}</p>
-    </div>
-    <div class="socialInfo">
-     <template for:each={socialLinks} for:item="link">
-        <div key={link.socialMediaIcon} class="social-media-icons">
-           <a href={link.socialMediaLink} target="_blank" > <img src={link.socialMediaIcon}  alt="icon"/>  </a>
-        </div>
-    </template>
-</div>
-</div>
-</footer>
-</template>
+	<template if:true={linksLoaded}>
+		<footer class="footer">
+			<div class="footerDetail">
+				<div class="copyright">
+					<p>{copyRightLabel}</p>
+				</div>
+				<div class="socialInfo">
+					<template for:each={socialLinks} for:item="link">
+						<div key={link.socialMediaIcon} class="social-media-icons">
+							<a href={link.socialMediaLink} target="_blank">
+								<img src={link.socialMediaIcon}  alt="icon"/>  </a>
+						</div>
+					</template>
+				</div>
+			</div>
+		</footer>
+	</template>
 </template>

@@ -21,7 +21,7 @@ selectedEventId
  handleMessage(eventMessage) {
     this.selectedEventId = eventMessage.eventId;
     console.log('handleMessage : ', this.selectedEventId);
-    getFooterItems({ recordType: 'Footer_Navigation' , eventId:this.selectedEventId}).then(data=>{
+    getFooterItems({ eventId:this.selectedEventId}).then(data=>{
          if (data) {
              this.linksLoaded= true
             data.forEach(link => {

@@ -1,5 +1,5 @@
 import { LightningElement, wire } from 'lwc';
-import getFAQs from '@salesforce/apex/FAQsController.getDenormalizedFAQs';
+import getFAQsList from '@salesforce/apex/FAQsController.getFAQsList';
 import FAQ_LABEL from '@salesforce/label/c.FAQ_LABEL';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
@@ -25,11 +25,11 @@ export default class FAQs extends LightningElement {
 
   handleEventId(eventMessage) {
     this.selectedEventId = eventMessage.eventId;
-    getFAQs({ eventId: this.selectedEventId }).then(data => {
+    getFAQsList({ eventId: this.selectedEventId }).then(data => {
      
         if (data) {
           this.faqList = data
-        
+       
       } else if (error) {
         console.error('wiredGetFAQs Error:', error);
       }

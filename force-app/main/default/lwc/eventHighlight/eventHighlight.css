@@ -1,5 +1,5 @@
 :host{
-    --primary: #81ecec;
+    --primary: rgb(169, 147, 255);
 }
 
 .event-highlight{

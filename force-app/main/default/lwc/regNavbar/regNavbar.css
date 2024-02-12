@@ -1,0 +1,97 @@
+/* navbar.css */
+
+:host {
+    display: block;
+}
+
+.navbar {
+ 
+    overflow: hidden;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #0abde3; 
+    color: #ffffff; 
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff; /* Set your desired text color */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+.logo h1{
+	font-size: 25px;
+}
+.hamburger-icon {
+    display: none; 
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+@media (max-width: 600px)  {
+   .hamburger-icon {
+    display: block; 
+    cursor: pointer;
+}
+}
+@media only screen and (max-width:600px) {
+    ul {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #0abde3; 
+
+        z-index: 1;
+    }
+
+    ul.menu-open {
+        display: flex;
+    }
+
+    .hamburger-icon {
+        display: block; /* Show the hamburger icon on smaller devices */
+    }
+}

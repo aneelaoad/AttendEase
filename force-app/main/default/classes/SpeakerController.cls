@@ -11,7 +11,7 @@ public with sharing class SpeakerController {
             denormalizedSpeaker.speakerContactNumber = speaker.Phone_Number__c;
             denormalizedSpeaker.speakerEmail = speaker.Email__c;
             denormalizedSpeaker.speakerImage = speaker.Speaker_Profile_Image__c;
-            
+            denormalizedSpeaker.speakerTitle = speaker.Speaker_title__c;
             denormalizedSpeakerList.add(denormalizedSpeaker);
         }
 

@@ -1,5 +1,5 @@
 import { LightningElement, wire } from "lwc";
-import getDenormalizedBannerImage from "@salesforce/apex/EventController.getDenormalizedEvent";
+import getDenormalizedBannerImage from "@salesforce/apex/EventController.getEvent";
 import { subscribe, MessageContext} from "lightning/messageService";
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import IMAGES from '@salesforce/resourceUrl/IMAGES'
@@ -17,10 +17,8 @@ export default class BannerImage extends LightningElement {
         this.selectedEventId = eventMessage.eventId;
         getDenormalizedBannerImage({eventId: this.selectedEventId})
         .then(data=> {
-          data.forEach(event => {
-         this.bannerImage = event.bannerImage;
-          //  this.bannerImageWarning = event.bannerImageWarning;
-          });
+          console.log('data.bannerImage'+data.bannerImage);
+          this.bannerImage=data.bannerImage;
         });
 
       }
@@ -31,5 +29,11 @@ export default class BannerImage extends LightningElement {
 
     }
 
+ isImgUrl(url) {
 
+  return fetch(url, {method: 'HEAD'}).then(res => {
+
+    return res.headers.get('Content-Type').startsWith('image')
+  })
+}
 }

@@ -1,5 +1,5 @@
 import { LightningElement, wire, api, track } from 'lwc';
-import getEventHightlight from '@salesforce/apex/EventController.getDenormalizedEvent';
+import getEventHightlight from '@salesforce/apex/EventController.getEvent';
 import RSVP_LABEL from '@salesforce/label/c.RSVP_LABEL';
 import ICONS from '@salesforce/resourceUrl/ICONS';
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
@@ -7,6 +7,7 @@ import { subscribe, MessageContext } from "lightning/messageService";
 
 export default class EventHighlight extends LightningElement {
 
+@api selectedEventId;
   eventTitle;
   eventDescription;
   eventStreet;
@@ -14,20 +15,19 @@ export default class EventHighlight extends LightningElement {
   eventCountry;
   eventDate;
   eventTime;
-  eventDateTime;
+  eventStartDateTime;
+  eventEndDateTime;
   buttonLabel = RSVP_LABEL;
   clockIcon;
   locationIcon;
-  @api selectedEventId;
-
+  
   titleWarning = '';
   dateTimeWarning = '';
   descriptionWarning = '';
   locationWarning = ''
 
+
   @wire(MessageContext) messageContext;
-
-
   subscribeToMessageChannel() {
     this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage))
   }
@@ -41,22 +41,18 @@ export default class EventHighlight extends LightningElement {
   @wire(getEventHightlight, { eventId: '$selectedEventId' })
   wiredEventHightlight({ error, data }) {
     if (data) {
-      data.forEach(event => {
-        this.eventTitle = event.eventTitle;
-        this.eventDescription = event.eventDescription;
-        this.eventStreet = event.eventStreet;
-        this.eventCity = event.eventCity;
-        this.eventCountry = event.eventCountry;
-        this.eventDateTime = event.eventDateTime;
-        this.bannerImageWarning = event.bannerImageWarning;
-        this.titleWarning = event.titleWarning;
-        this.dateTimeWarning = event.dateTimeWarning;
-        this.descriptionWarning = event.descriptionWarning
-        this.locationWarning = event.locationWarning
-
-      });
-      console.log('getEventHightlight : ',JSON.stringify(getEventHightlight));
-
+      this.eventTitle = data.eventTitle;
+      this.eventDescription = data.eventDescription;
+      this.eventStreet = data.eventStreet;
+      this.eventCity = data.eventCity;
+      this.eventCountry = data.eventCountry;
+      this.eventStartDateTime = data.eventStartDateTime;
+      this.eventEndDateTime = data.eventEndDateTime;
+      this.bannerImageWarning = data.bannerImageWarning;
+      this.titleWarning = data.titleWarning;
+      this.dateTimeWarning = data.dateTimeWarning;
+      this.descriptionWarning = data.descriptionWarning
+      this.locationWarning = data.locationWarning;
     } else if (error) {
       console.error(' getEventHightlight Error:', error);
     }
@@ -87,7 +83,7 @@ export default class EventHighlight extends LightningElement {
     if (!this.eventDescription) {
       this.showWarning('descriptionWarning', this.descriptionWarning);
     }
-  if (!this.bannerImage) {
+    if (!this.bannerImage) {
       this.showWarning('bannerImageWarning', this.bannerImageWarning);
     }
 

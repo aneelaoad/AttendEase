@@ -1,12 +1,12 @@
 import { LightningElement, wire } from "lwc";
-import getDenormalizedDescription from "@salesforce/apex/EventController.getDenormalizedEvent";
+import getDenormalizedDescription from "@salesforce/apex/EventController.getEvent";
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import { subscribe, MessageContext } from "lightning/messageService";
 
 export default class AboutUs extends LightningElement {
   subscription = null;
-  eventDescriptionList = [];
+  aboutUsDescription;
   selectedEventId;
   @wire(MessageContext) messageContext;
 
@@ -21,8 +21,8 @@ export default class AboutUs extends LightningElement {
     this.selectedEventId = eventMessage.eventId;
     getDenormalizedDescription({ eventId: this.selectedEventId })
       .then(data => {
-        this.eventDescriptionList = data;
-
+        this.aboutUsDescription = data.aboutUsDescription;
+         console.log('About us data'+ JSON.stringify(data));
       });
   }
 
