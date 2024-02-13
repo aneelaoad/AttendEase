@@ -1,12 +1,28 @@
-.Sessions{ background-color: #f8f8f8; width: 100%; padding: 70px 40px;}
-.sectionSession {max-width: 1300px; margin: auto; width: 100%; padding: 0px 20px;}
+.Sessions{ background-color: #fff; width: 100%; padding: 70px 40px; scroll-margin-top: 100px;}
+.sectionSession {max-width: 1240px; margin: auto; width: 100%; padding: 0px 20px;}
+
+
+.content {
+    max-height: 0;
+    /* overflow: hidden; */
+    transition: max-height 0.3s ease-out;
+    display: none;
+
+}
+
+.expanded {
+    max-height: 500px;
+	padding: 10px;
+    display: inline-block;
+
+}
 
 .session-box {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 5px;
-    height: 360px;
+    /* height: 360px; */
     transition: .5s ease-in;
 }
 
@@ -78,7 +94,12 @@
 .view-all {  font-size: 12px; border-radius: 6px; padding: 12px 25px; 
     text-align: center;max-width: 175px; margin: auto; display: block;  
     color: #fff; margin-top: 30px;
-    background-color: #8c7ae6;}
+    background-color: #8c7ae6;
+     font-weight: 500;
+     border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+   
+    }
 
 .sectionSession { padding-bottom: 0px;}
 
@@ -95,10 +116,10 @@
 
 .session-container{
     background: white;
-    display: flex;
+    /* display: flex; */
     margin: 10px auto;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-  
+    height: 150px;
 }
 .session-date{
            display: flex;
@@ -124,7 +145,8 @@
 .session-intro .readbutton{
     float:right; 
      display: flex;
-    
+     width: 150px;
+    max-width: 100px;
     justify-content: center;
     align-items: center;
 }
@@ -143,9 +165,25 @@
     margin: 20px auto;
 }
 
+.c-sessionsection_sessionsection{
+    
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 
+}
+.sessionSpeaker{
+    
+     width: 50%; padding: 10px; text-align: center;
 
+}
 
+.sessionSpeaker strong { display: block; padding-bottom: 10px;}
+
+.sessionSpeaker strong b { display: block;}
+
+.sessionSpeaker span { width: 150px; height: 150px; border-radius: 50% !important; overflow: hidden !important; margin: auto;}
 
 .time, .date, .duration{
     flex: 1;
@@ -160,7 +198,7 @@
 
 
 /* ---media queries--- */
-@media (max-width: 1200px ) and  (min-width:760px)  { 
+@media (min-width: 768px ) and  (max-width:1200px)  { 
     .session-container{
         flex-direction: column !important;
     }
@@ -180,13 +218,18 @@
    
 
 
+    .sessionModel .c-sessionsection_sessionsection { display: block;}
+
+    .sessionModel .sessionSpeaker { width: 100%; padding: 20px 0px;}
+   
+
 
 
 
  }
 
 
-@media only screen and (max-width:767px) and (min-width:300px) { 
+@media only screen and (min-width:200px) and (max-width:767px) { 
  
 
 .Sessions { padding: 60px 20px !important;}
@@ -198,7 +241,11 @@
 .readbutton { margin-top: 15px;}
  .session-container{
         flex-direction: column !important;
+        
     }
+    .session-container{
+            height: auto !important;
+        }
     .session-date{
         padding: 5px ;
     }
@@ -211,6 +258,11 @@
     .session-intro{
          flex-direction: column !important;
     }
+
+
+    .sessionModel .c-sessionsection_sessionsection { display: block;}
+
+    .sessionModel .sessionSpeaker { width: 100%; padding: 20px 0px;}
    
 
  }

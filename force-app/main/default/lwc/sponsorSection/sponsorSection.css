@@ -1,14 +1,14 @@
-.sectionSponser_outer{ background-color: #f8f8f8; width: 100%; padding: 70px 0px;}
+.sectionSponser_outer{ background-color: #fff; width: 100%; padding: 70px 0px;}
 
 .sectionSponser {max-width: 1240px; margin: auto; width: 100%; padding: 0px 20px;}
 
 .sectionSponser ul { display: flex; flex-wrap: wrap; max-width: 1000px; margin:auto;align-items: center; justify-content: center;}
 
-.sectionSponser ul li {  padding: 20px 20px;}
+.sectionSponser ul li {  padding: 20px 30px;}   
 
 .card_sponsr { width: 100%;}
 
-.card_sponsr img { display: block; width: auto; height: 140px; object-fit: contain;}
+.card_sponsr img { display: block; width: auto; height: 140px; margin: auto; object-fit: contain;}
 
 .card_sponsr p {    font-size: 14px;
     display: flex;

@@ -357,6 +357,13 @@
       "regionName" : "setEventId",
       "type" : "region"
     }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:sponsorSection",
+        "id" : "f7ca3d5b-cac7-42a8-a71c-d65f1e4f5f17",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "af6d8dfb-91dc-430a-b66f-b9730eb3d758",
       "regionName" : "Sponsors",
       "type" : "region"

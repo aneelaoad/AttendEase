@@ -3,10 +3,13 @@ import getDenormalizedDescription from "@salesforce/apex/EventController.getEven
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import { subscribe, MessageContext } from "lightning/messageService";
+import CompanyDescriptionLabel from '@salesforce/label/c.Company_Description_Label';
+
 
 export default class AboutUs extends LightningElement {
   subscription = null;
   aboutUsDescription;
+  aboutUsLabel=CompanyDescriptionLabel;
   selectedEventId;
   @wire(MessageContext) messageContext;
 
@@ -30,7 +33,7 @@ export default class AboutUs extends LightningElement {
   handleScroll(scrollMessage) {
     const sectionName = scrollMessage.section;
     if (sectionName === 'About Us') {
-      this.template.querySelector('.section').scrollIntoView({ behavior: 'smooth' });
+      this.template.querySelector('.section_about').scrollIntoView({ behavior: 'smooth' });
     }
   }
 

@@ -1,22 +1,31 @@
+/**
+* 
+* @author: Muhammad Raza
+* @description: Apex controller for retrieving company information.
+*               This class provides a method to fetch denormalized company information.
+* @created: 31/01/24
+* @Last Modified by: 31/01/24
+*/
 public with sharing class CompanyInformationController {
+    /**
+    * @author: Muhammad Raza
+    * @description: This method utilizes the CompanyInformationSelector class to fetch the organization ID
+    *               and URL.
+    * @return: `DenormalizedCompanyInformation`
+    */
     @AuraEnabled(cacheable=true)
-
-    public static List<CompanyInformation> getCompanyInfo(){
+    public static DenormalizedCompanyInformation getCompanyInfo(){
         
-        Id orgId = CompanyInformationSelector.getOrgId();
-        String orgUrl = CompanyInformationSelector.getOrgUrl();
-        List<CompanyInformation> denormalizedCaseList = new List<CompanyInformation>();
+        Id orgId = new CompanyInformationSelector().getOrgId();
+        String orgUrl = new CompanyInformationSelector().getOrgUrl();
         
-            CompanyInformation denormalizedCase = new CompanyInformation();
-           
-            denormalizedCase.orgId = orgId;
-            denormalizedCase.orgUrl = orgUrl;
-            denormalizedCaseList.add(denormalizedCase);
-
-            System.debug(denormalizedCaseList);
-
-        return denormalizedCaseList;
-
+        DenormalizedCompanyInformation  fetchingCompanyInfo= new DenormalizedCompanyInformation();
+        
+        fetchingCompanyInfo.orgId = orgId;
+        fetchingCompanyInfo.orgUrl = orgUrl;
+        
+        return fetchingCompanyInfo;
+        
     }
-        
+    
 }

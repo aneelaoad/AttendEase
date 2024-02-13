@@ -3,7 +3,8 @@
 .expandable-container {
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px auto;
+    transition: .6s ease-in;
 }
 
 .header {
@@ -11,6 +12,7 @@
     padding: 10px;
     cursor: pointer;
     user-select: none;
+     color: white;
 }
 
 .content {
@@ -18,12 +20,14 @@
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     display: none;
+   
 
 }
 
 .expanded {
-    max-height: 500px; /* Adjust the maximum height as needed */
+    max-height: 500px;
 	padding: 10px;
     display: inline-block;
+    transition: .6s ease-in;
 
 }

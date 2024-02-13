@@ -4,6 +4,10 @@ import { subscribe, MessageContext } from "lightning/messageService";
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import EVENT_ID_LMS from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import IMAGES from '@salesforce/resourceUrl/IMAGES'
+import SpeakerLabel from '@salesforce/label/c.Speaker_Label';
+import AllSpeakersLabel from '@salesforce/label/c.All_Speakers_Label';
+import ButtonLabel from '@salesforce/label/c.Button_View_Label';
+
 export default class speakerSection extends LightningElement {
   subscription = null;
   scrlMsg;
@@ -13,7 +17,9 @@ export default class speakerSection extends LightningElement {
   @track threespeakerInformation = [];
   selectedEventId;
   showModal = false;
-
+    speakerLabel=SpeakerLabel;
+    allSpeakersLabel=AllSpeakersLabel;
+    buttonLabel=ButtonLabel;
   speakerId;
   profilePlaceholder;
   speakerModalDetails;
@@ -28,9 +34,7 @@ export default class speakerSection extends LightningElement {
     this.showModal = true;
     this.speakerId = event.target.dataset.speakerid
     console.log(event);
-    console.log(' this.speakerId' + JSON.stringify(this.speakerId));
     this.speakerModalDetails = this.speakerInformation.find(speaker => speaker.speakerName === this.speakerId)
-    console.log('this.speakerModalDetails : ', this.speakerModalDetails);
 
     this.speakerName=this.speakerModalDetails.speakerName;
     this.speakerDescription=this.speakerModalDetails.speakerInformation;
@@ -38,10 +42,14 @@ export default class speakerSection extends LightningElement {
     this.speakerEmail=this.speakerModalDetails.speakerEmail;
     this.speakerPhone = this.speakerModalDetails.speakerContactNumber;
     this.speakerImage = this.speakerModalDetails.speakerImage;
+    document.body.style.overflow = 'hidden';
+
   }
 
   closeModal() {
     this.showModal = false;
+        document.body.style.overflow = 'auto';
+
   }
 
   @wire(MessageContext) messageContext;
@@ -79,9 +87,13 @@ export default class speakerSection extends LightningElement {
   handleViewAllClick() {
     this.showAllSpeakers = true;
     this.allspeakerInformation = this.speakerInformation;
+        document.body.style.overflow = 'hidden';
+
   }
   handleCloseModal() {
     this.showAllSpeakers = false;
+        document.body.style.overflow = 'auto';
+
   }
   connectedCallback() {
     this.subscribeToMessageChannel();

@@ -8,7 +8,9 @@ import { subscribe, MessageContext } from "lightning/messageService";
 
 export default class AttendeeRegistrationForm extends LightningElement {
     isModalOpen = false;
-    formLoads = false
+    formLoads = false;
+    formReset= false;
+
     // Questionaire data
     @api selectedEventId;
     questionId;
@@ -28,11 +30,15 @@ export default class AttendeeRegistrationForm extends LightningElement {
 
     openModal() {
         this.isModalOpen = true;
+         document.body.style.overflow = 'hidden';
+       
     }
 
     closeModal() {
         this.isModalOpen = false;
-        this.resetForm();
+      //  this.resetForm();
+         document.body.style.overflow = 'auto';
+
     }
 
     @wire(MessageContext) messageContext;
@@ -197,6 +203,7 @@ export default class AttendeeRegistrationForm extends LightningElement {
         this.email = '';
         this.responsesWithQuestionIds = [];
         this.questionsList = [];
+        this.formReset=true;
     }
 
     connectedCallback() {

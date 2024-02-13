@@ -1,13 +1,16 @@
 <template>
-  <div class="section">
+  <div class="section_about">
   <template if:true={selectedEventId} >
-  <div class="section_about about">
+  <div class=" about">
       
       <div   class="main-about">
           <template if:true={aboutUsDescription}>
             <div>
-                <h1 class="heading">About Us</h1>
-                  <lightning-formatted-rich-text value={aboutUsDescription}></lightning-formatted-rich-text>
+                <h1 class="heading" style="text-align:center; padding-bottom:25px"> {aboutUsLabel}</h1>
+                <div>
+                  <lightning-formatted-rich-text value={aboutUsDescription} class="slds-p-vertical_medium"></lightning-formatted-rich-text>
+                </div>
+                  
                   </div>
               </template>
           </div>

@@ -3,7 +3,7 @@
   "currentThemeId" : "f10dfecb-9371-4ee7-822e-318ecd235aae",
   "headMarkup" : null,
   "id" : "fd0e3d40-e170-400a-8b32-e585299d7d1b",
-  "isLockerServiceEnabled" : true,
+  "isLockerServiceEnabled" : false,
   "isRelaxedCSPLevel" : true,
   "label" : "main",
   "templateName" : "Service Community Template",

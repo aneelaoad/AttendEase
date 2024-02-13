@@ -22,7 +22,7 @@ export default class SponsorSection extends LightningElement {
         getSponsor({eventId: this.selectedEventId})
         .then(data=> {
             this.sponsorInformation = data;
-            console.log('Sponsor Information :'+ this.sponsorInformation);   
+            console.log('Sponsor Information :'+ JSON.stringify(data));   
         });
       }
       handleScroll(message) {

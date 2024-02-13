@@ -23,17 +23,18 @@ this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage)
         if (data) {
 //this.isFormLoaded=true; 
             // Assuming data is a list, loop through it
-            for (let i = 0; i < data.length; i++) {
+          
                 // Access properties for each item in the list
-                this.organizationId = data[i].orgId;
-                this.orgURL = data[i].orgUrl;
-                console.log('org ID::', data[i].orgId);
-                console.log('org URL::', data[i].orgUrl);
+                this.organizationId = data.orgId;
+                this.orgURL = data.orgUrl;
+                console.log('org ID::',  this.organizationId);
+                console.log('org URL::', this.orgURL);
                 // You might want to store this information in an array or another data structure
-            }
+            
             console.log('organizationId:'+this.organizationId);
             console.log('orgURL:'+this.orgURL);
              console.log('PageURL:'+this.pageUrl);
+            
         } else if (error) {
             console.error('Error fetching company info:', error);
         }

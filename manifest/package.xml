@@ -186,11 +186,12 @@
         <members>FAQsSelector</members>
         <members>DenormalizedFAQs</members>
         <members>FAQsController</members>
+        <members>EventSpeakerSelector</members>
         <members>DenormalizedSpeaker</members>
-        <members>SpeakerSelector</members>
         <members>SpeakerController</members>
         <members>DenormalizedSession</members>
         <members>SessionSelector</members>
+        <members>SessionSpeakerSelector</members>
         <members>SessionController</members>
         <members>FooterController</members>
         <members>DenormalizedFooter</members>
@@ -203,7 +204,7 @@
         <members>SponsorController</members>
          <members>SponsorSelector</members>
         <members>CompanyInformationController</members>
-        <members>CompanyInformation</members>
+         <members>DenormalizedCompanyInformation</members>
          <members>CompanyInformationSelector</members>
         <members>ContactSelector</members>
         <members>DenormalizedOption</members>
@@ -236,6 +237,13 @@
         <members>RSVP_LABEL</members> 
         <members>COPYRIGHT</members>
         <members>NAVBAR_MISSING_MESSAGE</members>
+        <members>All_Sessions_Label</members>
+        <members>All_Speakers_Label</members> 
+        <members>Button_View_Label</members>
+        <members>Company_Description_Label</members>
+         <members>ContactUs_Label</members>
+        <members>Session_Label</members> 
+        <members>Speaker_Label</members>
         
         <name>CustomLabel</name>
     </types>

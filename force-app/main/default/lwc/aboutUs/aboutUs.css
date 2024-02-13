@@ -1,3 +1,17 @@
-.section { scroll-margin-top: 80px;}
+/* .section { scroll-margin-top: 100px;} */
 
-.section_about{ width: 100%; background-color: #f8f8f8;   padding: 60px 0px 65px;}
+.section_about{ width: 100%; background-color: #f8f8f8;   padding: 60px 0px 65px;
+
+scroll-margin-top: 100px;
+}
+
+.main-about{
+    width:100%;
+    max-width: 1240px;
+    padding:0px 20px; margin: auto;
+}
+
+.main-about p{
+    text-align: justify;
+    padding: 20px 0px !important; 
+}
