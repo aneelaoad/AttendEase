@@ -27,13 +27,10 @@ this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage)
                 // Access properties for each item in the list
                 this.organizationId = data.orgId;
                 this.orgURL = data.orgUrl;
-                console.log('org ID::',  this.organizationId);
-                console.log('org URL::', this.orgURL);
+           
                 // You might want to store this information in an array or another data structure
             
-            console.log('organizationId:'+this.organizationId);
-            console.log('orgURL:'+this.orgURL);
-             console.log('PageURL:'+this.pageUrl);
+
             
         } else if (error) {
             console.error('Error fetching company info:', error);
@@ -62,10 +59,9 @@ this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage)
     }
     handleScroll(message) {
         const scrollSection = message.section;
-        console.log('scrollSection:>'+scrollSection);
+     
        if (scrollSection === 'Contact Us') {
-           console.log('In Scroling');
-            this.template.querySelector('.mainForm_outer').scrollIntoView({ behavior: 'smooth' });
+            this.template.querySelector('.contact-us').scrollIntoView({ behavior: 'smooth' });
          
        }
 

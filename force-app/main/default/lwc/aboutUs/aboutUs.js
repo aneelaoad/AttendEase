@@ -25,7 +25,7 @@ export default class AboutUs extends LightningElement {
     getDenormalizedDescription({ eventId: this.selectedEventId })
       .then(data => {
         this.aboutUsDescription = data.aboutUsDescription;
-         console.log('About us data'+ JSON.stringify(data));
+        
       });
   }
 

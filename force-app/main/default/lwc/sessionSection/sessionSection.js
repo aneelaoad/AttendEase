@@ -15,10 +15,10 @@ export default class SessionSection extends LightningElement {
     scrlMsg;
 
     @wire(MessageContext) messageContext;
-    @track sessionInformation = [];
+     sessionInformation = [];
     
-    @track allsessionInformation = [];
-    @track threesessionInformation = [];
+    @track allsessionInformation ;
+    @track threesessionInformation;
 
     selectedEventId;
     selectedSessionId;
@@ -50,36 +50,46 @@ export default class SessionSection extends LightningElement {
     allSessionDuration;
     allSpeakerNames;
 
+
+
+    wholeClass = 'card_info'
  
     get contentClass() {
         return this.isExpanded ? 'content expanded' : 'content';
     }
     toggleExpansion(event) {
+
+
         let sessId = event.target.dataset.sessionid;
-        console.log('sessId: ' + JSON.stringify(sessId));
+        let session = this.allsessionInformation.find(sess => sess.sessionTitle == sessId);
+        session.contentClass = session.contentClass == 'content' ? 'content expanded' : 'content';
 
-        if (sessId === this.allSessionTitle) {
-            this.isExpanded = !this.isExpanded;
-            // this.isExpanded = false;
-        } else {
-            this.isExpanded = true;
-            this.allSessionDetails = this.allsessionInformation.find(session => session.sessionTitle === sessId);
-            console.log('toggle sessionDetails: ' + JSON.stringify(this.allSessionDetails));
+        // if( session.contentClass == 'content expanded'){
+        //     this.wholeClass = 'testClass'
+            
+        // }
+        // if (sessId === this.allSessionTitle) {
+        //     this.isExpanded = !this.isExpanded;
+        //     // this.isExpanded = false;
+        // } else {
+        //     this.isExpanded = true;
+        //     this.allSessionDetails = this.allsessionInformation.find(session => session.sessionTitle === sessId);
+           
 
-            this.allSessionTitle = this.allSessionDetails.sessionTitle;
-            this.allSessionDescription = this.allSessionDetails.sessionDescription;
-            this.allSessionStartDate = this.allSessionDetails.sessionStartDate;
-            this.allSessionEndDate = this.allSessionDetails.sessionEndDate;
-            this.allSessionEndTime = this.allSessionDetails.sessionEndTime;
-            this.allSessionDuration = this.allSessionDetails.sessionDuration;
-            this.allSpeakerNames = this.allSessionDetails.lstOfSpeakers;
-            console.log('this.allSpeakerNames : ', JSON.stringify(this.allSpeakerNames));
-        }
+        //     this.allSessionTitle = this.allSessionDetails.sessionTitle;
+        //     this.allSessionDescription = this.allSessionDetails.sessionDescription;
+        //     this.allSessionStartDate = this.allSessionDetails.sessionStartDate;
+        //     this.allSessionEndDate = this.allSessionDetails.sessionEndDate;
+        //     this.allSessionEndTime = this.allSessionDetails.sessionEndTime;
+        //     this.allSessionDuration = this.allSessionDetails.sessionDuration;
+        //     this.allSpeakerNames = this.allSessionDetails.lstOfSpeakers;
+         
+        // }
     }
 
     openModal(event) {
         this.showModal = true;
-        console.log(event);
+      
         this.selectedSessionId = event.target.dataset.sessionid;
 
         this.sessionDetails = this.threesessionInformation.find(session => session.sessionTitle === this.selectedSessionId
@@ -115,28 +125,31 @@ export default class SessionSection extends LightningElement {
 
     handleMessage(eventMessage) {
         this.selectedEventId = eventMessage.eventId;
-        console.log('handleMessage : ', this.selectedEventId);
+      
         getSession({ eventId: this.selectedEventId })
             .then(data => {
                 this.sessionInformation = data;
                 this.threesessionInformation = this.sessionInformation.slice(0, 3);
-                console.log('Data:' + JSON.stringify(this.sessionInformation));
+               
 
             });
     }
     handleScroll(message) {
         const scrollSection = message.section;
-        console.log('scrollSection:>' + scrollSection);
+  
         if (scrollSection === 'Sessions') {
-            console.log('In Scroling');
             this.template.querySelector('.Sessions').scrollIntoView({ behavior: 'smooth' });
 
         }
     }
     handleViewAllClick() {
         this.showAllSession = true;
-        this.allsessionInformation = this.sessionInformation;
-        console.log('OUTPUT allsessionInformation : ', this.allsessionInformation);
+        this.allsessionInformation = [];
+        this.sessionInformation.forEach(session => {
+            let sessionItem = Object.assign({}, session, {contentClass: 'content'});
+            this.allsessionInformation.push(sessionItem);
+        });
+        // this.allsessionInformation = this.sessionInformation;
         document.body.style.overflow = 'hidden';
     }
     handleCloseModal() {

@@ -16,7 +16,7 @@ navbarItems;
 @wire(getNavbarItems)
 wiredData({ error, data }) {
   if (data) {
-    console.log('Data', data);
+
     this.navbarItems  = data
   } else if (error) {
     console.error('Error:', error);

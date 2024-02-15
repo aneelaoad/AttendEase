@@ -5,33 +5,28 @@
 .content {
     max-height: 0;
     /* overflow: hidden; */
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.3s ease-in-out;
     display: none;
 
 }
 
 .expanded {
-    max-height: 500px;
+    max-height: 100%;
 	padding: 10px;
     display: inline-block;
 
 }
 
 .session-box {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 5px;
-    /* height: 360px; */
+   
     transition: .5s ease-in;
 }
 
 .card_info {
-    background-color: #fff;
+  
     width: 100%;
     height: 100%;
     border-radius: 6px;
-    box-shadow: 0px 0px 3px #cccccc8c;
     padding: 30px 20px;
     display: flex;
     flex-direction: column;
@@ -39,14 +34,20 @@
     transition: .5s ease-in;
 
 }
-.session-box:hover{
-    background-color: #fff;
 
+.session-speakers{
+   width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+    margin-top: 8px;
 }
-.card_info:hover {
-    background-color: #e7f1f7;
-    color: black;
-
+.session-speakers img{
+        width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 22px auto;
 }
 .inner-card{
     display: flex;
@@ -116,10 +117,12 @@
 
 .session-container{
     background: white;
-    /* display: flex; */
     margin: 10px auto;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
     height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .session-date{
            display: flex;

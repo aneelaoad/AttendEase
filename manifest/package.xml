@@ -171,6 +171,7 @@
         <members>regNavbar</members>
         <members>regFooter</members>
         <members>popupModal</members>
+        <members>speakerRegistrationForm</members>
 		<name>LightningComponentBundle</name>
 	</types>
     
@@ -209,12 +210,17 @@
         <members>ContactSelector</members>
         <members>DenormalizedOption</members>
         <members>RegNavbarSelector</members>
-
+        <members>EventTestDataFactory</members>
         <members>EventControllerTest</members>
+       
         <members>NavigationControlSelectorTest</members>
         <members>NavigationbarControllerTest</members>
         <members>FAQsControllerTest</members>
         <members>AttendeeRegistrationControllerTest</members>
+        <members>SessionControllerTest</members>
+        <members>SpeakerControllerTest</members>
+        <members> SponsorControllerTest</members>
+       <members> CompanyInformationControllerTest</members>
         <members>FooterControllerTest</members>
 		<name>ApexClass</name>
 	</types>

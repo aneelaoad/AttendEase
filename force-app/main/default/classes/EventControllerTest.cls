@@ -22,6 +22,8 @@ public class EventControllerTest {
         organizerCompany.About_Us_Description__c = 'Test Description';
         insert organizerCompany;
         
+        Datetime startDate = Datetime.newInstance(2024, 12, 14, 9, 0, 0);
+        Datetime endDate = Datetime.newInstance(2024, 12, 14, 10, 30, 0);
         Event__c testEvent = new Event__c(
             Event_Title__c = 'Grand plot fair',
             Event_Organizer_Company__c = organizerCompany.Id,
@@ -29,7 +31,9 @@ public class EventControllerTest {
             Banner_Image__c = 'Test Image',
             Event_Address__City__s = 'Test City',
             Event_Address__CountryCode__s = 'US',
-            Event_Address__Street__s = 'Test Street'
+            Event_Address__Street__s = 'Test Street',
+            Event_Start_Date_and_Time__c = startDate,
+ 	 		Event_End_Date_and_Time__c = endDate
          
         );
         insert testEvent;

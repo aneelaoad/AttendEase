@@ -155,9 +155,10 @@
     <externalSharingModel>ReadWrite</externalSharingModel>
     <label>Session Speaker</label>
     <nameField>
+        <displayFormat>SS-{0000}</displayFormat>
         <label>Session Speaker</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Session Speakers</pluralLabel>
     <searchLayouts></searchLayouts>

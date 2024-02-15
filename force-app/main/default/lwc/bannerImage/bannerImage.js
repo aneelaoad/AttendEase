@@ -17,7 +17,7 @@ export default class BannerImage extends LightningElement {
         this.selectedEventId = eventMessage.eventId;
         getDenormalizedBannerImage({eventId: this.selectedEventId})
         .then(data=> {
-          console.log('data.bannerImage'+data.bannerImage);
+        
           this.bannerImage=data.bannerImage;
         });
 
@@ -25,7 +25,6 @@ export default class BannerImage extends LightningElement {
       connectedCallback() {
         this.subscribeToMessageChannel();
         this.bannerImageWarning = IMAGES+'/placeholder'+'.jpg';
-        console.log('bannerImageWarning : ',this.bannerImageWarning);
 
     }
 

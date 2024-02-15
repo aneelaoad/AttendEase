@@ -1,7 +1,57 @@
 <template>
+    <div class="contact-us">
+    <template if:true={selectedEventId}>
+        <div class="form-container">
+            <h1 style="margin:20px auto; color:#30336b; text-align:center">Contact Us</h1>
+            <form onsubmit={handleSubmit}>
+                <input type="hidden" name="orgid" value={organizationId} />
+                <input type="hidden" name="retURL" value={pageUrl} />
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="name">Contact Name</label>
+                        <input id="name" maxlength="80" name="name" size="20" type="text" required />
+                    </div>
+                    <div class="form-col">
+                        <label for="email">Email</label>
+                        <input id="email" maxlength="80" name="email" size="20" type="text" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="phone">Phone</label>
+                        <input id="phone" maxlength="40" name="phone" size="20" type="text" />
+                    </div>
+                    <div class="form-col">
+                        <label for="subject">Subject</label>
+                        <input id="subject" maxlength="80" name="subject" size="20" type="text" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col full-width">
+                        <label for="description">Description</label>
+                        <textarea name="description" required></textarea>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col full-width">
+                        <div class="form-submit">
+                            <input type="submit" name="submit" />
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="external" name="external" value="1" />
+            </form>
+        </div>
+    </template>
+    </div>
+</template>
+
+
+
+
+<!-- <template>
     <template if:true={selectedEventId}>
         <div>
-            <!-- Ensure that the organizationId and orgURL are available before rendering the form -->
             <div class="mainForm_outer " data-section="Contact Us" >
                 <h2>Contact Us</h2>
     
@@ -66,4 +116,4 @@
             </div>
         </div>
     </template>
-    </template>
+    </template> -->

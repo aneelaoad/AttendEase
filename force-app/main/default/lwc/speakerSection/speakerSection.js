@@ -11,15 +11,15 @@ import ButtonLabel from '@salesforce/label/c.Button_View_Label';
 export default class speakerSection extends LightningElement {
   subscription = null;
   scrlMsg;
-  @track speakerInformation = [];
+  @track speakerInformation;
   showAllSpeakers = false;
   @track allspeakerInformation = [];
-  @track threespeakerInformation = [];
+  @track threespeakerInformation;
   selectedEventId;
   showModal = false;
-    speakerLabel=SpeakerLabel;
-    allSpeakersLabel=AllSpeakersLabel;
-    buttonLabel=ButtonLabel;
+  speakerLabel = SpeakerLabel;
+  allSpeakersLabel = AllSpeakersLabel;
+  buttonLabel = ButtonLabel;
   speakerId;
   profilePlaceholder;
   speakerModalDetails;
@@ -33,13 +33,13 @@ export default class speakerSection extends LightningElement {
   openModal(event) {
     this.showModal = true;
     this.speakerId = event.target.dataset.speakerid
-    console.log(event);
+   
     this.speakerModalDetails = this.speakerInformation.find(speaker => speaker.speakerName === this.speakerId)
 
-    this.speakerName=this.speakerModalDetails.speakerName;
-    this.speakerDescription=this.speakerModalDetails.speakerInformation;
-    this.speakerTitle=this.speakerModalDetails.speakerTitle;
-    this.speakerEmail=this.speakerModalDetails.speakerEmail;
+    this.speakerName = this.speakerModalDetails.speakerName;
+    this.speakerDescription = this.speakerModalDetails.speakerInformation;
+    this.speakerTitle = this.speakerModalDetails.speakerTitle;
+    this.speakerEmail = this.speakerModalDetails.speakerEmail;
     this.speakerPhone = this.speakerModalDetails.speakerContactNumber;
     this.speakerImage = this.speakerModalDetails.speakerImage;
     document.body.style.overflow = 'hidden';
@@ -48,7 +48,7 @@ export default class speakerSection extends LightningElement {
 
   closeModal() {
     this.showModal = false;
-        document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
 
   }
 
@@ -62,14 +62,10 @@ export default class speakerSection extends LightningElement {
 
   handleMessage(eventMessage) {
     this.selectedEventId = eventMessage.eventId;
-    console.log('handleMessage : ', this.selectedEventId);
+   
     getSpeakers({ eventId: this.selectedEventId })
       .then(data => {
         this.speakerInformation = data;
-
-        // data.forEach(speaker => {
-        //   this.profilePlaceholder = speaker.
-        // });
         this.threespeakerInformation = this.speakerInformation.slice(0, 3);
 
       });
@@ -77,9 +73,9 @@ export default class speakerSection extends LightningElement {
 
   handleScroll(message) {
     const scrollSection = message.section;
-    console.log('scrollSection:>' + scrollSection);
+
     if (scrollSection === 'Speakers') {
-      console.log('In Scroling');
+   
       this.template.querySelector('.sectionSpeaker').scrollIntoView({ behavior: 'smooth' });
 
     }
@@ -87,12 +83,12 @@ export default class speakerSection extends LightningElement {
   handleViewAllClick() {
     this.showAllSpeakers = true;
     this.allspeakerInformation = this.speakerInformation;
-        document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
 
   }
   handleCloseModal() {
     this.showAllSpeakers = false;
-        document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
 
   }
   connectedCallback() {

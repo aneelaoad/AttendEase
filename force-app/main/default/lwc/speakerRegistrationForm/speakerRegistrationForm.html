@@ -1,0 +1,74 @@
+<template>
+	<div class="speaker-registration-form">
+		<!-- Button to open the modal -->
+		<div class="rsvpbutton">
+
+			<button  onclick={openModal}>Register Speaker </button>
+		</div>
+		<c-popup-modal show-modal={showModal} onclosemodal={closeModal}>
+			<div class="slds-p-around_medium">
+				<div class="input-column">
+					<lightning-input label="Speaker Name" value={speakerName} onchange={handleSpeakerNameChange}>
+					</lightning-input>
+					<lightning-input type="url" label="Speaker Profile Image" onchange={handleProfileImageChange}>
+					</lightning-input>
+				</div>
+				<div class="input-column">
+					<lightning-input label="Speaker Title" value={speakerTitle} onchange={handleSpeakerTitleChange}>
+					</lightning-input>
+					<lightning-textarea label="Speaker Information" value={speakerInformation}
+						onchange={handleSpeakerInformationChange}></lightning-textarea>
+				</div>
+
+				<!-- <lightning-button label="Add Session" variant="brand" onclick={handleAddSession}></lightning-button>
+			<template for:each={sessions} for:item="session">
+				<div key={session.key}>
+					<lightning-input label="Session Title" value={session.title} ></lightning-input>
+					<lightning-input type="date" label="Session Start Date" value={session.startDate} ></lightning-input>
+					<lightning-input type="date" label="Session End Date" value={session.endDate}></lightning-input>
+					<lightning-input type="time" label="Session Start Time" value={session.startTime}></lightning-input>
+					<lightning-input type="time" label="Session End Time" value={session.endTime}></lightning-input>
+				</div>
+			</template> -->
+				<div class="add-session">
+					<span>Add session? </span>
+					<button onclick={handleAddSession} class="btn">➕</button>
+
+				</div>
+				<template if:true={showSessionFields}>
+					<lightning-input label="Session Title" value={sessionTitle} onchange={handleSessionTitleChange}>
+					</lightning-input>
+					<lightning-input type="date" label="Session Start Date" value={sessionStartDate}
+						onchange={handleSessionStartDateChange}></lightning-input>
+					<lightning-input type="date" label="Session End Date" value={sessionEndDate}
+						onchange={handleSessionEndDateChange}></lightning-input>
+					<lightning-input type="time" label="Session Start Time" value={sessionStartTime}
+						onchange={handleSessionStartTimeChange}></lightning-input>
+					<lightning-input type="time" label="Session End Time" value={sessionEndTime}
+						onchange={handleSessionEndTimeChange}></lightning-input>
+				</template>
+
+				<div class="slds-m-top_medium">
+					<lightning-button label="Register" variant="brand" onclick={handleRegistration}></lightning-button>
+				</div>
+			</div>
+
+		</c-popup-modal>
+	</div>
+</template>
+
+
+<!-- <template>
+    <div class="speaker-registration-form">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Speaker Name" value={speakerName} onchange={handleSpeakerNameChange}></lightning-input>
+            <lightning-input label="Speaker Title" value={speakerTitle} onchange={handleSpeakerTitleChange}></lightning-input>
+            <lightning-input type="url" label="Speaker Profile Image" onchange={handleProfileImageChange}></lightning-input>
+            <lightning-textarea label="Speaker Information" value={speakerInformation} onchange={handleSpeakerInformationChange}></lightning-textarea>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Register" variant="brand" onclick={handleRegistration}></lightning-button>
+            </div>
+        </div>
+    </div>
+</template> -->

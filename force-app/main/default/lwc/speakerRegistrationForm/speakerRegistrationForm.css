@@ -1,0 +1,35 @@
+.speaker-registration-form .input-column {
+    display: inline-block;
+    width: 45%; /* Adjust as needed */
+    margin-right: 5%; /* Adjust spacing between columns */
+    vertical-align: top; /* Align columns to the top */
+}
+.rsvpbutton  button {  font-size: 12px; border-radius: 6px; padding: 12px 25px; 
+    text-align: center;max-width: 175px; margin: auto; display: block;  
+    color: #fff; margin-top: 10px; margin-bottom: 30px; border:0px;
+    background-color: #8c7ae6 !important;}
+    abbr{
+        display: none !important;
+    }
+
+
+.add-session{
+    width: 21%;
+    display: flex;
+    justify-content: space-between;
+}
+.add-session .btn{
+    border: none !important;
+    font-size: 17px;
+    background: none;
+}
+.add-session span{
+        font-size: 17px;
+}
+@media screen and (max-width: 600px) {
+    .speaker-registration-form .input-column {
+        display: block;
+        width: auto;
+        margin-right: 0;
+    }
+}

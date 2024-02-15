@@ -8,7 +8,7 @@ export default class SponsorSection extends LightningElement {
     subscription = null;
     scrlMsg;
     @wire(MessageContext) messageContext;
-    @track sponsorInformation = [];
+    @track sponsorInformation;
     selectedEventId;
     @wire(MessageContext) messageContext;
 
@@ -18,18 +18,18 @@ export default class SponsorSection extends LightningElement {
       }
       handleMessage(eventMessage) {
         this.selectedEventId = eventMessage.eventId;
-        console.log('handleMessage : ', this.selectedEventId);
+    
         getSponsor({eventId: this.selectedEventId})
         .then(data=> {
             this.sponsorInformation = data;
-            console.log('Sponsor Information :'+ JSON.stringify(data));   
+          
         });
       }
       handleScroll(message) {
         const scrollSection = message.section;
-        console.log('scrollSection:>'+scrollSection);
+     
        if (scrollSection === 'Sponsors') {
-           console.log('In Scroling');
+     
             this.template.querySelector('.sectionSponser_outer').scrollIntoView({ behavior: 'smooth' });
          
        }

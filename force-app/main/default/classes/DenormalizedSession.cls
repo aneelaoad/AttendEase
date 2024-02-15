@@ -20,7 +20,9 @@ public with sharing class DenormalizedSession {
 	public String sessionEndTime;
     @AuraEnabled
 	public String sessionDuration;
-    @AuraEnabled
+
+
+
 	public List<DenormalizedSpeaker> lstOfSpeakers;
 
     public DenormalizedSession(){}

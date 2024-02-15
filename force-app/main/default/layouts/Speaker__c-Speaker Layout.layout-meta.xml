@@ -26,6 +26,10 @@
                 <behavior>Edit</behavior>
                 <field>Speaker_Title__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Primary__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

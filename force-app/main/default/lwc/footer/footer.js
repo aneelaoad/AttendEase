@@ -20,7 +20,7 @@ selectedEventId
 
  handleMessage(eventMessage) {
     this.selectedEventId = eventMessage.eventId;
-    console.log('handleMessage : ', this.selectedEventId);
+   
     getFooterItems({ eventId:this.selectedEventId}).then(data=>{
          if (data) {
              this.linksLoaded= true
@@ -36,26 +36,6 @@ selectedEventId
     })
 
   }
-
-
-
-  // handleMessage(eventMessage) {
-  //   this.selectedEventId = eventMessage.eventId;
-  //   console.log('handleMessage : ', this.selectedEventId);
-  //   getFooterItems({ recordType: 'Footer_Navigation' , eventId:this.selectedEventId}).then(data=>{
-  //      if (data) {
-  //           data.forEach(link => {
-  //             const iconName = link.socialMediaIcon;
-  //             let socialLink = Object.assign({}, link, {socialMediaIcon: this.socialIcons + '/' + iconName});
-  //             this.socialLinks.push(socialLink);
-
-  //           });
-  //      }
-  //   })
-
-  // }
-
-
 
    connectedCallback() {
     this.subscribeToMessageChannel();

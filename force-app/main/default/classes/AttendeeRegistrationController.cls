@@ -53,7 +53,7 @@ public with sharing class AttendeeRegistrationController {
    @AuraEnabled
   public static void registerAttendee(String attendeeInfo) {
       DenormalizedAttendee denormalizedAttendeeInfo = (DenormalizedAttendee) JSON.deserialize(attendeeInfo, DenormalizedAttendee.class);
-
+      System.debug('attendeeInfo ---> '+ attendeeInfo);
       List<DenormalizedResponse> responsesList = denormalizedAttendeeInfo.responsesList;
       List<String> responsesWithQuestionIds = new List<String>();
     

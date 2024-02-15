@@ -1,6 +1,8 @@
 <template >
     <template if:true={selectedEventId} >
     <div class="sectionSponser_outer section">
+    <template if:true={sponsorInformation} >
+
         <div class="sectionSponser">
             <h1>Sponsors</h1>
             <ul>
@@ -16,6 +18,8 @@
                  </template>
              </ul>
          </div>
+   </template>  
+
      </div>
    </template>  
 </template>

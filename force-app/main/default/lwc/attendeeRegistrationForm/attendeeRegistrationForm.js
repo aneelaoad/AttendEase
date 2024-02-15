@@ -178,8 +178,8 @@ export default class AttendeeRegistrationForm extends LightningElement {
             questionsList: this.questionsList
 
         }
-        console.log('attendeeListObj : ', JSON.stringify(attendeeListObj));
-        registerAttendee({ attendeeList: JSON.stringify(attendeeListObj) })
+    console.log('attendeeListObj : ',JSON.stringify(attendeeListObj) );
+        registerAttendee({ attendeeInfo: JSON.stringify(attendeeListObj) })
             .then((attendeeObj) => {
                 this.dispatchEvent(
                     new ShowToastEvent({
