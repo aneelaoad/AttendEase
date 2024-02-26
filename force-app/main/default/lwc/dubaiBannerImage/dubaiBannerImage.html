@@ -1,0 +1,66 @@
+<template>
+	<!-- ---banner image starts----- -->
+	<div class="banner-image-container" style={backgroundImageStyle}>
+
+		<div class="banner-content">
+			<h1 class="heading1">{eventTitle}</h1>
+			<h3 class="heading3">Community-Led Conference Uniting Passion, Purpose, and Salesforce Excellence.</h3>
+		</div>
+		<img src={dubaiBuildingsIcon}  class='dubai-icon' />
+    </div>
+		<!-- ---banner image ends----- -->
+
+		<!-- ---when and where starts----- -->
+		<!-- <div class="location-container">
+            <div class="box">
+                <div class="label">Where:</div>
+			<div class="location-info">
+				<lightning-icon icon-name="utility:pin" size="small"></lightning-icon>
+
+
+				<div>
+					{eventCity}
+					{eventCountry}
+				</div>
+			</div>
+            </div>
+			<div class="box">
+                <div class="label">When:</div>
+
+			<div class="date-time-info">
+
+				<lightning-icon icon-name="utility:event" size="small"></lightning-icon>
+
+				<div>
+					<lightning-formatted-date-time value={eventStartDateTime} hour="2-digit" minute="2-digit">
+					</lightning-formatted-date-time>
+				</div>
+			</div>
+            </div>
+			<div class="RSVP-button">
+                <c-blue-button button-label={buttonLabel}></c-blue-button>
+            </div>
+		</div> -->
+
+		<!-- <div class="location-container">
+        <div class="input-row">
+            <lightning-input
+                type="text"
+                label="Pickup Location"
+                placeholder="Enter pickup location"
+            ></lightning-input>
+            <lightning-input
+                type="datetime-local"
+                label="Date & Time"
+            ></lightning-input>
+            <lightning-button
+                label="Submit"
+                variant="brand"
+                onclick={handleSubmit}
+            ></lightning-button>
+        </div>
+    </div> -->
+
+		<!-- ---when and where ends----- -->
+
+</template>

@@ -1,0 +1,113 @@
+.contact-us-section{
+    scroll-margin-top: 120px;
+}
+.sponsor-section{
+	background: var(--LIGHT-PINK);
+	margin-top: 40px;
+	width: 100%;
+	color: white;
+	padding: 80px 20px;
+}
+.sponsor-section .sponsor-content{
+	width: 60%;
+	margin: auto;
+}
+.sponsor-section h1{
+	margin: 12px 0;
+	font-size: 1.8rem;
+}
+.sponsor-section .sponsor-content p{
+	margin: 5px 0;
+
+}
+.contact-us-section{
+ margin: 40px auto;
+
+}
+.contact-us-section .slogan h1{
+	    font-size: 2.5rem;
+    color: white;
+    width: 60%;
+}
+.contact-us-section .bgImage{
+	height: 90vh;
+	width:80% ;
+	 background-position: fit; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  margin: auto;
+  padding: 20px;
+  position: relative;
+   display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.form-container {
+	position: absolute;
+       padding: 120px 20px;
+    width: 600px;
+	right: 0;
+	top: -150px;
+ background-position: fit; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.form-col {
+    flex: 1;
+    margin-right: 30px;
+	margin-top: 10px;
+}
+
+.form-col.full-width {
+    flex-basis: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+	color: #000;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 10px);
+    padding: 10px;
+    border-radius: 2px;
+	border: none;
+    border-bottom: 2px solid #000000 !important;
+	outline: none;
+}
+
+
+input[type="submit"] {
+      padding: 5px 10px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+	margin-top: 30px;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--DARK-BLUE);
+}
+
+
+input[type="text"]:focus,
+textarea:focus {
+    border-bottom: 2px solid var(--DARK-BLUE) !important;
+ 
+}

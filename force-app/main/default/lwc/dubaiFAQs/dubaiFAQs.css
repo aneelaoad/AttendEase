@@ -1,0 +1,60 @@
+.faq-section-container{
+	background: var(--Bg-light);
+	padding: 30px 80px;
+	
+
+}
+.slds-wrap{
+	margin: auto;
+}
+.faq-section{
+
+	padding-left: 50px;
+}
+ .direct-mail-section{
+ display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 500px;
+	width: 400px;
+    flex: 1;
+	background: white;
+    align-items: center; 
+	margin: 0 auto;
+	padding: 50px 10px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	position: relative; 
+}
+ .direct-mail-content{
+
+	flex:1;
+	 display: flex;
+
+    flex-direction: column;
+    height: 400px;
+	
+   
+    align-items: center; 
+}
+.direct-mail-content h2{
+	margin: 10px auto;
+	font-size: 2rem;
+	text-align: center;
+}
+.faq-section .faq-container{
+	flex: 2;
+}
+.vector{
+	width: 4rem;
+	height: 4rem;
+}
+.faq-box {
+    border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.mail-button{
+	width: 100%;
+}
+.heading1{
+	font-size: 3.1rem;
+}

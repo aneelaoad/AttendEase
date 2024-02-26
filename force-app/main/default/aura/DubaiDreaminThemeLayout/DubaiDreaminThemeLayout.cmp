@@ -1,0 +1,38 @@
+<aura:component  implements="forceCommunity:themeLayout">
+    
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="footer" type="Aura.Component[]" />
+	<aura:attribute name="Description" type="Aura.Component[]" />
+	<aura:attribute name="BannerImage" type="Aura.Component[]" />
+    <aura:attribute name="FAQ" type="Aura.Component[]" />
+	<aura:attribute name="Speakers" type="Aura.Component[]" />
+	<aura:attribute name="contactUs" type="Aura.Component[]" />
+    <div class=""> 
+        {!v.header} 
+        </div>         
+        <div class="BannerImage">
+            {!v.BannerImage} 
+        </div>
+      
+            <div class="description">
+                {!v.Description} 
+            </div>
+        
+
+        <div class="FAQ">
+            {!v.FAQ} 
+        </div>
+        <div class="contactUs">
+            {!v.contactUs} 
+        </div>     
+        <div class="Speakers">
+            {!v.Speakers} 
+        </div>   
+       
+
+        
+        
+        <div class=""> 
+          {!v.footer}                 
+         </div> 
+</aura:component>

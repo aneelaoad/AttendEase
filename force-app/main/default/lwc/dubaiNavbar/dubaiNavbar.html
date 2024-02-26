@@ -1,0 +1,30 @@
+<!-- dubainavbar.html -->
+<template>
+	<header class="navbar">
+		<!-- Logo -->
+		<div class="companyLogo">
+			<img src={companyLogo} alt="logo" srcset="">
+         </div>
+			<!-- Navigation Items -->
+
+			<div class="nav-items">
+				<ul class={menuClass}>
+					<template for:each={navigationItems} for:item="navItem">
+						<li onclick={handleNavItemClick} data-section={navItem.section} key={navItem.DeveloperName}>
+							{navItem.menuTab} </li>
+					</template>
+
+
+				</ul>
+				<div class="hamburger-icon" onclick={toggleMenu}>
+					<div class="bar"></div>
+					<div class="bar"></div>
+					<div class="bar"></div>
+				</div>
+			</div>
+			<!-- Contact Us Button -->
+			<!-- <div class="contact-us">
+            <c-blue-button button-label={buttonLabel}></c-blue-button>
+        </div> -->
+	</header>
+</template>

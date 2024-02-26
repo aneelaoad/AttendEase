@@ -60,10 +60,7 @@
         <apexClass>DenormalizedSpeaker</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <classAccesses>
-        <apexClass>SpeakerSelector</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+   
     <classAccesses>
         <apexClass>SpeakerController</apexClass>
         <enabled>true</enabled>
@@ -88,10 +85,7 @@
         <apexClass>DenormalizedFooter</apexClass>
         <enabled>true</enabled>
     </classAccesses>
-    <classAccesses>
-        <apexClass>EventListController</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
+   
     <classAccesses>
         <apexClass>AttendeeRegistrationController</apexClass>
         <enabled>true</enabled>
@@ -152,6 +146,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Attendee__c.Event__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Attendee__c.Payment_Verified__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Attendee__c.TransactionID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Attendee__c.Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

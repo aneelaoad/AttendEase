@@ -1,0 +1,75 @@
+.banner-image-container{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	
+}
+.banner-image-container img{
+
+	height: 70%;
+	width: 70%;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+    transform: translate(-50%);
+
+}
+.banner-image-container .banner-content{
+	position: absolute;
+    top: 10%;
+    left: 50%;
+	color: white;
+    transform: translate(-50%);
+	text-align: center;
+}
+.banner-image-container .banner-content h1{
+	font-size: 5rem;
+	font-weight: 400;
+}
+.banner-image-container .banner-content h3{
+	font-size: 1rem;
+	font-weight: 200;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+
+ .location-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: white;
+    top: 95%;
+    width: 500px;
+    padding: 30px 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    }
+
+    .location-info,
+    .date-time-info {
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+    }
+.location-container .box{
+	width: 100%;
+}
+/* .input-row {
+    display: flex;
+    align-items: center;
+}
+
+.input-row lightning-input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-row lightning-button {
+    margin-left: 10px;
+} */

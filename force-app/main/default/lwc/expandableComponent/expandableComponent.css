@@ -5,14 +5,17 @@
     border-radius: 5px;
     margin: 20px auto;
     transition: .6s ease-in;
+     background-color: white;
 }
 
 .header {
-    background-color: #8c7ae6;;
+   
     padding: 10px;
     cursor: pointer;
     user-select: none;
-     color: white;
+     display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
 }
 
 .content {

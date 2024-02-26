@@ -23,8 +23,8 @@
     <redirectToCustomDomain>false</redirectToCustomDomain>
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>test-gptryaoosss4@example.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>test-gptryaoosss4@example.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>test-7fzr8pkptwwh@example.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>test-7fzr8pkptwwh@example.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <urlPathPrefix>attendeaseplus</urlPathPrefix>
 </CustomSite>

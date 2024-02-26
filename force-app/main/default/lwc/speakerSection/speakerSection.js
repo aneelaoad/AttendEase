@@ -15,7 +15,7 @@ export default class speakerSection extends LightningElement {
   showAllSpeakers = false;
   @track allspeakerInformation = [];
   @track threespeakerInformation;
-  selectedEventId;
+  selectedEventId = 'a021m00001cTgUnAAK';
   showModal = false;
   speakerLabel = SpeakerLabel;
   allSpeakersLabel = AllSpeakersLabel;
@@ -60,16 +60,24 @@ export default class speakerSection extends LightningElement {
     this.scrlMsg = subscribe(this.messageContext, SCROLL_MESSAGE, (message) => this.handleScroll(message));
   }
 
-  handleMessage(eventMessage) {
-    this.selectedEventId = eventMessage.eventId;
-   
-    getSpeakers({ eventId: this.selectedEventId })
-      .then(data => {
-        this.speakerInformation = data;
-        this.threespeakerInformation = this.speakerInformation.slice(0, 3);
-
-      });
+@wire(getSpeakers, { eventId: '$selectedEventId' })
+wiredData({ error, data }) {
+  if (data) {
+ this.speakerInformation = data;
+   this.threespeakerInformation = this.speakerInformation.slice(0, 3);  } else if (error) {
+     console.error('Error:', error);
   }
+}
+  // handleMessage(eventMessage) {
+  //   this.selectedEventId = eventMessage.eventId;
+   
+  //   getSpeakers({ eventId: this.selectedEventId })
+  //     .then(data => {
+  //       this.speakerInformation = data;
+  //       this.threespeakerInformation = this.speakerInformation.slice(0, 3);
+
+  //     });
+  // }
 
   handleScroll(message) {
     const scrollSection = message.section;

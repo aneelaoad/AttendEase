@@ -3,6 +3,7 @@
     <aura:attribute name="header" type="Aura.Component[]" />
     <aura:attribute name="footer" type="Aura.Component[]" />
 	<aura:attribute name="Description" type="Aura.Component[]" />
+
     <div class=""> 
         {!v.header} 
         </div>         
@@ -12,7 +13,7 @@
                 {!v.Description} 
             </div>
         </div>         
-
+        
         <div class=""> 
           {!v.footer}                 
          </div> 

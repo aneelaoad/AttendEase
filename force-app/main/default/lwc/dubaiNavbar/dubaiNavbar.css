@@ -1,0 +1,159 @@
+myStickyHeader{
+       transition: background-color 0.3s ease;
+  background: white;
+
+}
+.navbar {
+ box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    overflow: hidden;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+        padding: 15px 120px;
+    
+}
+.companyLogo img{
+    width: 80px;
+    height: 80px;
+    padding: 12px;
+}
+
+.sticky {
+  top: 0;
+  left: -1px;
+  right: 0px;
+  width: 100%;
+  z-index: 2;
+  background: white; position: fixed !important;
+}
+
+.myStickyHeader { z-index: 3 !important;}
+
+
+
+
+.logo {
+    font-size: 1.5rem;
+}
+
+/* dubainavbar.css */
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+        padding: 10px 150px;
+}
+
+.companyLogo {
+    width: 5rem;
+}
+
+.nav-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+}
+
+.nav-items ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-items li {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 3px 10px;
+    border-bottom: 2px solid transparent;
+    transition: ease-in-out .3s;
+    padding-bottom: 5px;
+    cursor: pointer;
+    color: var(--TEXT-COLOR);
+    position: relative;
+
+}
+.nav-items li:hover {
+    color: var(--LIGHT-BLUE);
+    border-bottom: 2px solid var(--LIGHT-PINK);
+}
+
+li:last-child{
+    background-color: var(--LIGHT-BLUE);
+
+    color: white !important;;
+    border: none !important;
+    padding: 10px !important;
+    padding-bottom: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute !important;
+    right: 90px;
+}
+
+
+
+li:last-child:hover {
+    background-color: var(--DARK-BLUE);;
+}
+.hamburger-icon {
+    display: none; 
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 4px;
+    background-color: var(--DARK-BLUE);;
+    margin: 6px 0;
+}
+
+@media (max-width: 600px)  {
+   .hamburger-icon {
+    display: block; 
+    cursor: pointer;
+}
+}
+@media only screen and (max-width:600px) {
+    .navbar{
+        padding: 0;
+    }
+    .nav-items {
+    justify-content: end;
+    width: 80%;
+    }
+    ul {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        background: white;
+        z-index: 1;
+        
+    }
+
+    ul.menu-open {
+        display: flex;
+    }
+
+    .hamburger-icon {
+        display: block; 
+    }
+    li:last-child{
+    right: 10px;
+    position: relative !important;
+    
+    width: 100%;
+   
+}
+}

@@ -9,6 +9,8 @@ public class DenormalizedAttendee{
 @AuraEnabled public string firstName;
 @AuraEnabled public string lastName;
 @AuraEnabled public string email;
+@AuraEnabled public string transactionID;
+@AuraEnabled public Decimal amount;
 @AuraEnabled public List<DenormalizedResponse> responsesList;
 @AuraEnabled public List<DenormalizedQuestion> questionsList;
 

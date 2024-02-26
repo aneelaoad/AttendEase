@@ -1,0 +1,65 @@
+<template>
+	<div class="sponsor-section">
+		<div class="sponsor-content">
+			<h1>Become Our Sponsor</h1>
+			<p>Help us by becoming the exclusive sponsor of Dubai's premier TrAIlzing event! Simply complete the form
+				below to express your interest, and we'll reach out to</p>
+			<p>you with comprehensive sponsorship packages and associated benefits. Stay ahead of the curve and be the
+				first to receive exclusive details about our</p>
+			<p>sponsorship opportunities. Don't miss out on this chance to align your brand with the largest TrAIlzing
+				event in Dubai!</p>
+
+		</div>
+	</div>
+	<div class="contact-us-section">
+		<div class="bgImage" style={backgroundImageStyle}>
+			<div class="slogan">
+				<h1>We are here to help
+					you grow your business</h1>
+			</div>
+			<div class="form-container" style={formBackgroundStyle}>
+				<form onsubmit={handleSubmit}>
+					<input type="hidden" name="orgid" value={organizationId} />
+					<input type="hidden" name="retURL" value={pageUrl} />
+					<div class="form-row">
+						<div class="form-col">
+							<label for="name">Contact Name</label>
+							<input id="name" maxlength="80" name="name" size="20" type="text" required />
+                    </div>
+							<div class="form-col">
+								<label for="email">Email</label>
+								<input id="email" maxlength="80" name="email" size="20" type="text" required />
+                    </div>
+							</div>
+							<div class="form-row">
+								<div class="form-col">
+									<label for="phone">Phone</label>
+									<input id="phone" maxlength="40" name="phone" size="20" type="text" />
+                    </div>
+									<div class="form-col">
+										<label for="subject">Subject</label>
+										<input id="subject" maxlength="80" name="subject" size="20" type="text" required />
+                    </div>
+									</div>
+									<div class="form-row">
+										<div class="form-col full-width">
+											<label for="description">Description</label>
+											<textarea name="description" required></textarea>
+
+										</div>
+
+									</div>
+									<div class="form-row">
+										<div class="form-col full-width">
+											<div class="">
+												<input type="submit" name="submit" style="width:100%; padding 0 5px" />
+                        </div>
+											</div>
+										</div>
+
+										<input type="hidden" id="external" name="external" value="1" />
+            </form>
+									</div>
+								</div>
+							</div>
+</template>

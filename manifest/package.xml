@@ -101,6 +101,10 @@
         <members>Attendee__c.Attendee__c</members>
         <members>Attendee__c.Event__c</members>
         <members>Attendee__c.Event__c</members>
+        <members>Attendee__c.Amount__c</members>
+        <members>Attendee__c.TransactionID__c</members>
+        <members>Attendee__c.Payment_Verified__c</members>
+        <members>Attendee__c.Attendee_Full_Name__c</members>	
         <members>Event_Speaker__c.Event__c</members>
         <members>Event_Speaker__c.Speaker__c</members>
         <members>Event_Speaker__c.Duplication_Record_Chk__c</members>
@@ -121,30 +125,35 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>Events_Product</members>
+        <members>EventRegPortal</members>
         <members>AttendEasePlus</members>
+        <members>DubaiDreamin</members>
         <name>CustomSite</name>
     </types>
 
     <types>
-        <members>cbEvents_Product</members>
+        <members>cbEventRegPortal</members>
         <members>cbAttendEasePlus</members>
+        <members>cbDubaiDreamin</members>
         <name>NetworkBranding</name>
         </types>
      <types>
-        <members>Events Product</members> 
+        <members>EventRegPortal</members> 
         <members>AttendEasePlus</members> 
+        <members>DubaiDreamin</members>
         <name>Network</name>
         </types>
     <types>
-        <members>Events_Product1</members>
-        <members>AttendEasePlus1</members> 
+        <members>AttendEasePlus1</members>
+        <members>DubaiDreamin1</members>
+        <members>EventRegPortal1</members>
         <name>ExperienceBundle</name>
     </types>
   
        <types>
         <members>attendeesBlankLayout</members>
         <members>EventRegistrationLayout</members>
+        <members>DubaiDreaminThemeLayout</members>
         <name>AuraDefinitionBundle</name>
     </types>
      <types>
@@ -172,7 +181,15 @@
         <members>regFooter</members>
         <members>popupModal</members>
         <members>speakerRegistrationForm</members>
-		<name>LightningComponentBundle</name>
+        <members>dubaiNavbar</members>
+        <members>blueButton</members>
+        <members>dubaiEventHighlights</members>
+        <members>dubaiBannerImage</members>
+        <members>dubaiContactUs</members>   
+        <members>dubaiFAQs</members>
+        <members>dubaiFooter</members>
+        <members>dubaiRSVP</members>
+      	<name>LightningComponentBundle</name>
 	</types>
     
     <types>
@@ -211,8 +228,9 @@
         <members>DenormalizedOption</members>
         <members>RegNavbarSelector</members>
         <members>EventTestDataFactory</members>
+        <members>DubaiRSVPController</members>
+
         <members>EventControllerTest</members>
-       
         <members>NavigationControlSelectorTest</members>
         <members>NavigationbarControllerTest</members>
         <members>FAQsControllerTest</members>
@@ -262,16 +280,31 @@
 
     </types>
 
+
+    <types> 
+      <members>unfiled$public/Attendee_Verification_Email_1708601779750</members>
+       <name>EmailTemplate</name>
+    </types>
+
+
+
+
     <types>
         <members>ICONS</members>
         <members>SOCIAL_ICONS</members>
         <members>IMAGES</members>
+        <members>DUBAI_ASSET</members>
+        <members>SO_ICONS</members>
         <name>StaticResource</name>
     </types>
-
+    <types>
+        <members>Attendee__c.Transaction_Verified </members>
+        <name>QuickAction</name>
+    </types>
      <types>
         <members>Prevention_Of_Duplication_Of_Speaker_Record</members>
         <members>Prevention_Duplication_of_Speaker_From_Same_Session</members>
+        <members>Payment_Verified_Flow</members>
        <name>Flow</name>
     </types>
  <types>

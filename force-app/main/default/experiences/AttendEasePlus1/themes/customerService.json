@@ -157,9 +157,9 @@
     "type" : "view"
   }, {
     "componentAttributes" : { },
-    "componentName" : "c:EventRegistrationLayout",
+    "componentName" : "c:attendeesBlankLayout",
     "id" : "cc05fdb5-9381-49e3-958b-4a4e624ef4ef",
-    "label" : "EventRegistationThemeLayout",
+    "label" : "AttendeesThemeLayout",
     "regions" : [ {
       "id" : "f2d09072-b9ce-49dc-9c42-679386e16b98",
       "regionName" : "customHeader",
@@ -249,8 +249,8 @@
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:regFooter",
-        "id" : "0265a7fb-ffeb-44f8-a66b-b19cb52b37a2",
+        "componentName" : "c:footer",
+        "id" : "8b479ec7-6927-44b7-b94c-15298cf3a2bc",
         "renditionMap" : { },
         "type" : "component"
       } ],
@@ -268,8 +268,8 @@
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:regNavbar",
-        "id" : "6739ac07-5345-4a29-91dd-6ccc638faf62",
+        "componentName" : "c:navigationBar",
+        "id" : "645a1a52-a6e8-400c-91c6-6a924e21ae2c",
         "renditionMap" : { },
         "type" : "component"
       } ],
@@ -277,8 +277,103 @@
       "regionName" : "header",
       "type" : "region"
     }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:aboutUs",
+        "id" : "cf2d0793-f4f9-4cbf-9d20-e29e4182a9a2",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
       "id" : "41e8397f-112a-4535-a53d-2002777711a0",
       "regionName" : "Description",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:bannerImage",
+        "id" : "d4a92343-0470-44d9-bcea-9fc162b6c91a",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "3d780683-0d20-488d-8e3f-4cd2c5e7e35e",
+      "regionName" : "BannerImage",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:eventHighlight",
+        "id" : "f9cf5b29-7424-4a79-aee2-4e82a2153eeb",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "0ca6b2b0-1bcb-44de-b611-8a7020774517",
+      "regionName" : "PostDescription",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:sessionSection",
+        "id" : "33355789-e7b3-4030-827c-4e533d288aa9",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "d9088275-2556-4c63-b22e-0fded11999f9",
+      "regionName" : "Sessions",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:speakerSection",
+        "id" : "cfaa0499-499b-432a-a35d-cf1d4f45cb9d",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "537cfdff-b006-4932-af58-7f719483c75d",
+      "regionName" : "Speakers",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:fAQs",
+        "id" : "df325d2b-adb4-463d-b204-fc2d7c895263",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "088f5a11-32fa-434a-a6c0-61e505126b64",
+      "regionName" : "faq",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:contactUs",
+        "id" : "ee9b6888-e45f-43ec-bbb8-2d1c30559ef0",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "def0ae88-53dd-4970-b7ef-bc3c9fd60726",
+      "regionName" : "contactUs",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:setEventId",
+        "id" : "7629aa19-6009-41d6-b068-8ed0eadd4663",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "aaf74a65-ef70-405f-9484-9274005db708",
+      "regionName" : "setEventId",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:sponsorSection",
+        "id" : "9e38ace7-5418-4215-b48e-e61f699649d2",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "67f21283-bfc9-4a93-8b59-ca3296736190",
+      "regionName" : "Sponsors",
       "type" : "region"
     } ],
     "type" : "view"

@@ -1,0 +1,68 @@
+<template>
+
+	<div style=" height: auto; display:flex ;justify-content:center; overflow-y: auto;  padding:10px 15px">
+		<!-- Button to open the modal -->
+		<div class="rsvpbutton">
+			<!-- <lightning-button label="RSVP " onclick={openModal}></lightning-button> -->
+			<button  onclick={openModal}>RSVP Here </button>
+		</div>
+		
+
+		<!-- Modal -->
+
+		<template if:true={isModalOpen}>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+			<div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+				class="slds-modal slds-fade-in-open slds-modal_small">
+				<div class="slds-modal__container">
+
+
+					<section style="overflow: auto; " class="RSVP-form">
+						<!-- Modal Header -->
+						<header class="slds-modal__header">
+							<h2 id="modal-heading-01" class="slds-modal__title">Attendee Registration</h2>
+						</header>
+						<div class="form-details">
+							<div style="">
+
+								<lightning-record-edit-form object-api-name="Contact">
+									<lightning-messages>
+									</lightning-messages>
+
+									<lightning-input-field field-name="FirstName" label="FirstName" onchange={handleFieldChange}>
+									</lightning-input-field>
+									<lightning-input-field field-name="LastName" label="LastName" onchange={handleFieldChange}>
+									</lightning-input-field>
+									<lightning-input-field field-name="Email" label="Email" onchange={handleFieldChange}>
+									</lightning-input-field>
+									<hr />
+									<!-- ----payment starts from here---- -->
+									<div class="payment-section">
+										<h2>Payment Details <span style="width:1.1rem">💳</span> </h2>
+										<lightning-input label="TransactionId" value={transactionId}
+											onchange={handleFieldChange}></lightning-input>
+										<lightning-input label="Amount" type="number" value={amount}
+											onchange={handleFieldChange}></lightning-input>
+
+									</div>
+									<!-- payment ends till here---- -->
+
+									<div class="slds-m-vertical_large">
+										<lightning-button class="slds-m-top_small slds-m-right_small" variant="brand"
+											name="saveApex" label="RSVP" onclick={handleRSVP}>
+										</lightning-button>
+										<lightning-button label="Cancel" onclick={closeModal}></lightning-button>
+
+									</div>
+								</lightning-record-edit-form>
+							</div>
+						</div>
+					</section>
+
+				</div>
+			</div>
+		</template>
+
+	</div>
+
+</template>

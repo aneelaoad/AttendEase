@@ -1,0 +1,96 @@
+.footer {
+    background-color: var(--purple);
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex: 1 1 25%;
+    margin-bottom: 20px;
+	text-align: center;
+}
+.companyLogo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.companyLogo img{
+    width: 80px;
+    margin-bottom: 20px;
+    height: 80px;
+}
+.footer-column h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+.newsletter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter input {
+   width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.newsletter button {
+    background-color: var(--LIGHT-PINK);
+    color: white;
+    padding: 7px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+
+}
+.copy-right{
+    font-size: 1.1rem;
+    text-align: center;
+    color: white;
+}
+.newsletter button:hover {
+    background-color: var(--DARK-PINK);
+}
+a, h4{
+	color: white;
+}
+
+.socialInfo .social-media-icons { width: auto; margin: 0px 10px; }
+.socialInfo .social-media-icons a img{ width: 30px; height: 30px; display: block; }
+
+/* .social-media-icons{} */
+
+.socialInfo{
+display: flex;
+}
+
+
+
+@media only screen and (max-width:767px) {
+	.footerDetail { flex-flow: column;}
+	.socialInfo { padding-top: 10px;}
+	
+	}

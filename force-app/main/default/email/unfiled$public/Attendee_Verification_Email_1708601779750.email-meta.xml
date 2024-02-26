@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Attendee Verification Email</name>
+    <relatedEntityType>Attendee__c</relatedEntityType>
+    <style>none</style>
+    <subject>Attendee Registration Successfull</subject>
+    <textOnly>[Image alt text: No Image Found]  &lt; https://dubaidreamin.com/assets/img/logo/main_logo.png &gt; 
+
+Dear {{{Attendee__c.Attendee_Full_Name__c}}},
+
+Thank you for registering for the Dubai Dreamin&apos; Event! We&apos;re thrilled to have you join us for what promises to be an enriching and engaging experience.
+
+Here are the event details:
+
+ - Date:9th November, 2024
+ - Location:Dubai, UAE
+
+Your registration has been successfully confirmed, and we look forward to welcoming you. The event agenda will include insightful sessions, networking opportunities, and hands-on workshops tailored to empower you with the latest insights and tools in Salesforce technology.
+
+Should you have any questions leading up to the event, please don&apos;t hesitate to reach out to our team at mailto:info@dubaidreamin.com &lt; info@dubaidreamin.com &gt; .
+
+We&apos;re excited to see you there and share in this journey of learning and collaboration.
+
+Best regards,
+
+Maham Hassan</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

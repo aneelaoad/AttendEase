@@ -1,0 +1,84 @@
+.event-highlight-section{
+    	background: white;
+	padding: 60px 80px;
+    scroll-margin-top: 50px;
+}
+.event-highlights{
+    width: 80%;
+    margin: auto;
+}
+.header, .sub-content{
+    text-align: center;
+}
+.header h1, .sub-content h1{
+    font-size: 2rem;
+
+}
+.header h1{
+    position: relative;
+    margin: 50px auto;
+}
+.header img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-content {
+    color: #5e5c5c;
+  flex-grow: 1;
+    margin-top: 15px;
+    width: 100%;
+   
+}
+.card-content h3{
+    font-size: 1rem;
+    margin: 10px 0;
+}
+.card-content span{
+    margin-left: 5px;
+}
+
+.card-content p {
+    margin: 0;
+    letter-spacing: 2px;
+}
+.rsvp-section {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box{
+     width: 320px;
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    height: 300px;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    margin: auto;
+}
+
+
+.box-wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    margin: 40px auto;
+}
+p{
+    margin: 10px 0;
+    font-size: 1rem;
+}
+.register-buttons{
+    display: flex;
+        align-items: center;
+    margin: auto;
+}
+@media (max-width: 600px)  {
+
+}

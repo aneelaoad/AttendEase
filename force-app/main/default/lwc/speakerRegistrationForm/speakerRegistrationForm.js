@@ -14,15 +14,6 @@ export default class SpeakerRegistrationForm extends LightningElement {
     showSessionFields = false;
     showModal=false;
     
-    // @wire(MessageContext) messageContext;
-    // subscribeToMessageChannel() {
-    //     this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage));
-    // }
-
-    // handleMessage(eventMessage) {
-    //     this.selectedEventId = eventMessage.eventId;
-    //     console.log('handleMessage : ',this.selectedEventId);
-    // }
 
 
      openModal(event) {

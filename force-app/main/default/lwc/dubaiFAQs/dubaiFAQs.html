@@ -1,0 +1,78 @@
+<template>
+	<div class="faq-section-container">
+		<div class="faq-section">
+		<div class="slds-grid slds-wrap">
+	<div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+		<template if:true={faqList}>
+				<h2 class="heading1">Fequently
+			asked questions</h2>
+			
+				<div class="faq-list">
+
+					<template if:true={faqList}>
+						<h1 style="">{faqLabel}</h1>
+
+						<div>
+							<template for:each={faqList} for:item="faq">
+								<div class="faq-box slds-col" key={faq.Id}>
+									<c-expandable-component question-header={faq.question} answer-body={faq.answer}>
+									</c-expandable-component>
+								</div>
+							</template>
+						</div>
+					</template>
+
+				</div>
+		
+		</template>
+	</div>
+	<div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_4-of-12">
+		<div class="direct-mail-section" >
+			<div style={mailBackgroundImage} class="vector"> </div>
+            <div class="direct-mail-content" >
+                <h2>Do you have more questions?</h2>
+                <p>End-to-end payments and financial management in a single solution. Meet the right platform to help realize.</p>
+            </div>
+			<div class="mail-button">	<c-blue-button button-label='Shoot a direct mail'></c-blue-button></div>
+        </div>
+	</div>
+	
+</div>
+</div>
+	<!-- <div class="faq-section">
+	<div class="faq-container ">
+		<template if:true={faqList}>
+				<h2 class="heading1">Fequently
+			asked questions</h2>
+			
+				<div class="faq-list">
+
+					<template if:true={faqList}>
+						<h1 style="">{faqLabel}</h1>
+
+						<div>
+							<template for:each={faqList} for:item="faq">
+								<div class="faq-box slds-col" key={faq.Id}>
+									<c-expandable-component question-header={faq.question} answer-body={faq.answer}>
+									</c-expandable-component>
+								</div>
+							</template>
+						</div>
+					</template>
+
+				</div>
+		
+		</template>
+	</div>
+        <div class="direct-mail-section" >
+			<div style={mailBackgroundImage} class="vector"> </div>
+            <div class="direct-mail-content" >
+                <h2>Do you have more questions?</h2>
+                <p>End-to-end payments and financial management in a single solution. Meet the right platform to help realize.</p>
+            </div>
+			<div class="mail-button">	<c-blue-button button-label='Shoot a direct mail'></c-blue-button></div>
+        </div>
+
+	</div> -->
+	</div>
+</template>

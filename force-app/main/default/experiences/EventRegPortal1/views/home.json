@@ -1,0 +1,94 @@
+{
+  "appPageId" : "fd0e3d40-e170-400a-8b32-e585299d7d1b",
+  "componentName" : "siteforce:sldsTwoCol48Layout",
+  "dataProviders" : [ ],
+  "id" : "fac02fa0-fded-4e4e-bf72-a9ac00e8184e",
+  "label" : "Home",
+  "regions" : [ {
+    "id" : "6a537eef-35e9-4a56-ad54-d4e1f34095be",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "buttonAlignment" : "center",
+        "buttonBgColor" : "",
+        "buttonBgHoverColor" : "",
+        "buttonBorderColor" : "",
+        "buttonMaxWidth" : 100,
+        "buttonRadius" : 0,
+        "buttonTextColor" : "",
+        "buttonTextHoverColor" : "",
+        "confirmationMessage" : "Got it!",
+        "followUpPromptLabel" : "Can we close your question?",
+        "isAskFollowPromptEnabled" : true,
+        "isIncludeArticlesEnabled" : false,
+        "isIncludeDiscussionsEnabled" : true,
+        "isInitialSatisfactionPromptEnabled" : true,
+        "isPublisherDeflectionEnabled" : true,
+        "label" : "Ask a Question",
+        "maxSuggestions" : 5,
+        "satisfactionPromptLabel" : "Did we help to answer your question?",
+        "showDetails" : false,
+        "showTopics" : true,
+        "uneditableTopics" : false
+      },
+      "componentName" : "forceCommunity:askCommunity",
+      "id" : "c128a157-6f53-4481-ad69-f5007ffae9e8",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "711fc4e1-558a-4e23-90b2-c4e7a7be0edf",
+    "regionName" : "featured",
+    "type" : "region"
+  }, {
+    "id" : "1673bece-5cb9-4d65-8fa7-6ab44324ea74",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "display" : "LEVELS_POINTS",
+        "excludeInternalUsers" : false,
+        "knowledgeLabel" : "Knows about",
+        "numberOfUsers" : 5,
+        "showContextUser" : false,
+        "showTooltip" : false,
+        "showUserRank" : false,
+        "title" : "Leaderboard",
+        "tooltipText" : "Earn points and climb to new levels when you contribute in the experience!"
+      },
+      "componentName" : "forceCommunity:reputationLeaderboard42",
+      "id" : "5acbfe20-2bff-43e4-bd8e-de91ffa40fd3",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "74eadc34-8eb0-4eca-8338-2980e873de22",
+    "regionName" : "sidebar",
+    "type" : "region"
+  }, {
+    "id" : "ba465f60-13a6-4c2f-a463-46a16cdbee2d",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "84b16450-65a8-43bb-84ae-443012d048d3",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "971c086b-1ae2-4e71-abd2-464de79a0fe5",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Pxkm0LDdYpSdr1rTdsI1MSVssYjp70",
+  "type" : "view",
+  "viewType" : "home"
+}
