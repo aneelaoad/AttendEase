@@ -17,7 +17,9 @@
             <div class="description">
                 {!v.Description} 
             </div>
-        
+            <div class="Speakers">
+                {!v.Speakers} 
+            </div> 
 
         <div class="FAQ">
             {!v.FAQ} 
@@ -25,9 +27,7 @@
         <div class="contactUs">
             {!v.contactUs} 
         </div>     
-        <div class="Speakers">
-            {!v.Speakers} 
-        </div>   
+          
        
 
         
