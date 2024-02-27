@@ -111,3 +111,48 @@ textarea:focus {
     border-bottom: 2px solid var(--DARK-BLUE) !important;
  
 }
+@media (max-width: 1400px)  {
+.bgImage{
+    width: 100% !important;
+}
+}
+
+@media (max-width: 1100px)  {
+.bgImage{
+    width: 100% !important;
+}
+.slogan{
+    display: none;
+}
+.form-container{
+        top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+}
+input[type="submit"]{
+        width: 98%;
+}
+}
+@media (max-width: 600px)  {
+    .bgImage{
+        background: var(--DARK-BLUE) !important;
+    }
+    .form-container{
+ width: 100%;
+ left: 0;
+ background: white !important;
+    }
+    .form-col {
+  
+    margin-right: 0;
+	
+}
+}
+
+@media (max-width: 800px)  {
+    .form-container{
+        top: 45%;
+        
+        font-size: .6rem;}
+  
+}

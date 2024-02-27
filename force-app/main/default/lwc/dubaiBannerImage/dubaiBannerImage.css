@@ -73,3 +73,12 @@
 .input-row lightning-button {
     margin-left: 10px;
 } */
+
+
+@media (max-width: 500px)  {
+
+.banner-image-container .banner-content h1{
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+}

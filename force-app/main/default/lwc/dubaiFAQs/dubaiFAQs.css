@@ -58,3 +58,24 @@
 .heading1{
 	font-size: 3.1rem;
 }
+
+@media (max-width: 1500px)  {
+	.faq-section-container{
+		padding: 0 !important;
+	}
+	.faq-list{
+		margin: 10px;
+	}
+}
+
+@media (max-width: 550px)  {
+	.faq-section{
+		padding: 0 !important;
+	}
+	.direct-mail-section{
+		width: 100%;
+	}
+	.heading1{
+		font-size: 2rem;
+	}
+}

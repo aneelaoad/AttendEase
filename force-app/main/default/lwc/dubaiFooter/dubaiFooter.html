@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column companyLogo">
+        <div class="footer-container slds-grid slds-wrap">
+            <div class="companyLogo slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
                     
                 <template if:true={linksLoaded}>
                    <img src={companyLogo} />
@@ -13,14 +13,10 @@
 						</div>
 					</template>
 				</div>
-                <!-- <div class="social-icons">
-                    <img src="/assets/facebook-icon.png" alt="Facebook">
-                    <img src="/assets/twitter-icon.png" alt="Twitter">
-                    <img src="/assets/linkedin-icon.png" alt="LinkedIn">
-                </div> -->
+        
                 </template>
             </div>
-            <div class="footer-column">
+            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
                 <h4>Useful Links</h4>
                 <ul>
                     <li><a href="#">Cargo</a></li>
@@ -28,7 +24,7 @@
                     <li><a href="#">Port</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
+            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
                 <h4>About Us</h4>
                 <ul>
                     <li><a href="#">Our People</a></li>
@@ -36,7 +32,7 @@
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="footer-column">
+            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
                 <h4>Join Our Newsletter</h4>
                 <div class="newsletter">
                     <input type="email" placeholder="Enter your email">

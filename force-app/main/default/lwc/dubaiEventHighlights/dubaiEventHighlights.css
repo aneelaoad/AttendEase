@@ -69,7 +69,7 @@
     justify-content: space-around;
     width: 700px;
     margin: 40px auto;
-}
+  }
 p{
     margin: 10px 0;
     font-size: 1rem;
@@ -79,6 +79,25 @@ p{
         align-items: center;
     margin: auto;
 }
-@media (max-width: 600px)  {
+@media (max-width: 1000px)  {
+    .box-wrapper{
+            width: 100%;
+            flex-wrap: wrap;
+    }
+    .box{
+        margin: 10px;
+    }
+}
 
+@media (max-width: 500px)  {
+
+.event-highlight-section{
+    padding: 60px 10px;
+}
+.event-highlights{
+width: 90%;
+}
+.sub-content h1{
+   font-size: 2rem;
+}
 }
