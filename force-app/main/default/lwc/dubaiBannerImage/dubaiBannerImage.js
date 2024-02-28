@@ -1,7 +1,8 @@
 import { LightningElement, wire } from 'lwc';
 import getEventHightlight from '@salesforce/apex/EventController.getEvent';
 import DUBAI_ASSET from '@salesforce/resourceUrl/DUBAI_ASSET';
-
+import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
+import { subscribe,  MessageContext } from 'lightning/messageService';
 export default class DubaiBannerImage extends LightningElement {
     selectedEventId = 'a021m00001cTgUnAAK';
     buttonLabel = 'RSVP'
@@ -17,7 +18,20 @@ export default class DubaiBannerImage extends LightningElement {
     eventStartDateTime;
     eventEndDateTime;
 
+    @wire(MessageContext)
+    messageContext
+   
+    subscribeToScrollMsg(){
+      let scrollSubs = subscribe(this.messageContext, SCROLL_MESSAGE, (sectionMessage)=> this.handleMessage(sectionMessage))
+    }
 
+  handleMessage(sectionMessage){
+    let section = sectionMessage.section;
+    if(section === 'Banner'){
+            this.template.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
+      
+    }
+  }
     @wire(getEventHightlight, { eventId: '$selectedEventId' })
     wiredEventHightlight({ error, data }) {
         if (data) {
@@ -53,7 +67,7 @@ export default class DubaiBannerImage extends LightningElement {
         this.dubaiBuildingsIcon = DUBAI_ASSET + '/dubai.png';
         console.log('clicked');
         console.log(' this.backgroundImageUrl : ', this.backgroundImageUrl);
-     
+        this.subscribeToScrollMsg();
     }
 
     get backgroundImageStyle() {

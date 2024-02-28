@@ -9,7 +9,7 @@ myStickyHeader{
 	display: flex;
     justify-content: space-between;
     align-items: center;
-        padding: 15px 120px;
+        padding: 10px 120px;
     
 }
 .companyLogo img{
@@ -43,7 +43,7 @@ myStickyHeader{
     align-items: center;
     background-color: white;
     color: black;
-        padding: 10px 150px;
+        padding: 5px 150px;
 }
 
 .companyLogo {
@@ -79,6 +79,8 @@ myStickyHeader{
     cursor: pointer;
     color: var(--TEXT-COLOR);
     position: relative;
+    padding: 10px !important;
+
 
 }
 .nav-items li:hover {

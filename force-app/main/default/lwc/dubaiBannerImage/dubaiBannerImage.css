@@ -16,7 +16,7 @@
 }
 .banner-image-container .banner-content{
 	position: absolute;
-    top: 10%;
+    top: 20%;
     left: 50%;
 	color: white;
     transform: translate(-50%);

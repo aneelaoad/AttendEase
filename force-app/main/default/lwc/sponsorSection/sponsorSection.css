@@ -33,3 +33,10 @@
 .sectionSponser_outer{  padding: 55px 0px;}
 }
 .section { scroll-margin-top: 115px;}
+
+h1{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    color: var(--DARK-BLUE);
+    text-transform: uppercase;
+}

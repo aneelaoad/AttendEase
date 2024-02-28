@@ -323,6 +323,17 @@
       "id" : "a91e575d-31de-4b66-9122-25a93def0fcb",
       "regionName" : "BannerImage",
       "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:sponsorSection",
+        "id" : "5c8158b5-6fb3-4d5e-ace1-64d46775437e",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "111b648f-fc5e-4b94-a626-3651aae0dd37",
+      "regionName" : "Sponsors",
+      "type" : "region"
     } ],
     "type" : "view"
   } ]
