@@ -7,5 +7,12 @@
   "mainAppPageId" : "55ad45ea-a054-4d5b-9458-680c4a173ec4",
   "preferredDomain" : "none",
   "selfRegistrationRouteId" : "ad2dfa7e-3de0-4f94-8e5e-7566e97f0235",
+  "trustedSitesForScript" : [ {
+    "id" : "4a9dec9e-8dce-469c-a149-ad1e181a00b3",
+    "isActive" : true,
+    "trustedSiteName" : "xperra",
+    "trustedSiteUrl" : "https://xperra.com",
+    "type" : "trustedSitesForScripts"
+  } ],
   "type" : "site"
 }

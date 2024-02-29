@@ -1,0 +1,13 @@
+<apex:page controller="AttendeeTicketPDFController" renderAs="pdf" showHeader="false" sidebar="false">
+   
+    
+    <apex:image styleclass="logo" value="{!$Resource.DubaiDreaminLogo}"  alt="No Dubai Dreamin Logo is Showing" style="width:100px;height:100px;"/>
+    
+    <p style="text-align:center;font-size:30px;">Dear <b>{!attendeeTicket.attendeeName}</b></p>
+    
+    <div styleclass="ticket" style="background-color: coral;" >
+        <p 	style="text-align:center;font-size:30px;" >Your Ticket Number is: {!attendeeTicket.ticketNumber}</p>
+        <p  style="text-align:center;font-size:30px;">The Amount is: {!attendeeTicket.amount}</p>
+        <p 	style="text-align:center;font-size:30px;">The Transaction ID is: {!attendeeTicket.transactionId}</p>
+    </div>
+</apex:page>

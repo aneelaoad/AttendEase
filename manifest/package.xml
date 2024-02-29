@@ -229,7 +229,7 @@
         <members>RegNavbarSelector</members>
         <members>EventTestDataFactory</members>
         <members>DubaiRSVPController</members>
-
+        <members>AttendeeTicketPDFController</members>
         <members>EventControllerTest</members>
         <members>NavigationControlSelectorTest</members>
         <members>NavigationbarControllerTest</members>
@@ -240,6 +240,8 @@
         <members> SponsorControllerTest</members>
        <members> CompanyInformationControllerTest</members>
         <members>FooterControllerTest</members>
+        <members>ContentDocumentUtils</members>
+        <members>ContentVersionSelector</members>
 		<name>ApexClass</name>
 	</types>
     
@@ -286,7 +288,10 @@
        <name>EmailTemplate</name>
     </types>
 
-
+  <types> 
+      <members>AttendeeTicket</members>
+       <name>ApexPage</name>
+    </types>
 
 
     <types>
@@ -295,6 +300,7 @@
         <members>IMAGES</members>
         <members>DUBAI_ASSET</members>
         <members>SO_ICONS</members>
+         <members>DubaiDreaminLogo</members>
         <name>StaticResource</name>
     </types>
     <types>
@@ -304,7 +310,7 @@
      <types>
         <members>Prevention_Of_Duplication_Of_Speaker_Record</members>
         <members>Prevention_Duplication_of_Speaker_From_Same_Session</members>
-        <members>Payment_Verified_Flow</members>
+        <members>Payment_Verified_Flow-9</members>
        <name>Flow</name>
     </types>
  <types>

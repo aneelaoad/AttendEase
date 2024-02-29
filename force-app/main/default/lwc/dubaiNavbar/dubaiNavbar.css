@@ -79,7 +79,7 @@ myStickyHeader{
     cursor: pointer;
     color: var(--TEXT-COLOR);
     position: relative;
-    padding: 10px !important;
+    padding: 10px 0;
 
 
 }
@@ -136,8 +136,8 @@ li:last-child:hover {
         display: none; 
         flex-direction: column;
         position: absolute;
-        top: 85px;
-        left: 0;
+        top: 80px;
+        left: 1px;
         width: 100%;
         background: white;
         z-index: 1;
@@ -158,4 +158,16 @@ li:last-child:hover {
     width: 100%;
    
 }
+}
+
+@media only screen and (max-width:800px) and (min-width: 600px) {
+    .navbar{
+        padding: 0;
+    }
+    .nav-items{
+    justify-content: space-between;
+    }
+    li:last-child{
+            right: 20px;
+    }
 }
