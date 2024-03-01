@@ -6,7 +6,7 @@
 * @Last Modified by: 31/01/24
 */
 
-public with sharing class EventController {
+public without sharing class EventController {
 
 
     /**

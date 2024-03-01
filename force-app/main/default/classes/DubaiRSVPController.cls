@@ -50,23 +50,7 @@ public class DubaiRSVPController {
     }
       
   
-      
-    //   List<Question_Response__c> responseListToInsert = new List<Question_Response__c>();
-
-    // for (DenormalizedResponse res : responsesList) {
-    //     Question_Response__c response = new Question_Response__c();
-
-    //     response.Question_Name__c = res.questionId;
-    //     response.Response__c = res.response;
-    //     response.Attendee__c = attendee.Id;
-
-    //     responseListToInsert.add(response);
-    // }
-    // if( Schema.sObjectType.Question_Response__c.isCreateable()) {
-    //   if (!responseListToInsert.isEmpty()) {
-    //     insert responseListToInsert;
-    // } 
-    // }
+ 
       
        
 }

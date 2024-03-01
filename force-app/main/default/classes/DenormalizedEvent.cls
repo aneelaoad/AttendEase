@@ -4,7 +4,7 @@
 * @since: 20/12/23
 * @Last Modified by: Aneela Oad
 */
-public with sharing  class DenormalizedEvent {
+public without sharing  class DenormalizedEvent {
   @AuraEnabled public String eventDescription;
   @AuraEnabled public String aboutUsDescription;
    @AuraEnabled public String bannerImage;

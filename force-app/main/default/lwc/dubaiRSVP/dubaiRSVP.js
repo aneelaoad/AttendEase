@@ -5,7 +5,7 @@ import registerAttendee from '@salesforce/apex/DubaiRSVPController.registerAtten
 import { subscribe, MessageContext } from "lightning/messageService";
 
 export default class DubaiRSVP extends LightningElement {
-    selectedEventId = 'a021m00001cYNRRAA4'
+    selectedEventId = 'a021m00001cTgUnAAK'
 
     isModalOpen = false;
     formLoads = false;
@@ -17,7 +17,7 @@ export default class DubaiRSVP extends LightningElement {
     lastName;
     email;
     transactionId = '';
-    amount = '';
+    amount;
 
 
 
@@ -75,7 +75,7 @@ export default class DubaiRSVP extends LightningElement {
             lastName: this.lastName,
             email: this.email,
             transactionID: this.transactionId, 
-            amount: this.amount 
+            amount: parseInt(this.amount )
 
         }
         console.log('attendeeListObj : ', JSON.stringify(attendeeListObj));
@@ -101,6 +101,8 @@ export default class DubaiRSVP extends LightningElement {
         this.firstName = '';
         this.lastName = '';
         this.email = '';
+        this.transactionId= '';
+        this.amount = ' ';
         this.responsesWithQuestionIds = [];
         this.questionsList = [];
         this.formReset = true;

@@ -25,16 +25,16 @@
 						<div class="form-details">
 							<div style="">
 
-								<lightning-record-edit-form object-api-name="Contact">
+								<form >
 									<lightning-messages>
 									</lightning-messages>
 
-									<lightning-input-field field-name="FirstName" label="FirstName" onchange={handleFieldChange}>
-									</lightning-input-field>
-									<lightning-input-field field-name="LastName" label="LastName" onchange={handleFieldChange}>
-									</lightning-input-field>
-									<lightning-input-field field-name="Email" label="Email" onchange={handleFieldChange}>
-									</lightning-input-field>
+									<lightning-input field-name="FirstName" label="FirstName" onchange={handleFieldChange}>
+									</lightning-input>
+									<lightning-input field-name="LastName" label="LastName" onchange={handleFieldChange}>
+									</lightning-input>
+									<lightning-input field-name="Email" label="Email" onchange={handleFieldChange}>
+									</lightning-input>
 									<hr />
 									<!-- ----payment starts from here---- -->
 									<div class="payment-section">
@@ -54,7 +54,7 @@
 										<lightning-button label="Cancel" onclick={closeModal}></lightning-button>
 
 									</div>
-								</lightning-record-edit-form>
+								</form>
 							</div>
 						</div>
 					</section>
