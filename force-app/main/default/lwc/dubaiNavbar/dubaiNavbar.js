@@ -3,16 +3,29 @@ import getNavigationItems from '@salesforce/apex/NavigationbarController.getNavi
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import EVENT_CHANNEL from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { publish, subscribe, MessageContext, createMessageContext } from 'lightning/messageService';
+import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 
 
 
 export default class DubaiNavbar extends LightningElement {
 
-  selectedEventId = 'a021m00001cTgUnAAK';
+  //selectedEventId = 'a021m00001cTgUnAAK';
+  selectedEventId;
   buttonLabel = 'Contact Us';
   companyLogo;
   navigationItems = [];
   menuOpen = false;
+
+  @wire(getDubaiDreaminEventId)
+  wiredEventId({ error, data }) {
+  if (data) {
+      
+      console.log('Dubai Dreamin Event ID:', data);
+      this.selectedEventId=data;
+  } else if (error) {
+      console.error('getDubaiDreaminEventId Error:', error);
+  }
+  }
 
 
   @wire(MessageContext)
@@ -53,17 +66,17 @@ export default class DubaiNavbar extends LightningElement {
 
 
 
-  publishEventId() {
-    // 
+  // publishEventId() {
+  //   // 
 
 
-    const payload = { eventId: this.selectedEventId };
-    publish(createMessageContext(), EVENT_CHANNEL, payload);
+  //   const payload = { eventId: this.selectedEventId };
+  //   publish(createMessageContext(), EVENT_CHANNEL, payload);
 
-    // console.log('publishss : ',publish(this.messageContext, EVENTID_MESSAGE, payload));
+  //   // console.log('publishss : ',publish(this.messageContext, EVENTID_MESSAGE, payload));
 
 
-  }
+  // }
   handleNavItemClick(event) {
     const section = event.target.dataset.section;
     const payload = { section: section };
@@ -93,7 +106,7 @@ export default class DubaiNavbar extends LightningElement {
   }
 
   connectedCallback() {
-    this.publishEventId();
+    // this.publishEventId();
     // const payload = {eventId: this.selectedEventId};
     //   publish(this.messageContext, EVENTID_MESSAGE, payload);
     // this.publishEventId();

@@ -39,4 +39,16 @@ public Event__c getEventById(String eventId){
         }
         return null;
     }
+    // Fetch Dubai DreamIn Event
+    public static String getDubaiDreaminEvent(){
+        String eventId;
+        List<Event__c> event=[SELECT Id,Name FROM Event__c WHERE Name LIKE 'Dubai Dreamin%' Limit 1 ];
+            for(Event__c ev:event){
+               eventId=ev.Id;
+            }
+       // System.debug('Dubai DreamIn Event Id'+eventId);
+        return eventId;
+    }
+    
+    
  }

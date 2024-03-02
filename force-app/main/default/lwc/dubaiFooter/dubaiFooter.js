@@ -1,6 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 import getFooterItems from '@salesforce/apex/FooterController.getFooterItems';
 // import SOCIAL_ICONS from '@salesforce/resourceUrl/SOCIAL_ICONS';
+import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 import SOCIAL_ICONS from '@salesforce/resourceUrl/SO_ICONS';
 import getNavigationItems from '@salesforce/apex/NavigationbarController.getNavigationItems';
 
@@ -9,8 +10,20 @@ export default class DubaiFooter extends LightningElement {
     socialIcons = SOCIAL_ICONS;
     linksLoaded = false;
     socialLinks = [];
-    selectedEventId = 'a021m00001cTgUnAAK';
+    //selectedEventId = 'a021m00001cTgUnAAK';
+    selectedEventId
     companyLogo
+
+    @wire(getDubaiDreaminEventId)
+wiredEventId({ error, data }) {
+if (data) {
+    
+    console.log('Dubai Dreamin Event ID:', data);
+    this.selectedEventId=data;
+} else if (error) {
+    console.error('getDubaiDreaminEventId Error:', error);
+}
+}
 
     @wire(getFooterItems, { eventId: '$selectedEventId' })
 

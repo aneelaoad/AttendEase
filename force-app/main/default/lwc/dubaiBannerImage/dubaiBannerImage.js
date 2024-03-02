@@ -1,10 +1,12 @@
 import { LightningElement, wire } from 'lwc';
 import getEventHightlight from '@salesforce/apex/EventController.getEvent';
+import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 import DUBAI_ASSET from '@salesforce/resourceUrl/DUBAI_ASSET';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import { subscribe,  MessageContext } from 'lightning/messageService';
 export default class DubaiBannerImage extends LightningElement {
-    selectedEventId = 'a021m00001cTgUnAAK';
+   // selectedEventId = 'a021m00001cTgUnAAK';
+   selectedEventId;
     buttonLabel = 'RSVP'
     backgroundImageUrl;
     dubaiBuildingsIcon;
@@ -17,6 +19,17 @@ export default class DubaiBannerImage extends LightningElement {
     eventTime;
     eventStartDateTime;
     eventEndDateTime;
+
+    @wire(getDubaiDreaminEventId)
+    wiredEventId({ error, data }) {
+    if (data) {
+        
+        console.log('Dubai Dreamin Event ID:', data);
+        this.selectedEventId=data;
+    } else if (error) {
+        console.error('getDubaiDreaminEventId Error:', error);
+    }
+}
 
     @wire(MessageContext)
     messageContext

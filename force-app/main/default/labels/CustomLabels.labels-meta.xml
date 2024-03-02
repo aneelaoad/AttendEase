@@ -50,14 +50,6 @@
         <value>FAQ</value>
     </labels>
     <labels>
-        <fullName>NAVBAR_MISSING_MESSAGE</fullName>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>NAVBAR_MISSING_MESSAGE</shortDescription>
-        <value>This event is missing the navigation bar.
-Please check your settings.</value>
-    </labels>
-    <labels>
         <fullName>RSVP_LABEL</fullName>
         <language>en_US</language>
         <protected>true</protected>

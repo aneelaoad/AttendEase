@@ -4,7 +4,7 @@
 * @since: 20/12/23
 * @Last Modified by: Aneela Oad
 */
-public without sharing  class DenormalizedEvent {
+public with sharing  class DenormalizedEvent {
   @AuraEnabled public String eventDescription;
   @AuraEnabled public String aboutUsDescription;
    @AuraEnabled public String bannerImage;
@@ -16,6 +16,7 @@ public without sharing  class DenormalizedEvent {
    @AuraEnabled public String eventStreet;
    @AuraEnabled public DateTime eventStartDateTime;
    @AuraEnabled public DateTime eventEndDateTime;
+   @AuraEnabled public String dubaiDreamineventId;
  
   @AuraEnabled public String titleWarning;
   @AuraEnabled public String descriptionWarning;

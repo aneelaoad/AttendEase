@@ -1,11 +1,11 @@
 import { LightningElement, wire, api, track } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import registerAttendee from '@salesforce/apex/DubaiRSVPController.registerAttendee';
-// import getEventQuestions from '@salesforce/apex/AttendeeRegistrationController.getEventQuestions';
-import { subscribe, MessageContext } from "lightning/messageService";
+import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 
 export default class DubaiRSVP extends LightningElement {
-    selectedEventId = 'a021m00001cTgUnAAK'
+    // selectedEventId = 'a021m00001cTgUnAAK'
+    selectedEventId;
 
     isModalOpen = false;
     formLoads = false;
@@ -17,8 +17,19 @@ export default class DubaiRSVP extends LightningElement {
     lastName;
     email;
     transactionId = '';
-    amount;
+    amount = '';
 
+
+    @wire(getDubaiDreaminEventId)
+    wiredEventId({ error, data }) {
+    if (data) {
+        
+        console.log('Dubai Dreamin Event ID:', data);
+        this.selectedEventId=data;
+    } else if (error) {
+        console.error('getDubaiDreaminEventId Error:', error);
+    }
+    }
 
 
     openModal() {
@@ -36,9 +47,15 @@ export default class DubaiRSVP extends LightningElement {
 
 
 
-
+    @wire(getDubaiDreaminEventId)
+    wiredEventId({ error, data }) {
+    if (data) {
+       this.selectedEventId=data;
+    } else if (error) {
+        console.error('getDubaiDreaminEventId Error:', error);
+    }
+    }
     handleFieldChange(event) {
-        // const fieldName = event.target.fieldName;
         const fieldName = event.target.label;
         const value = event.target.value;
         switch (fieldName) {
@@ -108,8 +125,5 @@ export default class DubaiRSVP extends LightningElement {
         this.formReset = true;
     }
 
-    connectedCallback() {
-        // this.subscribeToMessageChannel();
-
-    }
+    
 }
