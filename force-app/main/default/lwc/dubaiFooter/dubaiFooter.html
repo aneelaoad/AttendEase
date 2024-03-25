@@ -1,7 +1,8 @@
 <template>
     <footer class="footer">
         <div class="footer-container slds-grid slds-wrap">
-            <div class="companyLogo slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
+            <!-- <div class="companyLogo slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12"> -->
+            <div class="companyLogo">
                     
                 <template if:true={linksLoaded}>
                    <img src={companyLogo} />
@@ -15,33 +16,33 @@
 				</div>
         
                 </template>
+                 <p class="copy-right">© 2024 Dubaidreamin All rights reserved.</p>
+
             </div>
-            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
-                <h4 style="margin-bottom:20px">Useful Links</h4>
-                <ul>
-                    <li><a href="#">Cargo</a></li>
-                    <li><a href="#">Ship</a></li>
-                    <li><a href="#">Port</a></li>
-                </ul>
-            </div>
-            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
+            
+            <!-- <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
                 <h4 style="margin-bottom:20px">About Us</h4>
                 <ul>
-                    <li><a href="#">Our People</a></li>
-                    <li><a href="#">Our Activities</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
+                    <template for:each={navigationItems} for:item="navItem">
+						<li onclick={handleNavItemClick} data-section={navItem.section} key={navItem.DeveloperName}>
+							{navItem.menuTab} </li>
+					</template>
+                      </ul>
+            </div> -->
+            <!-- <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12">
                 <h4 style="margin-bottom:20px">Join Our Newsletter</h4>
                 <div class="newsletter">
                     <input type="email" placeholder="Enter your email">
                     <button>Subscribe</button>
                 </div>
-            </div>
+            </div> -->
+            <!-- <div class="slds-col slds-small-size_12-of-12 slds-medium-size_6-of-12 slds-large-size_3-of-12" style="text-align:center"> -->
+
+                 <!-- <p class="copy-right">© 2024 Dubaidreamin All rights reserved.</p> -->
+
+        <!-- </div> -->
         </div>
 
-        <hr/>
-        <p class="copy-right">© 2024 Dubaidreamin All rights reserved.</p>
+        <!-- <hr/> -->
     </footer>
 </template>

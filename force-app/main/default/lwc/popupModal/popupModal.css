@@ -8,6 +8,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+   
     z-index: 99;
 }
 
@@ -16,18 +17,33 @@
 }
 
 .modal-content {
+    /* background-image: url(/dubaidreamin/resource/1710324443000/DUBAI_ASSET/formBg.png); */
+    /* background-color: transparent; */
     background-color: #fff;
     padding: 20px;
     border-radius: 3px;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 20px;
-    border: 3px solid  #8c7ae6;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
+    border: 3px solid  var(--LIGHT-BLUE);
+    /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px 2px 0px inset;}
 
 .modal-footer {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
 }
+
+.modal-content2 {
+    /* background-image: url(/dubaidreamin/resource/1710324443000/DUBAI_ASSET/formBg.png); */
+    /* background-color: transparent; */
+    background-color: #fff !important;
+    padding: 20px;
+    border-radius: 3px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 20px;
+    border: 3px solid  var(--LIGHT-BLUE);
+    /* box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px 2px 0px inset;}

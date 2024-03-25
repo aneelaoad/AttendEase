@@ -1,8 +1,8 @@
 {
-  "appPageId" : "dfb6d148-efb7-4fc4-8582-99807b0aa8aa",
+  "appPageId" : "037cb2ea-eff2-4b4a-8f6b-dee80b19404d",
   "componentName" : "siteforce:sldsTwoCol84SidebarFeaturedLayout",
   "dataProviders" : [ ],
-  "id" : "00a928f0-b067-4f83-8709-b44c50454261",
+  "id" : "f680244f-f13d-439f-9dc6-c68818e1c8e2",
   "label" : "Topic Detail",
   "regions" : [ {
     "components" : [ {
@@ -16,12 +16,12 @@
         "uniqueNameOrId" : ""
       },
       "componentName" : "forceCommunity:headline",
-      "id" : "7b6c53a4-c203-401a-ac44-dbc042371e40",
+      "id" : "0b6891e0-5657-4bc9-ab28-05e7cb372366",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "75eccfb0-765b-4dc3-bc7f-ae8cf9bbed74",
+    "id" : "6c2ac46c-66a1-4e7f-804a-c5055bc7b6ef",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -31,7 +31,7 @@
         "topicId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:topicDescription",
-      "id" : "f99e4181-349e-40b9-882f-28391c9eb12b",
+      "id" : "4b8086c9-cc93-4f2a-a15c-94597774fea6",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -44,7 +44,7 @@
         "topicId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:topicMetrics",
-      "id" : "a5c93a64-45aa-4418-8ce6-4161367eb633",
+      "id" : "4ed8d9fd-2b2a-4c89-919b-a6fef7cb191f",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -73,7 +73,7 @@
         "uneditableTopics" : false
       },
       "componentName" : "forceCommunity:askCommunity",
-      "id" : "5f95eb5f-af32-4d41-8b83-2f9a7d82f295",
+      "id" : "679ec257-d82e-47ed-a777-2420f0f2b6e4",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -91,12 +91,12 @@
         "showNotificationMenu" : true
       },
       "componentName" : "forceCommunity:follow",
-      "id" : "5f0b3312-e501-4ee3-826d-b0514313d020",
+      "id" : "531cc496-3353-43d1-9d61-de71be12b6de",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "a78a4d0e-ef7c-44d2-b582-db054caf361b",
+    "id" : "6432b15f-cea3-4319-8c6e-2fe5f16ae678",
     "regionName" : "featured",
     "type" : "region"
   }, {
@@ -114,12 +114,12 @@
         "topicId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:resultsList",
-      "id" : "a0944b6c-7588-4232-938f-51df3de264af",
+      "id" : "1fd6af8b-f0f0-4fd6-a233-8e00a945fe59",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "99041778-60cb-49d2-9275-e7d9dab538be",
+    "id" : "c557506c-d944-4136-be32-5ba0cebad582",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -130,7 +130,7 @@
         "topicId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:relatedTopics",
-      "id" : "4edb29be-3d9f-49bd-af4a-4a951c8925bb",
+      "id" : "38485074-3a00-47cf-be75-e04aa8b37245",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -140,12 +140,12 @@
         "topicId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:knowledgeablePeople",
-      "id" : "9b414682-23eb-4e7e-b46c-d21b45112195",
+      "id" : "f201bd2c-469b-4c20-b1ee-8d405da0da0a",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "b4efaa1e-6cdf-4b1b-8ffc-2b39904faf88",
+    "id" : "56b48e1e-6d7e-409c-9d86-428a55b5a071",
     "regionName" : "sidebar",
     "type" : "region"
   }, {
@@ -179,12 +179,12 @@
         "showTopics" : true
       },
       "componentName" : "siteforce:napiliFooter",
-      "id" : "0e7f2e99-6b59-4656-88a2-edef44abb694",
+      "id" : "8ca6e6b3-bc3e-4bc4-bf65-a91ffb8dfaac",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "e3f47a32-2c6a-4a33-af64-3c39bb72578e",
+    "id" : "52c88666-eac1-433f-9e80-8327dafe11cd",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -195,11 +195,11 @@
         "title" : "{!Record._Title}"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "d75f3811-669e-41e9-9a23-51ed66b7b0b8",
+      "id" : "b8072fe3-66de-4762-8f9d-02583870a440",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "a7d20203-37c3-4dc1-83bd-bac527e69d75",
+    "id" : "05b45833-3cb6-49c1-9fa9-fce4eff21071",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],

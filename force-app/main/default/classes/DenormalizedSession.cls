@@ -21,6 +21,8 @@ public with sharing class DenormalizedSession {
     @AuraEnabled
 	public String sessionDuration;
     @AuraEnabled
+	public String sessionTrack;
+    @AuraEnabled
 	public List<DenormalizedSpeaker> lstOfSpeakers;
 
     public DenormalizedSession(){}

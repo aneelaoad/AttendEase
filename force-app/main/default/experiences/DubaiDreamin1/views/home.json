@@ -1,8 +1,8 @@
 {
-  "appPageId" : "55ad45ea-a054-4d5b-9458-680c4a173ec4",
+  "appPageId" : "bb439056-5ce0-40d9-9b30-ba6626856be8",
   "componentName" : "siteforce:sldsTwoCol84SidebarFeaturedLayout",
   "dataProviders" : [ ],
-  "id" : "4c58f0a9-c4a0-4d7a-b493-709bc6c2c11f",
+  "id" : "b08a8ebc-6e56-483a-9d31-ddf593f86eec",
   "label" : "Home",
   "regions" : [ {
     "components" : [ {
@@ -16,12 +16,12 @@
         "uniqueNameOrId" : ""
       },
       "componentName" : "forceCommunity:headline",
-      "id" : "900c0b76-1d0e-4445-9a38-2959b26465c7",
+      "id" : "8815ed20-1d59-4e11-a114-79450085ace5",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "5c1a3c83-df9c-4f35-88a3-989e2c3674db",
+    "id" : "6849b4a5-1ec2-4de8-a2a5-bc7dfc312dc1",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -50,12 +50,12 @@
         "uneditableTopics" : false
       },
       "componentName" : "forceCommunity:askCommunity",
-      "id" : "13d21888-b8ad-44f7-9ee7-34f760fb577d",
+      "id" : "85533b53-a1c2-47c2-b340-dbcca85ddae0",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "ffcad035-68c6-4755-b90b-379fe774b68c",
+    "id" : "2c92f36c-d4a2-4d25-84b5-892ea194edde",
     "regionName" : "featured",
     "type" : "region"
   }, {
@@ -79,12 +79,12 @@
         "textPosition" : "center center"
       },
       "componentName" : "forceCommunity:homeTabs",
-      "id" : "c1390a61-9f3e-4d75-9cb5-2dbba94fbfc7",
+      "id" : "76c656af-bd1b-4123-b2d9-ae58ca589387",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "df98a9bb-58cf-44a1-9462-0ee4acafce93",
+    "id" : "54a8b752-d021-48b5-8cf1-1fe2c2e88a5c",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -94,7 +94,7 @@
         "title" : ""
       },
       "componentName" : "forceCommunity:recommendations",
-      "id" : "e1a7bee1-505d-4d4a-8f5d-b80c500b408b",
+      "id" : "a9d19010-1870-46fe-aa66-f057458e3c6b",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -111,7 +111,7 @@
         "tooltipText" : "Earn points and climb to new levels when you contribute in the experience!"
       },
       "componentName" : "forceCommunity:reputationLeaderboard42",
-      "id" : "cfb4625b-6699-408e-9772-b4608cbd3d3e",
+      "id" : "b8f12b47-51a8-42cc-8cd3-7960b4671e95",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -122,12 +122,12 @@
         "title" : "Trending Topics"
       },
       "componentName" : "forceCommunity:trendingTopics",
-      "id" : "1f22de5f-744b-45bf-aa3e-805c891749f0",
+      "id" : "587c648a-3420-46df-89da-0a01f0ad8750",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "793a0c32-7a8a-473a-b62c-7fe254467d1f",
+    "id" : "fcbf7e91-840f-488c-b8b3-3e544589080d",
     "regionName" : "sidebar",
     "type" : "region"
   }, {
@@ -161,12 +161,12 @@
         "showTopics" : true
       },
       "componentName" : "siteforce:napiliFooter",
-      "id" : "4f0573b0-92fc-4bac-b7f2-1183d5150d2f",
+      "id" : "8c7d3f80-546e-46b7-a40a-1c2801be4f85",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "d15c781b-3e37-4eee-b5e3-c0be3e75248f",
+    "id" : "5361f12e-f788-4f3a-b26f-56db692f52ae",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -177,15 +177,15 @@
         "title" : "Home"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "263163b3-f570-44fc-b967-d8ee8a2c4c9d",
+      "id" : "b3e7eae4-a930-494d-90ad-1d06e390cdd1",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "6d649480-22cf-44b8-86de-e5734f917d15",
+    "id" : "5e4a01b4-3e08-4bc8-ba12-67a6fcfdc392",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
-  "themeLayoutType" : "IJPswM7I5HUScuQXvFnxFZ24h6y05v",
+  "themeLayoutType" : "ifXoBweqt67RTp1xr7f855U79SBfvW",
   "type" : "view",
   "viewType" : "home"
 }

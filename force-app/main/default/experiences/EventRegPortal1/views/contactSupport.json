@@ -1,11 +1,11 @@
 {
-  "appPageId" : "fd0e3d40-e170-400a-8b32-e585299d7d1b",
+  "appPageId" : "55f8d622-5481-4261-8613-31208a63a484",
   "componentName" : "siteforce:sldsTwoCol66Layout",
   "dataProviders" : [ ],
-  "id" : "80b885ad-a43b-4ca3-a79e-ce7776db9221",
+  "id" : "ece47fba-fc21-45fd-9c91-9a806077593a",
   "label" : "Contact Support",
   "regions" : [ {
-    "id" : "45e253c2-7125-4548-a9c8-29091fa4bbb9",
+    "id" : "5088eb7c-e40c-4183-98fe-314bd4a7846c",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -35,12 +35,12 @@
         "requestSummaryText" : "Case summary"
       },
       "componentName" : "forceCommunity:contactSupportForm",
-      "id" : "85b50c14-4739-44dc-8b09-9e634314b141",
+      "id" : "71c4ecdf-62c8-4525-99ff-d342596134c4",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "13aedf75-497a-4b3a-85d4-d9d09c6e92eb",
+    "id" : "2f13e851-e131-4fb6-a73e-f04d16e9ebad",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -60,16 +60,16 @@
         "topicId" : ""
       },
       "componentName" : "forceCommunity:caseDeflection",
-      "id" : "947d2a42-a3e4-41f4-920a-1ca8e781ebbd",
+      "id" : "703ec03d-6b84-4d98-af77-8b66907c4580",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "38b980af-f1d5-45a1-a037-9605c95f1058",
+    "id" : "b3881806-7b12-455f-8cde-968a1a01947f",
     "regionName" : "sidebar",
     "type" : "region"
   }, {
-    "id" : "3eef8950-9ad1-4b95-ae91-3f319d5dda00",
+    "id" : "281e5861-93c5-463b-a828-cbd68bc24f0c",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -80,11 +80,11 @@
         "title" : "Contact Support"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "96e2cfe6-fadd-4cdc-a833-a32f2c4fa0b5",
+      "id" : "e402ab44-90b9-4b97-a682-5b39947b23a5",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "c415c4e7-96d8-4128-aa84-e412d6b249e0",
+    "id" : "e00eedb2-cbef-4c22-8604-2c54d87e7a8f",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],

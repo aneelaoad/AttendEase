@@ -1,4 +1,4 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, wire, api } from 'lwc';
 import getEventHighlight from '@salesforce/apex/EventController.getEvent';
 import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 import { subscribe, MessageContext } from 'lightning/messageService';
@@ -7,6 +7,7 @@ import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import DUBAI_ASSET from '@salesforce/resourceUrl/DUBAI_ASSET';
 
 export default class DubaiEventHighlights extends LightningElement {
+    //selectedEventId = 'a021m00001cTgUnAAK';
     selectedEventId;
     eventTitle;
     eventStreet;
@@ -18,29 +19,42 @@ export default class DubaiEventHighlights extends LightningElement {
     calenderIcon;
     pinkCircle;
     eventSubscription;
+    @api counterDateTime;
     scrollSubscription;
     @wire(MessageContext) messageContext;
 
+ isModalOpen = false;
 
-
-    @wire(getDubaiDreaminEventId)
-    wiredEventId({ error, data }) {
-        if (data) {
-
-            this.selectedEventId = data;
-        } else if (error) {
-            console.error('getDubaiDreaminEventId Error:', error);
-        }
+    openModal() {
+        this.isModalOpen = true;
     }
+
+    closeModal() {
+        this.isModalOpen = false;
+    }
+
+// subscribeToEventMessageChannel() {
+//     this.subscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage));
+//   }
+@wire(getDubaiDreaminEventId)
+wiredEventId({ error, data }) {
+    if (data) {
+        
+       
+        this.selectedEventId=data;
+    } else if (error) {
+      
+    }
+}
 
     subscribeToMessageChannels() {
 
         this.scrollSubscription = subscribe(this.messageContext, SCROLL_MESSAGE, (message) => this.handleScroll(message));
-        this.eventSubscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage));
-
+     this.eventSubscription = subscribe(this.messageContext, EVENT_MESSAGE, (eventMessage) => this.handleMessage(eventMessage));
+  
 
     }
-
+    
     handleScroll(message) {
         const scrollSection = message.section;
         if (scrollSection === 'About Us') {
@@ -50,7 +64,7 @@ export default class DubaiEventHighlights extends LightningElement {
     }
 
     handleMessage(eventMessage) {
-        this.selectedEventId = eventMessage.eventID;
+         this.selectedEventId = eventMessage.eventID;
     }
 
     @wire(getEventHighlight, { eventId: '$selectedEventId' })
@@ -60,8 +74,11 @@ export default class DubaiEventHighlights extends LightningElement {
             this.eventStreet = data.eventStreet;
             this.eventCity = data.eventCity;
             this.eventCountry = data.eventCountry;
+            this.counterDateTime = data.eventStartDateTime;
             this.eventStartDateTime = new Date(data.eventStartDateTime);
             this.eventEndDateTime = new Date(data.eventEndDateTime);
+       
+
         } else if (error) {
             console.error('getEventHighlight Error:', error);
         }
@@ -86,7 +103,7 @@ export default class DubaiEventHighlights extends LightningElement {
         const endTime = this.eventEndDateTime ? this.eventEndDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '';
         return `${startTime} to ${endTime}`;
     }
-
+   
 
 
 
@@ -99,9 +116,9 @@ export default class DubaiEventHighlights extends LightningElement {
         this.calenderIcon = DUBAI_ASSET + '/calender-icon.png';
         this.pinkCircle = DUBAI_ASSET + '/pink-circle.png';
 
-
+        
     }
 
-
+   
 
 }

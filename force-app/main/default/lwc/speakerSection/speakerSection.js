@@ -10,17 +10,17 @@ import ButtonLabel from '@salesforce/label/c.Button_View_Label';
 import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 
 export default class speakerSection extends LightningElement {
-  selectedEventId;
-
-  showModal = false;
-  showAllSpeakers = false;
   subscription = null;
-
-
+  scrlMsg;
+  @track speakerInformation;
+  showAllSpeakers = false;
+  @track allspeakerInformation = [];
+  @track threespeakerInformation;
+  selectedEventId;
+  showModal = false;
   speakerLabel = SpeakerLabel;
   allSpeakersLabel = AllSpeakersLabel;
   buttonLabel = ButtonLabel;
-
   speakerId;
   profilePlaceholder;
   speakerModalDetails;
@@ -30,16 +30,24 @@ export default class speakerSection extends LightningElement {
   speakerEmail;
   speakerPhone;
   speakerImage;
-  scrlMsg;
 
-  @track speakerInformation;
-  @track allspeakerInformation = [];
-  @track threespeakerInformation;
 
+
+    @wire(getDubaiDreaminEventId)
+    wiredEventId({ error, data }) {
+      console.log('speaker data'+data);
+    if (data) {
+
+        this.selectedEventId=data;
+       
+    } else if (error) {
+        console.error('getDubaiDreaminEventId Error:', error);
+    }
+    }
   openModal(event) {
     this.showModal = true;
     this.speakerId = event.target.dataset.speakerid
-
+   
     this.speakerModalDetails = this.speakerInformation.find(speaker => speaker.speakerName === this.speakerId)
 
     this.speakerName = this.speakerModalDetails.speakerName;
@@ -58,15 +66,6 @@ export default class speakerSection extends LightningElement {
 
   }
 
-  @wire(getDubaiDreaminEventId)
-  wiredEventId({ error, data }) {
-    if (data) {
-
-      this.selectedEventId = data;
-    } else if (error) {
-      console.error('getDubaiDreaminEventId Error:', error);
-    }
-  }
   @wire(MessageContext) messageContext;
 
 
@@ -75,31 +74,30 @@ export default class speakerSection extends LightningElement {
     this.scrlMsg = subscribe(this.messageContext, SCROLL_MESSAGE, (message) => this.handleScroll(message));
   }
 
-  @wire(getSpeakers, { eventId: '$selectedEventId' })
-  wiredData({ error, data }) {
-    if (data) {
-      this.speakerInformation = data;
-      this.threespeakerInformation = this.speakerInformation.slice(0, 3);
-    } else if (error) {
-      console.error('Error:', error);
-    }
+@wire(getSpeakers, { eventId: '$selectedEventId' })
+wiredData({ error, data }) {
+  if (data) {
+ this.speakerInformation = data;
+   this.threespeakerInformation = this.speakerInformation.slice(0, 3);  } else if (error) {
+     console.error('Error:', error);
   }
-  // handleMessage(eventMessage) {
-  //   this.selectedEventId = eventMessage.eventId;
+}
+  handleMessage(eventMessage) {
+    this.selectedEventId = eventMessage.eventId;
+   
+    getSpeakers({ eventId: this.selectedEventId })
+      .then(data => {
+        this.speakerInformation = data;
+        this.threespeakerInformation = this.speakerInformation.slice(0, 3);
 
-  //   getSpeakers({ eventId: this.selectedEventId })
-  //     .then(data => {
-  //       this.speakerInformation = data;
-  //       this.threespeakerInformation = this.speakerInformation.slice(0, 3);
-
-  //     });
-  // }
+      });
+  }
 
   handleScroll(message) {
     const scrollSection = message.section;
 
     if (scrollSection === 'Speakers') {
-
+   
       this.template.querySelector('.sectionSpeaker').scrollIntoView({ behavior: 'smooth' });
 
     }

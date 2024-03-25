@@ -1,31 +1,31 @@
 {
-  "activeBrandingSetId" : "fec5a794-c596-40f2-9786-7cc75ac1ae59",
+  "activeBrandingSetId" : "72a0bbad-0500-4991-b3e2-c68c53de1cbb",
   "customCSS" : "",
   "developerName" : "service",
-  "id" : "480473fc-b7de-4692-9888-26f9b5e74cfa",
+  "id" : "1f4add09-0a06-4d09-8fc5-5a9673904e9e",
   "label" : "Customer Service",
   "layouts" : {
-    "B3gtuPG3JcS1HP7OhlfDQ09sRW1NSe" : "cc05fdb5-9381-49e3-958b-4a4e624ef4ef",
-    "Inner" : "a240dba0-1468-479d-911b-387d725f7370",
-    "Login" : "ff96c68b-b4c3-4153-ac67-c473d1152414",
-    "ServiceNotAvailable" : "b39380ff-0ac0-499a-9bdc-cdc66fe45d49"
+    "Inner" : "5c0aa435-583d-43e5-89c9-a68d47ac104e",
+    "Login" : "e8793f61-d3fb-4400-8505-428ac5bd055a",
+    "ServiceNotAvailable" : "afc149eb-0cc6-421f-8de5-a564fd4c0ea7",
+    "oBKUghGCv7ehblEYmjZ6yhE27mf3pI" : "4d830bdf-9971-4de3-bab9-64f1796eaece"
   },
   "type" : "theme",
   "views" : [ {
     "componentAttributes" : { },
     "componentName" : "salesforceIdentity:loginBody2",
-    "id" : "ff96c68b-b4c3-4153-ac67-c473d1152414",
+    "id" : "e8793f61-d3fb-4400-8505-428ac5bd055a",
     "label" : "Login",
     "regions" : [ {
-      "id" : "efc288b0-b57a-4930-9080-770a1001f8a5",
+      "id" : "dd8dd53e-ca64-42a1-b37e-f14a9f70fb4c",
       "regionName" : "header",
       "type" : "region"
     }, {
-      "id" : "85918203-db1d-467a-a809-c84428b15435",
+      "id" : "5e0236d6-fbe0-4151-862b-b89d0be72086",
       "regionName" : "content",
       "type" : "region"
     }, {
-      "id" : "50ae7a5b-6fc6-44ac-b5bd-04d88782edb0",
+      "id" : "d3a5b073-ae57-4301-b615-b25a208581ee",
       "regionName" : "footer",
       "type" : "region"
     } ],
@@ -38,10 +38,10 @@
       "isPageWidthFixed" : true
     },
     "componentName" : "siteforce:serviceBody",
-    "id" : "a240dba0-1468-479d-911b-387d725f7370",
+    "id" : "5c0aa435-583d-43e5-89c9-a68d47ac104e",
     "label" : "Default",
     "regions" : [ {
-      "id" : "6de4f531-831e-4f3b-9a36-08cf385f011d",
+      "id" : "5b2ae9e5-dfd0-4d22-890d-2d4f875c9eb3",
       "regionName" : "customHeader",
       "type" : "region"
     }, {
@@ -73,11 +73,11 @@
           "signInActionLabel" : "Sign in to ask the community"
         },
         "componentName" : "forceCommunity:searchBox",
-        "id" : "7fb69360-a57c-4abc-baae-ad833fb9e9d1",
+        "id" : "2c828762-d35d-4bc9-bbcb-89f4b0b67f2b",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "2c90bc8c-b86d-4828-8ad0-ac51f40538b9",
+      "id" : "c295f71d-aac2-4f45-8346-bfac51fb990d",
       "regionName" : "search",
       "type" : "region"
     }, {
@@ -100,11 +100,11 @@
           "viewProfileLabel" : "My Profile"
         },
         "componentName" : "selfService:userProfileMenu",
-        "id" : "f9192e72-9759-46e0-823f-297534483da8",
+        "id" : "349a3662-098d-45d4-aa24-6b9e8561d1c9",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "b3ab1764-4c93-42bf-8bf5-2798bb794e8f",
+      "id" : "5cb35898-78d8-413b-b3e8-412384232597",
       "regionName" : "profileMenu",
       "type" : "region"
     }, {
@@ -115,19 +115,19 @@
           "hideHomeText" : false
         },
         "componentName" : "forceCommunity:globalNavigation",
-        "id" : "8b8d0f46-ba4a-4dfe-8c63-6d8a0229ca13",
+        "id" : "05284b81-afee-4996-acb1-13b3694099ea",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "cdc997e9-523d-45b4-bd57-d4026eebddfd",
+      "id" : "2e954213-2990-4f4e-b670-3ac829cf1950",
       "regionName" : "navBar",
       "type" : "region"
     }, {
-      "id" : "2224235b-0c66-4bf2-9ebb-21ce8e755ad1",
+      "id" : "4d86d4b2-d9bb-4afc-b50e-520ac8cdd93b",
       "regionName" : "customRegion",
       "type" : "region"
     }, {
-      "id" : "f2f4d182-c797-4255-927e-7fdb23fbb164",
+      "id" : "493c0683-63f8-4b43-9c17-1b2ddb87ce76",
       "regionName" : "footer",
       "type" : "region"
     } ],
@@ -143,14 +143,14 @@
       "showHero" : true
     },
     "componentName" : "siteforce:themeLayoutStarter",
-    "id" : "b39380ff-0ac0-499a-9bdc-cdc66fe45d49",
+    "id" : "afc149eb-0cc6-421f-8de5-a564fd4c0ea7",
     "label" : "ServiceNotAvailable",
     "regions" : [ {
-      "id" : "263725af-a84d-4341-9d95-fe0135a3ca4a",
+      "id" : "683139e9-999d-4baa-9b5c-c5a291f0f43c",
       "regionName" : "themeHeader",
       "type" : "region"
     }, {
-      "id" : "f4544f9b-f0bb-4944-9609-d8e1a2488664",
+      "id" : "d728cb49-3d50-480c-986a-3e8e5bc6c9c3",
       "regionName" : "themeFooter",
       "type" : "region"
     } ],
@@ -158,10 +158,10 @@
   }, {
     "componentAttributes" : { },
     "componentName" : "c:attendeesBlankLayout",
-    "id" : "cc05fdb5-9381-49e3-958b-4a4e624ef4ef",
-    "label" : "AttendeesThemeLayout",
+    "id" : "4d830bdf-9971-4de3-bab9-64f1796eaece",
+    "label" : "AttendeesBlankLayout",
     "regions" : [ {
-      "id" : "f2d09072-b9ce-49dc-9c42-679386e16b98",
+      "id" : "d1c9221c-1d21-4936-91c3-a383c2c05421",
       "regionName" : "customHeader",
       "type" : "region"
     }, {
@@ -193,11 +193,11 @@
           "signInActionLabel" : "Sign in to ask the community"
         },
         "componentName" : "forceCommunity:searchBox",
-        "id" : "d8bb6313-6901-457d-9dc5-4a26f8975628",
+        "id" : "6f3971ff-d933-4b36-ba5b-ea88b1e3724c",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "cfaed138-fbbb-427c-924a-a7af4a2f9ed5",
+      "id" : "84d18217-77f6-4ed4-b475-df459c3a68be",
       "regionName" : "search",
       "type" : "region"
     }, {
@@ -220,11 +220,11 @@
           "viewProfileLabel" : "My Profile"
         },
         "componentName" : "selfService:userProfileMenu",
-        "id" : "0ba22429-52e9-49cd-99d3-a0635d424c82",
+        "id" : "763369ed-bfb8-44fa-874d-2460bfa8e738",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "114ec442-edd1-4951-b772-d869f9e89dea",
+      "id" : "e8414df9-067b-4cac-aa72-88942cf9bdab",
       "regionName" : "profileMenu",
       "type" : "region"
     }, {
@@ -235,144 +235,129 @@
           "hideHomeText" : false
         },
         "componentName" : "forceCommunity:globalNavigation",
-        "id" : "4094caa7-1119-4c19-9d13-b7d0ddb3637c",
+        "id" : "6977b4ba-c463-4630-9940-fe3b5128c26f",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "dc06a04f-57b7-4303-a8e8-5bcc4bacd98a",
+      "id" : "2911f4b8-18a4-4e3b-b5ff-16d513ec81dd",
       "regionName" : "navBar",
       "type" : "region"
     }, {
-      "id" : "c5ecd6f4-9049-4188-86c6-5ef453cdc4a6",
+      "id" : "a38930ec-9403-4c1a-9ef4-d3ff2ed4d41d",
       "regionName" : "customRegion",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:footer",
-        "id" : "8b479ec7-6927-44b7-b94c-15298cf3a2bc",
+        "id" : "3215948d-8731-480c-a62f-81bd24e9df0b",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "9d2fcdf9-6c4f-4791-92cf-09c45700826f",
+      "id" : "26dbcc05-52d6-496b-a1a6-fbc398fa854b",
       "regionName" : "footer",
-      "type" : "region"
-    }, {
-      "id" : "5fa7c172-67f5-4d2b-8480-e2fa297f881e",
-      "regionName" : "column1",
-      "type" : "region"
-    }, {
-      "id" : "35bec33f-f3ec-440d-b221-dda0f1197161",
-      "regionName" : "column2",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:navigationBar",
-        "id" : "645a1a52-a6e8-400c-91c6-6a924e21ae2c",
+        "id" : "fc62703a-493b-48d0-aaf9-e1c889315381",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "0dd1f3bc-691b-4f9d-829a-955b4b56be11",
+      "id" : "28df219e-5a2d-4407-b638-70eac2a5907b",
       "regionName" : "header",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:aboutUs",
-        "id" : "cf2d0793-f4f9-4cbf-9d20-e29e4182a9a2",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
-      "id" : "41e8397f-112a-4535-a53d-2002777711a0",
-      "regionName" : "Description",
-      "type" : "region"
-    }, {
-      "components" : [ {
-        "componentAttributes" : { },
         "componentName" : "c:bannerImage",
-        "id" : "d4a92343-0470-44d9-bcea-9fc162b6c91a",
+        "id" : "a7a83cdb-fb05-4803-a825-6c6ce1141fdd",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "3d780683-0d20-488d-8e3f-4cd2c5e7e35e",
+      "id" : "8dc544ad-a6b5-413d-bafb-f37e5ba6a90d",
       "regionName" : "BannerImage",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:eventHighlight",
-        "id" : "f9cf5b29-7424-4a79-aee2-4e82a2153eeb",
+        "componentName" : "c:aboutUs",
+        "id" : "a2434697-622d-4c88-9fb4-836db771734e",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "0ca6b2b0-1bcb-44de-b611-8a7020774517",
+      "id" : "fbf49fdd-9f93-40ba-8454-60996a04e89c",
+      "regionName" : "Description",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:eventHighlight",
+        "id" : "7aafa847-0800-454c-bf72-605e4bc71280",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "5830407a-11b0-44be-b4e8-9a1310ab71e3",
       "regionName" : "PostDescription",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:sessionSection",
-        "id" : "33355789-e7b3-4030-827c-4e533d288aa9",
+        "id" : "f1a24755-c970-45de-bd26-17400e58ecbd",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "d9088275-2556-4c63-b22e-0fded11999f9",
+      "id" : "a619e504-9bbc-4056-836f-83c35c907e7d",
       "regionName" : "Sessions",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:speakerSection",
-        "id" : "cfaa0499-499b-432a-a35d-cf1d4f45cb9d",
+        "id" : "58419a54-8d93-4e1e-958c-34ebb3a6b661",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "537cfdff-b006-4932-af58-7f719483c75d",
+      "id" : "772d787e-d1e4-45f8-9dcc-0892abb90534",
       "regionName" : "Speakers",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:fAQs",
-        "id" : "df325d2b-adb4-463d-b204-fc2d7c895263",
+        "id" : "c106f27d-b9a6-4eb1-928f-d9a65139155c",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "088f5a11-32fa-434a-a6c0-61e505126b64",
+      "id" : "fec1061e-2507-49aa-ad01-61a697fda622",
       "regionName" : "faq",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:contactUs",
-        "id" : "ee9b6888-e45f-43ec-bbb8-2d1c30559ef0",
+        "id" : "40419cc4-ed8f-41ee-a8e3-f0128c50b487",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "def0ae88-53dd-4970-b7ef-bc3c9fd60726",
+      "id" : "19127699-734d-43f7-b64f-33e541cd4278",
       "regionName" : "contactUs",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:setEventId",
-        "id" : "7629aa19-6009-41d6-b068-8ed0eadd4663",
+        "id" : "2627ab62-9785-4869-a6ee-e607291ec3ff",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "aaf74a65-ef70-405f-9484-9274005db708",
+      "id" : "fe928f5e-c9f4-4479-a8e8-9602f397d239",
       "regionName" : "setEventId",
       "type" : "region"
     }, {
-      "components" : [ {
-        "componentAttributes" : { },
-        "componentName" : "c:sponsorSection",
-        "id" : "9e38ace7-5418-4215-b48e-e61f699649d2",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
-      "id" : "67f21283-bfc9-4a93-8b59-ca3296736190",
+      "id" : "e9ca224a-7150-4d08-bec4-5e673d9c19cc",
       "regionName" : "Sponsors",
       "type" : "region"
     } ],

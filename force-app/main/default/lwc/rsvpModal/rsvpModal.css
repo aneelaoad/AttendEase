@@ -1,0 +1,94 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+.modal-content {
+    background-color: #fff;
+  
+     /* max-width: 80%;
+    max-height: 80%; */
+    
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-header{
+    color: white;
+    font-size: 1.6rem;
+    background-color: var(--LIGHT-BLUE);
+
+}
+.modal-footer {
+    background: var(--Bg-light);
+
+}
+.scrollable-content {
+    max-height: calc(100% - 100px); /* Adjust this value according to your modal header and footer heights */
+    overflow-y: auto;
+    padding: 20px;
+    height: 500px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* ----ticket css------ */
+.ticket-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.ticket-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.ticket-info {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* -----------------RSVP form---------- */
+
+.RSVP-form{
+    margin: 20px auto;
+}

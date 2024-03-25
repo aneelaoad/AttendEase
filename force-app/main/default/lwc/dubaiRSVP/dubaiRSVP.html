@@ -4,7 +4,7 @@
 		<!-- Button to open the modal -->
 		<div class="rsvpbutton">
 			<!-- <lightning-button label="RSVP " onclick={openModal}></lightning-button> -->
-			<button  onclick={openModal}>RSVP Here </button>
+			<button  onclick={openModal}>RSVP </button>
 		</div>
 		
 
@@ -29,25 +29,25 @@
 									<lightning-messages>
 									</lightning-messages>
 
-									<lightning-input field-name="FirstName" label="FirstName" onchange={handleFieldChange}>
+									<lightning-input field-name="FirstName" label="FirstName" onchange={handleFieldChange} >
 									</lightning-input>
-									<lightning-input field-name="LastName" label="LastName" onchange={handleFieldChange}>
+									<lightning-input field-name="LastName" label="LastName" onchange={handleFieldChange} >
 									</lightning-input>
-									<lightning-input field-name="Email" label="Email" onchange={handleFieldChange}>
+									<lightning-input field-name="Email" label="Email" onchange={handleFieldChange} >
 									</lightning-input>
 									<hr />
 									<!-- ----payment starts from here---- -->
 									<div class="payment-section">
 										<h2>Payment Details <span style="width:1.1rem">💳</span> </h2>
 										<lightning-input label="TransactionId" value={transactionId}
-											onchange={handleFieldChange}></lightning-input>
+											onchange={handleFieldChange}  ></lightning-input>
 										<lightning-input label="Amount" type="number" value={amount}
-											onchange={handleFieldChange}></lightning-input>
+											onchange={handleFieldChange} ></lightning-input>
 
 									</div>
 									<!-- payment ends till here---- -->
 
-									<div class="slds-m-vertical_large">
+									<div class="slds-m-vertical_large ">
 										<lightning-button class="slds-m-top_small slds-m-right_small" variant="brand"
 											name="saveApex" label="RSVP" onclick={handleRSVP}>
 										</lightning-button>

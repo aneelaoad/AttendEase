@@ -26,7 +26,7 @@ export default class AutoOpenModal extends LightningElement {
     publishEventId() {
         const params = new URLSearchParams();
      
-        this.pageURL = window.location.origin + '/eventsproduct/s/';
+        this.pageURL = window.location.origin + '/attendeaseplus/s/';
 
         if (this.selectedEventId) {
             sessionStorage.setItem('eventId', this.selectedEventId);
@@ -41,6 +41,7 @@ export default class AutoOpenModal extends LightningElement {
             }
 
             const payload = { eventId: this.selectedEventId };
+            console.log('payload : ',JSON.stringify(payload));
             publish(this.messageContext, EVENT_CHANNEL, payload);
             this.hideModal();
         }

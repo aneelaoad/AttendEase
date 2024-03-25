@@ -19,9 +19,7 @@ export default class DubaiNavbar extends LightningElement {
   @wire(getDubaiDreaminEventId)
   wiredEventId({ error, data }) {
   if (data) {
-      
-      console.log('Dubai Dreamin Event ID:', data);
-      this.selectedEventId=data;
+  this.selectedEventId=data;
   } else if (error) {
       console.error('getDubaiDreaminEventId Error:', error);
   }
@@ -42,6 +40,7 @@ export default class DubaiNavbar extends LightningElement {
   }
 
   @wire(getNavigationItems, { eventId: '$selectedEventId' })
+ 
   wiredData({ error, data }) {
     if (data) {
       data.forEach(navItem => {
@@ -66,21 +65,19 @@ export default class DubaiNavbar extends LightningElement {
 
 
 
-  // publishEventId() {
-  //   // 
+  publishEventId() {
+    // 
 
 
-  //   const payload = { eventId: this.selectedEventId };
-  //   publish(createMessageContext(), EVENT_CHANNEL, payload);
+    const payload = { eventId: this.selectedEventId };
+    publish(createMessageContext(), EVENT_CHANNEL, payload);
 
-  //   // console.log('publishss : ',publish(this.messageContext, EVENTID_MESSAGE, payload));
-
-
-  // }
+  }
   handleNavItemClick(event) {
     const section = event.target.dataset.section;
     const payload = { section: section };
     publish(this.messageContext, SCROLL_MESSAGE, payload);
+  this.menuOpen = false;
 
   }
 
@@ -106,7 +103,7 @@ export default class DubaiNavbar extends LightningElement {
   }
 
   connectedCallback() {
-    // this.publishEventId();
+    this.publishEventId();
     // const payload = {eventId: this.selectedEventId};
     //   publish(this.messageContext, EVENTID_MESSAGE, payload);
     // this.publishEventId();

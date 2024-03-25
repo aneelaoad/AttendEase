@@ -1,136 +1,145 @@
 <template>
 	<template if:true={selectedEventId}>
 		<div class="sectionSpeaker">
-			
-
-				<div class="sectionSpeaker_inner">
-					<div class="sectionSpeaker_info">
-						<div class="sectionSpeaker_inner_info">
-							<h1 style="text-align: center; padding-bottom:25px">{speakerLabel}</h1>
-
-							<lightning-layout multiple-rows>
 
 
-								<template for:each={threespeakerInformation} for:item="speaker">
-									<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
-										large-device-size="4" key={speaker.Id}
-										class="slds-m-around_medium slds-m-around_none">
+			<div class="sectionSpeaker_inner">
+				<div class="sectionSpeaker_info">
+					<div class="sectionSpeaker_inner_info">
+						<h1 style="text-align: center; padding-bottom:25px">{speakerLabel}</h1>
 
-										<div data-section="Speakers" class="speaker-card">
+						<lightning-layout multiple-rows>
 
-											<div class="speaker-info">
-												<div class="speaker-overlay">
-													<button onclick={openModal} data-speakerid={speaker.speakerName} class="readbutton">
+
+							<template for:each={threespeakerInformation} for:item="speaker">
+								<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+									large-device-size="4" key={speaker.Id}
+									class="slds-m-around_medium slds-m-around_none">
+
+									<div data-section="Speakers" class="speaker-card">
+
+										<div class="speaker-info">
+											<div class="speaker-overlay">
+												<button onclick={openModal} data-speakerid={speaker.speakerName} class="readbutton">
                                             View More
 									    </button>
-												</div>
-												<template if:false={speaker.speakerImage}>
-													<img src={profilePlaceholder} alt="Speaker Profile Image" />
+											</div>
+											<template if:false={speaker.speakerImage}>
+												<img src={profilePlaceholder} alt="Speaker Profile Image" />
 
                                         </template>
-													<template if:true={speaker.speakerImage}>
-														<img src={speaker.speakerImage} alt="Speaker Profile Image" />
+												<template if:true={speaker.speakerImage}>
+													<img src={speaker.speakerImage} alt="Speaker Profile Image" />
 
                                         </template>
-														<div class="slds_footer">
-															<h3 class="heading">{speaker.speakerName}</h3>
-															<p> {speaker.speakerTitle}</p>
-														</div>
+													<!-- <div class="slds_footer">
+														<h3 class="heading"> {speaker.speakerName}</h3>
+														<p>{speaker.speakerTitle}</p>
+													</div> -->
 
-											</div>
 										</div>
-									</lightning-layout-item>
-								</template>
-							</lightning-layout>
-							<button class="view-all" onclick={handleViewAllClick}> {buttonLabel} {allSpeakersLabel}</button>
-
-						</div>
-						<c-popup-modal show-modal={showModal} onclosemodal={closeModal}>
-							<div class="speaker-details">
-								<div class="speaker-profile">
-									<img src={speakerImage} alt="Speaker Profile Image" />
-									<h5 style="text-align:cente; padding-top:15px">{speakerTitle}</h5>
-								</div>
-								<div class="speaker-information">
-									<h3>{speakerName}</h3>
-									<lightning-formatted-rich-text value={speakerDescription}>
-									</lightning-formatted-rich-text>
-									<div class="speaker-contact">
-
-										<div class="icon-p">
-											<div class="icon" style="margin-right:8px">
-												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-													<path
-														d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
-												</svg>
-											</div>
-											<p>
-												{speakerEmail}
-											</p>
-										</div>
-
-
-										<div class="icon-p">
-											<div class="icon" style="margin-right:8px">
-												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-													<path
-														d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
-												</svg>
-											</div>
-											<p>
-
-												{speakerPhone}
-											</p>
-										</div>
-
-
 									</div>
-								</div>
+								</lightning-layout-item>
+							</template>
+						</lightning-layout>
+						<button class="view-all" onclick={handleViewAllClick}> {buttonLabel} {allSpeakersLabel}</button>
+
+					</div>
+					<!-- --- Individual speaker card open on 'view more'---- -->
+					<c-popup-modal show-modal={showModal} onclosemodal={closeModal}>
+						<div class="speaker-details">
+							<div class="speaker-profile">
+								<img src={speakerImage} alt="Speaker Profile Image" />
 
 							</div>
+							<div class="speaker-information">
+									<!-- <h5 style="text-align:cente; padding-top:15px">{speakerTitle}</h5> -->
+								<h5>{speakerName}</h5>
 
-						</c-popup-modal>
+								<lightning-formatted-rich-text value={speakerDescription}>
+								</lightning-formatted-rich-text>
+								<div class="speaker-contact">
+
+									<div class="icon-p">
+										<div class="icon" style="margin-right:8px">
+											<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+												<path
+													d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+											</svg> -->
+											📧
+										</div>
+										<p>
+											{speakerEmail}
+										</p>
+									</div>
 
 
+									<div class="icon-p" style="margin-left:10px">
+										<div class="icon" style="margin-right:8px">
+											<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+												<path
+													d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z" />
+											</svg> -->
+											📞
+										</div>
+										<p>
+
+											{speakerPhone}
+										</p>
+									</div>
+
+
+								</div>
+							</div>
+
+						</div>
+
+					</c-popup-modal>
+
+					<!-- --- Individual speaker card open on 'view more'---- -->
+
+				</div>
+			</div>
+
+					<!-- --- All speakers card open on 'view all'---- -->
+
+			<template if:true={showAllSpeakers}>
+				<div class="slds-backdrop slds-backdrop_open"></div>
+				<div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+					aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+					<div class="slds-modal__container">
+						<header class="slds-modal__header">
+							<button class="closeModal" title="Close" onclick={handleCloseModal}>
+                        ❌
+						</button>
+							<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{allSpeakersLabel}
+							</h2>
+						</header>
+						<div class="slds-modal__content slds-p-horizontal_medium speakerModel">
+							<template for:each={speakerInformation} for:item="speaker">
+								<div key={speaker.Id} data-section="Speakers" class="speaker-info">
+
+									<div class="card_info">
+										<img src={speaker.speakerImage} alt="Speaker Profile Image" />
+
+										<h3 class="heading">{speaker.speakerName}</h3>
+										<lightning-formatted-rich-text value={speaker.speakerInformation}>
+										</lightning-formatted-rich-text>
+										<div class="card-footer">
+										<p><strong>📧 </strong> {speaker.speakerEmail}</p>
+										<p><strong>📞 </strong>{speaker.speakerContactNumber}</p>
+										</div>
+									</div>
+
+								</div>
+
+							</template>
+						</div>
 					</div>
 				</div>
+			</template>
+					<!-- - All speakers card open on 'view all'- -->
 
-
-				<template if:true={showAllSpeakers}>
-					<div class="slds-backdrop slds-backdrop_open"></div>
-					<div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
-						aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
-						<div class="slds-modal__container">
-							<header class="slds-modal__header">
-								<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
-                            <lightning-icon icon-name="utility:close" alternative-text="close" class="slds-icon-standard-textbox"></lightning-icon>
-                        </button>
-								<h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{allSpeakersLabel}
-								</h2>
-							</header>
-							<div class="slds-modal__content slds-p-around_medium speakerModel">
-								<template for:each={speakerInformation} for:item="speaker">
-									<div key={speaker.Id} data-section="Speakers" class="speaker-info">
-
-										<div class="card_info">
-											<img src={speaker.speakerImage} alt="Speaker Profile Image" />
-
-											<h3 class="heading">{speaker.speakerName}</h3>
-											<lightning-formatted-rich-text value={speaker.speakerInformation}>
-											</lightning-formatted-rich-text>
-											<p><strong>Email:</strong> {speaker.speakerEmail}</p>
-											<p><strong>Contact Number: </strong>{speaker.speakerContactNumber}</p>
-
-										</div>
-
-									</div>
-
-								</template>
-							</div>
-						</div>
-					</div>
-				</template>
-			
 		</div>
 	</template>
 </template>

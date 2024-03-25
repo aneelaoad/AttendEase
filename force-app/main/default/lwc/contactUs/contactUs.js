@@ -8,7 +8,7 @@ import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
 export default class ContactUs extends LightningElement {
     organizationId;
     orgURL;
-    pageUrl = window.location.origin + '/eventsproduct/s/';
+    pageUrl = window.location.origin + '/attendeaseplus/s/';
     subscription = null;
     selectedEventId;
     //isFormLoaded=false;

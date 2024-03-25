@@ -1,0 +1,174 @@
+<template>
+	
+	
+	<div class="sponsor-registration-form" style="background-color:transparent !important">
+		<!-- <H1><b>Sponser Registeration</b></H1> -->
+		<!-- Button to open the modal -->
+		<div class="rsvpbutton">
+
+			<button  onclick={openModal}><b>SignUp for Sponsorship</b></button>
+		</div>
+		<c-popup-modal show-modal={showModal} onclosemodal={closeModal} modal-content-class="modal-content">
+
+	<div class="slds-p-around_medium" >
+				
+			<!-- <div class="section  border"> -->
+
+				
+				<div class="input-column">
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Sponsor Name</label>
+						<div class="slds-form-element__control">
+						  <input type="text"   class="slds-input no-border fat-fonts"  value={sponsorName} onchange={handleSponsorNameChange} />
+						</div>
+					</div>
+					<!-- <lightning-input label="Sponsor Name" value={sponsorName} onchange={handleSponsorNameChange}>
+					</lightning-input> -->
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Sponsor Title</label>
+						<div class="slds-form-element__control">
+						  <input type="text"   class="slds-input no-border fat-fonts"  value={sponsorTitle} onchange={handleSponsorTitleChange} />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Sponsor Email</label>
+						<div class="slds-form-element__control">
+						  <input type="email"   class="slds-input no-border fat-fonts"  value={sponsorEmail} onchange={handleSponsorEmailChange} />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Sponsorship Level</label>
+						<div class="slds-form-element__control">
+							<!-- <input type="text"   class="slds-input no-border fat-fonts"  value={sponsorTitle} onchange={handleSponsorTitleChange} /> -->
+							<!-- <select name="level" id="level" class="slds-input no-border fat-fonts" value={sponsorshipLevel} onchange={handleSponsorshipChange}>
+								<template for:each={sponsorshipLevelOptions} for:item="option">
+									<option key={option.value} value={option.value}>{option.label}</option>
+								</template>
+								
+							</select> -->
+							<select name="level" id="level" class="slds-input no-border fat-fonts" value={sponsorshipLevel} onchange={handleSponsorshipChange}>
+								<template for:each={sponsorshipLevelPicklistValues} for:item="option">
+									<option key={option.value} value={option.value}>{option.value}</option>
+								</template>
+							</select>
+						</div>
+					</div>
+					
+					
+				</div>
+				<div class="input-column">
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Company/Organization Name</label>
+						<div class="slds-form-element__control">
+						  <input type="text"   class="slds-input no-border fat-fonts" value={companyName}  onchange={handleCompanyNameChange} />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Company Type</label>
+						<div class="slds-form-element__control">
+							<!-- <input type="text"   class="slds-input no-border fat-fonts"  value={sponsorTitle} onchange={handleSponsorTitleChange} /> -->
+							<select name="type" id="type" class="slds-input no-border fat-fonts" value={companyType} onchange={handleCompanyTypeChange}>
+								<template for:each={companyTypePicklistValues} for:item="option">
+									<option key={option.value} value={option.value}>{option.label}</option>
+								</template>
+							</select>
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Company Website</label>
+						<div class="slds-form-element__control">
+						  <input type="text"   class="slds-input no-border fat-fonts"  value={companyWebsite} onchange={handleCompnayWebsiteChange} />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Company Phone</label>
+						<div class="slds-form-element__control">
+						  <input type="email"   class="slds-input no-border fat-fonts"  value={companyPhone} onchange={handleCompanyPhoneChange} />
+						</div>
+					</div>
+					
+
+
+					<!-- <lightning-input label="Sponsor Title" value={sponsorTitle} onchange={handleSponsorTitleChange}>
+					</lightning-input> -->
+					<!-- <div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Sponsor Information</label>
+						<div class="slds-form-element__control">
+						  <textarea    class="slds-input no-border fat-fonts" value={sponsorInformation}
+						  onchange={handleSponsorInformationChange} ></textarea>
+						</div>
+					</div> -->
+					<!-- <lightning-textarea label="Sponsor Information" value={sponsorInformation}
+						onchange={handleSponsorInformationChange}></lightning-textarea> -->
+				</div>
+				<div class="input-column">
+					<div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts" >Industry</label>
+						<div class="slds-form-element__control">
+							<!-- <input type="text"   class="slds-input no-border fat-fonts"  value={sponsorTitle} onchange={handleSponsorTitleChange} /> -->
+							<select name="industry" id="industry" class="slds-input no-border fat-fonts" value={companyIndustry} onchange={handleCompanyIndustryChange}>
+								<template for:each={industryPicklistValues} for:item="option">
+									<option key={option.value} value={option.value}>{option.label}</option>
+								</template>
+							</select>
+						</div>
+					</div>
+					
+					
+						
+						<div class="slds-form-element">
+							<label class="slds-form-element__label fat-fonts" >Company Address</label>
+							<div class="slds-form-element__control">
+							  <input type="text"   class="slds-input no-border fat-fonts"  value={companyAddress} onchange={handleCompnayAddressChange} />
+							</div>
+						</div>
+						<div class="slds-form-element">
+							<label class="slds-form-element__label fat-fonts" >Sponsor Profile Image</label>
+							<div class="slds-form-element__control">
+							  <input type="url"   class="slds-input no-border fat-fonts"  onchange={handleSponsorProfileImageChange} />
+							</div>
+						</div>
+						<!-- <lightning-input type="url" label="Sponsor Profile Image" onchange={handleProfileImageChange}>
+						</lightning-input> -->
+
+					<!-- <div class="slds-form-element">
+						<label class="slds-form-element__label fat-fonts">Sponsor Picture</label>
+						<div class="slds-form-element__control">
+							<lightning-file-upload
+								label="Upload Picture"
+								name="fileUploader"
+								accept=".png, .jpg, .jpeg"
+							
+								onuploadfinished={handleUploadFinished}
+							></lightning-file-upload>
+						</div>
+					</div> -->
+                    <!-- <div class="slds-form-element">
+                        <label class="slds-form-element__label fat-fonts">Sponsor Profile Image</label>
+                        <div class="slds-form-element__control">
+                            <input type="url" class="slds-input no-border fat-fonts" onchange={handleSponsorProfileImageChange} />
+                        </div>
+                    </div> -->
+					
+					
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label fat-fonts">Company Description</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" class="slds-input no-border fat-fonts" value={companyDescription} onchange={handleCompnayDescriptionChange} />
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="centered">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree" class="checkbox-label">I Agree to the Terms and Conditions:</label>
+                        <br>
+                    </div>
+                    <div class="registerbutton centered fat-fonts">
+                        <button onclick={handleSponsorRegistration}>SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+        </c-popup-modal>
+    </div>
+</template>

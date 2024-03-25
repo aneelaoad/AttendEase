@@ -1,18 +1,11 @@
 {
-  "forgotPasswordRouteId" : "758c7413-8ade-45f5-9e3d-1b42a4f595f3",
+  "forgotPasswordRouteId" : "efaf9703-88f5-436d-82a4-6ad9834772e1",
   "isAvailableToGuests" : false,
   "isFilteredComponentsView" : false,
   "isProgressiveRenderingEnabled" : false,
-  "loginAppPageId" : "d00b544f-233e-4c0f-809e-7e668d33174d",
-  "mainAppPageId" : "55ad45ea-a054-4d5b-9458-680c4a173ec4",
+  "loginAppPageId" : "39b26dfa-c835-4588-b63f-8a462499483e",
+  "mainAppPageId" : "bb439056-5ce0-40d9-9b30-ba6626856be8",
   "preferredDomain" : "none",
-  "selfRegistrationRouteId" : "ad2dfa7e-3de0-4f94-8e5e-7566e97f0235",
-  "trustedSitesForScript" : [ {
-    "id" : "4a9dec9e-8dce-469c-a149-ad1e181a00b3",
-    "isActive" : true,
-    "trustedSiteName" : "xperra",
-    "trustedSiteUrl" : "https://xperra.com",
-    "type" : "trustedSitesForScripts"
-  } ],
+  "selfRegistrationRouteId" : "dc4cd497-5b5f-4cbf-a204-a3ff07f30185",
   "type" : "site"
 }

@@ -1,7 +1,7 @@
 User testUser = new User(
     FirstName = 'test',
     LastName = 'user001',
-    Username = 'testuser1122@gmail.com',
+    Username = 'testuser112231824@gmail.com',
     Email = 'testuser@gmail.com',
     Alias = 'TA',
     CommunityNickname = 'test',
@@ -14,6 +14,7 @@ User testUser = new User(
 
 insert testUser;
 
+String testUserId = [SELECT Id FROM User WHERE Email = 'zeeshan.alikhan@gmail.com' LIMIT 1].Id;
 Account dubaiAccount = new Account(
     Name = 'Dubai Dreamin',
     Logo__c = 'https://dubaidreamin.com/assets/img/logo/main_logo.png'
@@ -24,7 +25,7 @@ Event__c newEvent = new Event__c(
     Name = 'Dubai Dreamin',
     Banner_Image__c = 'https://images.pexels.com/photos/101808/pexels-photo-101808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     Event_Title__c = 'Dubai Dreamin 24',
-    Event_Organizer__c = testUser.Id,
+    Event_Organizer__c = testUserId,
     Event_Organizer_Company__c = dubaiAccount.Id,
     Event_Type__c = 'Hybrid',
     Event_Charges__c = 500,
@@ -78,8 +79,8 @@ Speaker__c speaker = new Speaker__c(
     Email__c = 'test@example.com',
     Phone_Number__c = '123-456-7890',
     Speaker_Information__c = 'Experienced speaker with expertise in real estate trends and home discovery.',
-    Speaker_Name__c = 'Jane Doe',
-    Speaker_Profile_Image__c = 'https://ca.slack-edge.com/T03QSUT4URF-U03QBBJ9E3X-29ffce660e56-512'
+    Speaker_Name__c = 'Jane Doe'
+    // Speaker_Profile_Image__c = 'https://ca.slack-edge.com/T03QSUT4URF-U03QBBJ9E3X-29ffce660e56-512'
 );
 
 insert speaker;

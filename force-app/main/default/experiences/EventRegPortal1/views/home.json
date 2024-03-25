@@ -1,11 +1,27 @@
 {
-  "appPageId" : "fd0e3d40-e170-400a-8b32-e585299d7d1b",
-  "componentName" : "siteforce:sldsTwoCol48Layout",
+  "appPageId" : "55f8d622-5481-4261-8613-31208a63a484",
+  "componentName" : "siteforce:sldsTwoCol84SidebarFeaturedLayout",
   "dataProviders" : [ ],
-  "id" : "fac02fa0-fded-4e4e-bf72-a9ac00e8184e",
+  "id" : "b4f9f0c7-3163-4cb3-b355-dd1762341df0",
   "label" : "Home",
   "regions" : [ {
-    "id" : "6a537eef-35e9-4a56-ad54-d4e1f34095be",
+    "components" : [ {
+      "componentAttributes" : {
+        "bannerText" : "A place where you can easily find solutions and ask questions",
+        "bannerTextWithKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineArticles\">articles</a> and <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "bannerTextWithoutKnowledge" : "Explore other <a href=\"javascript:void(0)\" class=\"headlineDiscussions\">discussions</a> on this topic.",
+        "pageType" : "",
+        "showSubTopics" : true,
+        "title" : "Welcome!",
+        "uniqueNameOrId" : ""
+      },
+      "componentName" : "forceCommunity:headline",
+      "id" : "8f57c348-38f3-4d49-ad8b-66b8da864731",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "c4fd387d-bfb4-49e1-b9c2-643e0334de0e",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -34,20 +50,55 @@
         "uneditableTopics" : false
       },
       "componentName" : "forceCommunity:askCommunity",
-      "id" : "c128a157-6f53-4481-ad69-f5007ffae9e8",
+      "id" : "92a6b0b2-f7aa-45ed-945e-ee268f63b3b9",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "711fc4e1-558a-4e23-90b2-c4e7a7be0edf",
+    "id" : "7a35acf9-2577-44de-8dee-bd1282c14bc0",
     "regionName" : "featured",
     "type" : "region"
   }, {
-    "id" : "1673bece-5cb9-4d65-8fa7-6ab44324ea74",
+    "components" : [ {
+      "componentAttributes" : {
+        "defaultSortOrderCompactFeed" : "Relevance",
+        "defaultSortOrderFullFeed" : "Relevance",
+        "discussionTabLabel" : "Discussions",
+        "featuredTabLabel" : "Featured",
+        "maxWidth" : 100,
+        "myFeedTabLabel" : "My Feed",
+        "overlayColor" : "rgba(0,0,0,0.6)",
+        "overlayHoverColor" : "",
+        "radius" : 0,
+        "showCompactFeedInDiscussion" : true,
+        "textAlignment" : "center",
+        "textBgColor" : "rgba(0,0,0,0)",
+        "textBgHoverColor" : "rgba(0,0,0,0)",
+        "textColor" : "",
+        "textHoverColor" : "",
+        "textPosition" : "center center"
+      },
+      "componentName" : "forceCommunity:homeTabs",
+      "id" : "56f3aee4-f1ea-43c5-b228-d8a9f1467da9",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4d31b1c3-03c2-4976-bb4b-8869fc6e4e31",
     "regionName" : "content",
     "type" : "region"
   }, {
     "components" : [ {
+      "componentAttributes" : {
+        "channel" : "DefaultChannel",
+        "title" : ""
+      },
+      "componentName" : "forceCommunity:recommendations",
+      "id" : "48c36677-175c-417b-a5b6-f256fb10971a",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
       "componentAttributes" : {
         "display" : "LEVELS_POINTS",
         "excludeInternalUsers" : false,
@@ -60,16 +111,62 @@
         "tooltipText" : "Earn points and climb to new levels when you contribute in the experience!"
       },
       "componentName" : "forceCommunity:reputationLeaderboard42",
-      "id" : "5acbfe20-2bff-43e4-bd8e-de91ffa40fd3",
+      "id" : "0d9b8e0c-0009-4e88-b119-c6071748842f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    }, {
+      "componentAttributes" : {
+        "numberOfTopics" : 5,
+        "showTopicsMetric" : true,
+        "title" : "Trending Topics"
+      },
+      "componentName" : "forceCommunity:trendingTopics",
+      "id" : "c724f01d-9ab2-4ead-8439-814fcca1412a",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "74eadc34-8eb0-4eca-8338-2980e873de22",
+    "id" : "7d228bb0-66d9-4e2d-8d55-4ac0f2404f29",
     "regionName" : "sidebar",
     "type" : "region"
   }, {
-    "id" : "ba465f60-13a6-4c2f-a463-46a16cdbee2d",
+    "components" : [ {
+      "componentAttributes" : {
+        "askCommunityLabel" : "Ask a Question",
+        "buttonBgColor" : "",
+        "buttonBgHoverColor" : "",
+        "buttonBorderColor" : "",
+        "buttonRadius" : 0,
+        "buttonTextColor" : "",
+        "buttonTextHoverColor" : "",
+        "buttonTwoBgColor" : "",
+        "buttonTwoBgHoverColor" : "",
+        "buttonTwoBorderColor" : "",
+        "buttonTwoRadius" : 0,
+        "buttonTwoTextColor" : "",
+        "buttonTwoTextHoverColor" : "",
+        "confirmationMessage" : "Got it!",
+        "contactSupportLabel" : "Contact Support",
+        "followUpPromptLabel" : "Can we close your question?",
+        "headerLabel" : "Don't see what you're looking for?",
+        "isAskFollowPromptEnabled" : true,
+        "isIncludeArticlesEnabled" : false,
+        "isIncludeDiscussionsEnabled" : true,
+        "isInitialSatisfactionPromptEnabled" : true,
+        "isPublisherDeflectionEnabled" : true,
+        "maxSuggestions" : 5,
+        "satisfactionPromptLabel" : "Did we help to answer your question?",
+        "showDetails" : false,
+        "showTopics" : true
+      },
+      "componentName" : "siteforce:napiliFooter",
+      "id" : "1fbdd931-f2ed-4ddd-b84d-14e3f0cf321f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "a52ed69c-f829-4362-8bc8-06cb05ec797b",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -80,15 +177,15 @@
         "title" : "Home"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "84b16450-65a8-43bb-84ae-443012d048d3",
+      "id" : "875bea04-f03e-43f7-97c7-890fbe988c09",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "971c086b-1ae2-4e71-abd2-464de79a0fe5",
+    "id" : "4569f4ed-acf1-4910-9471-3eddf9cdf32e",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],
-  "themeLayoutType" : "Pxkm0LDdYpSdr1rTdsI1MSVssYjp70",
+  "themeLayoutType" : "8LWL9p7IIgrAZxA4DkulpkVgoaczkI",
   "type" : "view",
   "viewType" : "home"
 }

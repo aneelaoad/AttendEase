@@ -1,8 +1,8 @@
 {
-  "appPageId" : "55ad45ea-a054-4d5b-9458-680c4a173ec4",
+  "appPageId" : "bb439056-5ce0-40d9-9b30-ba6626856be8",
   "componentName" : "siteforce:sldsTwoCol84Layout",
   "dataProviders" : [ ],
-  "id" : "15667088-2285-4d60-bed2-ea54f7c86204",
+  "id" : "68768c47-cac0-4c68-8804-9c57a0ccd76d",
   "label" : "Question Detail",
   "regions" : [ {
     "components" : [ {
@@ -16,12 +16,12 @@
         "uniqueNameOrId" : "{!recordId}"
       },
       "componentName" : "forceCommunity:headline",
-      "id" : "d119d964-4978-48c7-b379-8540e88d02f6",
+      "id" : "5839152f-c3a7-431a-8c19-1e8a1f5ca709",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "7693b065-ce1d-49ad-ad3f-35b0b74c0fb1",
+    "id" : "70660090-87ed-4fa9-86ae-11e94f21c6c6",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -30,12 +30,12 @@
         "id" : "{!feedItemId}"
       },
       "componentName" : "forceCommunity:feedItemDetail",
-      "id" : "c924d2b1-463a-48d4-a8b3-33938c43a6d2",
+      "id" : "eeb6cc22-e188-462d-a500-e42d2fef3692",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "550b577d-9074-4cba-9f09-f5cb2f1ff725",
+    "id" : "6ace4a35-d0a5-4962-b62e-51ea51cbe5c9",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -46,7 +46,7 @@
         "title" : "Related Questions"
       },
       "componentName" : "selfService:similarQuestions",
-      "id" : "ef285ea3-8e86-4426-b862-4aecc2a012c5",
+      "id" : "93efe796-06b6-4199-8f1f-67fd71ff1909",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -56,12 +56,12 @@
         "title" : ""
       },
       "componentName" : "forceCommunity:recommendations",
-      "id" : "280b045b-92ef-49e3-ba92-8836c06236e4",
+      "id" : "7e6020b1-28c0-4c96-87b0-0e2fa59e3c5f",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "9315242f-6458-4f2e-9b2a-ca49f96cd13a",
+    "id" : "e6b54ee9-f0da-4e5d-9091-04e24a5f5552",
     "regionName" : "sidebar",
     "type" : "region"
   }, {
@@ -95,12 +95,12 @@
         "showTopics" : true
       },
       "componentName" : "siteforce:napiliFooter",
-      "id" : "7388de16-1c4a-4115-a64a-d0480dda6c18",
+      "id" : "1902ed44-3471-4690-bcd5-c5b512663b25",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "254a65d7-98e8-4c68-8d42-8a84348b6f60",
+    "id" : "5f6eccfe-ad18-4ba2-88f7-4fbd1b4ac757",
     "regionName" : "footer",
     "type" : "region"
   }, {
@@ -111,11 +111,11 @@
         "title" : "{!Record.Title}"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "71c6c895-92d8-4cd2-a64b-dc3a319f081f",
+      "id" : "6f46e9ab-0ed7-4f83-b50c-845155e6946b",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "789bd82f-38ad-4f1c-9eda-501d6b6ecf0b",
+    "id" : "d40acbf7-e087-4582-94c0-fd79b15afabd",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],

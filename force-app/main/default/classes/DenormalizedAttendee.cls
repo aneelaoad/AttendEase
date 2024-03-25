@@ -13,6 +13,7 @@ public class DenormalizedAttendee{
 @AuraEnabled public Decimal amount;
 @AuraEnabled public List<DenormalizedResponse> responsesList;
 @AuraEnabled public List<DenormalizedQuestion> questionsList;
+@AuraEnabled public List<DenormalizedTicket> ticketsList;
 
 
 public DenormalizedAttendee(){

@@ -1,0 +1,104 @@
+<template>
+	<lightning-button label="REGISTER NOW" onclick={openModal}></lightning-button>
+
+	<div class="modal" if:true={isOpen}>
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<h2>Choose your purchase</h2>
+			</div>
+			<div class="modal-body">
+				<div class="scrollable-content">
+
+					<div class="left-side">
+						<!-- -----tickets list start here---- -->
+						<section class="tickets-container">
+							<template if:true={showTickets}>
+								<div class="ticket-container">
+									<template if:true={tickets}>
+										<template for:each={tickets} for:item="ticket">
+											<div key={ticket.id} class="ticket-card">
+												<p class="ticket-title">Title: {ticket.ticketTitle}</p>
+												<p class="ticket-info">Price: {ticket.ticketPrice}</p>
+												<p class="ticket-info">Vat: {ticket.ticketVatTex}</p>
+
+												<lightning-combobox name="Quantity" label="Quantity"
+													value={ticket.quantity} placeholder={ticket.quantity}
+													options={options} data-ticketid={ticket.id}
+													onchange={handleQuantityChange}>
+												</lightning-combobox>
+
+											</div>
+
+										</template>
+										<lightning-button variant="success" label="Checkout" title="Checkout"
+											onclick={handleCheckout}></lightning-button>
+
+									</template>
+									<template if:false={tickets}>
+										<div class="no-tickets">No tickets available</div>
+									</template>
+								</div>
+
+							</template>
+						</section>
+						<!-- -----tickets list end here---- -->
+
+						<!-- -----Attendee Info Gather start here---- -->
+						<section style="overflow: auto; " class="RSVP-form">
+							<template if:true={showAttendeeForm}>
+								<div class="form-details">
+									<div style="">
+
+										<form>
+											<lightning-messages>
+											</lightning-messages>
+
+											<lightning-input field-name="FirstName" label="FirstName"
+												onchange={handleFieldChange}>
+											</lightning-input>
+											<lightning-input field-name="LastName" label="LastName"
+												onchange={handleFieldChange}>
+											</lightning-input>
+											<lightning-input field-name="Email" label="Email"
+												onchange={handleFieldChange}>
+											</lightning-input>
+
+										</form>
+									</div>
+								</div>
+							</template>
+						</section>
+					</div>
+					<!-- -----Attendee Info Gather end here---- -->
+
+					<div class="right-side">
+
+						<section class="order-summary">
+							<template if:true={showOrderSummary}>
+								<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
+									<div key={ticketWithQuantity.id}>
+										{ticketWithQuantity.id}
+										{ticketWithQuantity.ticketTitle}
+										{ticketWithQuantity.quantity}
+									</div>
+								</template>
+							</template>
+						</section>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="modal-footer">
+
+				<button onclick={closeModal}>Close</button>
+				<lightning-button class="slds-m-left_small" variant="brand" label="RSVP" onclick={handleRSVP}>
+				</lightning-button>
+			</div>
+		</div>
+	</div>
+	<div class="overlay" if:true={isOpen} onclick={closeModal}></div>
+</template>

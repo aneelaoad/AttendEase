@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 .companyLogo img{
     width: 80px;

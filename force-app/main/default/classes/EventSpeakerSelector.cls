@@ -4,7 +4,7 @@
 * @created: 31/01/24
 * @Last Modified by: Muhammad Raza
 */
-public with sharing class EventSpeakerSelector {
+public without sharing class EventSpeakerSelector {
     
  /**
 * 

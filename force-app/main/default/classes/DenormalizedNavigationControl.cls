@@ -4,7 +4,7 @@
 * @since: 4/01/24   
 * @Last Modified by: Aneela Oad
 */
-public class DenormalizedNavigationControl {
+global without sharing class DenormalizedNavigationControl {
 
 @AuraEnabled public String menuTab;
 @AuraEnabled public String section;

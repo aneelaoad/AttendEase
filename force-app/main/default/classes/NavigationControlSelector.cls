@@ -4,7 +4,7 @@
 * @since: 01/12/24
 * @Last Modified by: Aneela Oad
 */
-public with sharing class NavigationControlSelector{
+public without sharing class NavigationControlSelector{
     /**
     * @author: Aneela Oad
     * @description: Returns the list of header navigation item based on record type and evend id

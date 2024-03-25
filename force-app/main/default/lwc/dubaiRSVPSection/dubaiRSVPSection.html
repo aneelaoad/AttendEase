@@ -1,0 +1,143 @@
+<template>
+	<section class="tickets-section">
+		<div class="left-side">
+			<template if:true={showTickets}>
+				<div class="ticket-container">
+					<h1>DUBAI DREAMIN </h1>
+					<h3>COMMUNITY-LED CONFERENCE UNITING PASSION, PURPOSE, AND SALESFORCE</h3>
+					<template if:true={tickets}>
+						<template for:each={tickets} for:item="ticket">
+							<div key={ticket.id} class="ticket-card">
+								<div class="ticket-title">
+									<h2>{ticket.ticketTitle}</h2>
+									<p> <span>$ {ticket.ticketPrice}</span> + $ {ticket.ticketVatTex} </p>
+								</div>
+
+								<div class="ticket-quantity">
+									<lightning-combobox name="Quantity" label="Quantity" value={ticket.quantity}
+										placeholder={ticket.quantity} options={options} data-ticketid={ticket.id}
+										onchange={handleQuantityChange}>
+									</lightning-combobox>
+
+
+								</div>
+							</div>
+						</template>
+						<div class="ticket-footer">
+							<ul class="terms-and-conditions">
+								<li>● Event ends on 12th November. </li>
+								<li>● Sales end this date Read our Terms and condition policy </li>
+								<li>● Before placing the order please read carefully our <a href="/">Refund Policy</a>
+								</li>
+							</ul>
+							<lightning-button variant="success" label="Checkout" title="Checkout"
+								onclick={handleCheckout}>
+							</lightning-button>
+						</div>
+					</template>
+					<template if:false={tickets}>
+						<div class="no-tickets">No tickets available</div>
+					</template>
+				</div>
+
+			</template>
+		</div>
+		<div class="right-side">
+
+			<section class="order-summary">
+				<template if:true={showOrderSummary}>
+					<h3>Order Summary</h3>
+					<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
+						<div key={ticketWithQuantity.id}>
+							<div class="ticket-details">
+								<p> <span>{ticketWithQuantity.ticketTitle} x {ticketWithQuantity.quantity} </span>
+									<span>{ticketWithQuantity.ticketPrice}</span> </p>
+								<p> <span>VAT</span> <span>{ticketWithQuantity.ticketVatTex}</span> </p>
+								<p> <span>Total</span> <span>{totalTicketPrice}</span> </p>
+
+
+							</div>
+						</div>
+					</template>
+				</template>
+			</section>
+		</div>
+
+	</section>
+
+
+	<!-- ----tickets section ends here----- -->
+
+
+	<!-- ----attendee Info gathering starts here----- -->
+	<div class="modal" if:true={isOpen}>
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2>Choose your purchase</h2>
+			</div>
+			<div class="modal-body">
+				<div class="scrollable-content">
+					<div class="left-side">
+
+					<section style="overflow: auto; " class="RSVP-form">
+						<template if:true={showAttendeeForm}>
+							<div class="form-details">
+								<div style="">
+
+									<form>
+										<lightning-messages>
+										</lightning-messages>
+
+										<lightning-input field-name="FirstName" label="FirstName"
+											onchange={handleFieldChange}>
+										</lightning-input>
+										<lightning-input field-name="LastName" label="LastName"
+											onchange={handleFieldChange}>
+										</lightning-input>
+										<lightning-input field-name="Email" label="Email" onchange={handleFieldChange}>
+										</lightning-input>
+
+									</form>
+								</div>
+							</div>
+						</template>
+					</section>
+					</div>
+					<div class="right-side">
+
+						<section class="order-summary">
+							<template if:true={showOrderSummary}>
+								<h3>Order Summary</h3>
+								<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
+									<div key={ticketWithQuantity.id}>
+										<div class="ticket-details">
+											<p> <span>{ticketWithQuantity.ticketTitle} x {ticketWithQuantity.quantity} </span>
+												<span>{ticketWithQuantity.ticketPrice}</span> </p>
+											<p> <span>VAT</span> <span>{ticketWithQuantity.ticketVatTex}</span> </p>
+											<p> <span>Total</span> <span>{totalTicketPrice}</span> </p>
+
+
+										</div>
+									</div>
+								</template>
+							</template>
+						</section>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="modal-footer">
+
+				<button onclick={closeModal}>Close</button>
+				<lightning-button class="slds-m-left_small" variant="brand" label="RSVP" onclick={handleRSVP}>
+				</lightning-button>
+			</div>
+		</div>
+	</div>
+	<div class="overlay" if:true={isOpen} onclick={closeModal}></div>
+
+
+
+	<!-- ----attendee Info gathering ends here----- -->
+</template>

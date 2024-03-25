@@ -2,6 +2,7 @@ import { LightningElement, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import DUBAI_ASSET from '@salesforce/resourceUrl/DUBAI_ASSET';
 import getCompanyInfo from '@salesforce/apex/CompanyInformationController.getCompanyInfo';
+import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 import { subscribe, MessageContext } from "lightning/messageService";
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import EVENT_MESSAGE from '@salesforce/messageChannel/EventIDMessageChannel__c';
@@ -13,8 +14,18 @@ export default class DubaiContactUs extends LightningElement {
     organizationId
     orgURL
     pageUrl = window.location.origin + '/dubaidreamin/s';
+    selectedEventId;
 
-
+    @wire(getDubaiDreaminEventId)
+    wiredEventId({ error, data }) { 
+    if (data) {
+        
+        console.log('Dubai Dreamin Event ID:', data);
+        this.selectedEventId=data;
+    } else if (error) {
+        console.error('getDubaiDreaminEventId Error:', error);
+    }
+}
 
 @wire(MessageContext) messageContext;
     
@@ -31,6 +42,10 @@ export default class DubaiContactUs extends LightningElement {
 
         }
 
+ if (scrollSection === 'Sponsors') {
+            this.template.querySelector('.sponsor-section').scrollIntoView({ behavior: 'smooth' });
+
+        }
     }
     @wire(getCompanyInfo)
     getAllCompanyInfo({ data, error }) {

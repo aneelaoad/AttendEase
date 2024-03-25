@@ -25,7 +25,7 @@ public static List<Event__c> getEvents(String whereClause) {
                       + 'Event_Organizer_Company__r.About_Us_Description__c '
                       + 'FROM Event__c '
                       + clause;
-
+        // system.debug(query);
         List<Event__c> result = Database.query(String.valueOf(query));
         return result;
     }
@@ -42,7 +42,7 @@ public Event__c getEventById(String eventId){
     // Fetch Dubai DreamIn Event
     public static String getDubaiDreaminEvent(){
         String eventId;
-        List<Event__c> event=[SELECT Id,Name FROM Event__c WHERE Name LIKE 'Dubai Dreamin%' Limit 1 ];
+        List<Event__c> event=[SELECT Id,Name, Event_Start_Date_and_Time__c, Event_End_Date_and_Time__c FROM Event__c WHERE Name LIKE 'Dubai Dreamin%' Limit 1 ];
             for(Event__c ev:event){
                eventId=ev.Id;
             }

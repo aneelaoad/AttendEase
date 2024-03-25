@@ -155,10 +155,9 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Sponsor</label>
     <nameField>
-        <displayFormat>S-{0000}</displayFormat>
         <label>Sponsor Name</label>
         <trackHistory>false</trackHistory>
-        <type>AutoNumber</type>
+        <type>Text</type>
     </nameField>
     <pluralLabel>Sponsors</pluralLabel>
     <searchLayouts></searchLayouts>

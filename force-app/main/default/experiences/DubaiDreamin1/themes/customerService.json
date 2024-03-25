@@ -1,31 +1,31 @@
 {
-  "activeBrandingSetId" : "37392eda-a4e0-4153-975a-94f70abe9dc7",
+  "activeBrandingSetId" : "b0b49526-b038-411e-ad3f-fa368217c7c3",
   "customCSS" : "",
   "developerName" : "service",
-  "id" : "47370832-56e0-450a-b7da-0fecd82e5c34",
+  "id" : "2ab8187c-ae2c-43eb-a9a3-e29317878b94",
   "label" : "Customer Service",
   "layouts" : {
-    "IJPswM7I5HUScuQXvFnxFZ24h6y05v" : "337fa3ec-5781-473d-bfcb-8e9990d89b31",
-    "Inner" : "5f29d7be-981c-4976-8616-e32c59f43406",
-    "Login" : "e2b41639-ff82-4032-95a3-2cfa9557c6e0",
-    "ServiceNotAvailable" : "a7794ce4-044a-4a9d-8c22-ab098bcbe1fc"
+    "Inner" : "91e99c46-4cb0-400a-9e36-1dfc3d81c4cd",
+    "Login" : "53dbf05e-e4fd-41a5-b275-1207550da178",
+    "ServiceNotAvailable" : "3dd56fca-fd2e-4e97-aba7-94c38684749a",
+    "ifXoBweqt67RTp1xr7f855U79SBfvW" : "668074fc-b42f-4157-a4bd-231c30680732"
   },
   "type" : "theme",
   "views" : [ {
     "componentAttributes" : { },
     "componentName" : "salesforceIdentity:loginBody2",
-    "id" : "e2b41639-ff82-4032-95a3-2cfa9557c6e0",
+    "id" : "53dbf05e-e4fd-41a5-b275-1207550da178",
     "label" : "Login",
     "regions" : [ {
-      "id" : "667d2360-2c38-4adc-8f15-8f2b532481c8",
+      "id" : "de50b17b-dc16-487b-afc9-1e09adbd8fb6",
       "regionName" : "header",
       "type" : "region"
     }, {
-      "id" : "21a93b64-670e-42f2-bb09-3f5a3e5ae0a9",
+      "id" : "45f8effb-6437-4f79-9c62-ec6d4af9abfd",
       "regionName" : "content",
       "type" : "region"
     }, {
-      "id" : "316af782-f734-441e-b689-3f1a98822281",
+      "id" : "d0c6b834-b23d-44eb-b616-0117397c6232",
       "regionName" : "footer",
       "type" : "region"
     } ],
@@ -38,10 +38,10 @@
       "isPageWidthFixed" : true
     },
     "componentName" : "siteforce:serviceBody",
-    "id" : "5f29d7be-981c-4976-8616-e32c59f43406",
+    "id" : "91e99c46-4cb0-400a-9e36-1dfc3d81c4cd",
     "label" : "Default",
     "regions" : [ {
-      "id" : "ff801c88-7014-4acb-89e1-b704a1b6bc6d",
+      "id" : "8ae42635-541d-4f85-b97c-28262b27e412",
       "regionName" : "customHeader",
       "type" : "region"
     }, {
@@ -73,11 +73,11 @@
           "signInActionLabel" : "Sign in to ask the community"
         },
         "componentName" : "forceCommunity:searchBox",
-        "id" : "8d060e02-ff83-4071-8182-8dc3149123c4",
+        "id" : "c51de0d7-fd24-4163-b54f-c12c5346e504",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "7e39a773-d5b1-4e96-a168-7e9fa5fe0144",
+      "id" : "fe2179b2-9d51-497c-a3a5-02d28abae3af",
       "regionName" : "search",
       "type" : "region"
     }, {
@@ -100,11 +100,11 @@
           "viewProfileLabel" : "My Profile"
         },
         "componentName" : "selfService:userProfileMenu",
-        "id" : "f8d62afb-e727-4368-a827-c8f566086f97",
+        "id" : "0378a84a-f71a-4d01-abb5-1be4e45faeb1",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "7d12dc15-5af0-49f0-9794-98bd151735a5",
+      "id" : "8a7ab9e1-206f-44d8-a5b3-2c15b7ba6907",
       "regionName" : "profileMenu",
       "type" : "region"
     }, {
@@ -115,19 +115,19 @@
           "hideHomeText" : false
         },
         "componentName" : "forceCommunity:globalNavigation",
-        "id" : "6ac6955f-6dc1-4edc-9ec2-8e4063cb2d9e",
+        "id" : "8a447d33-f17a-47c2-8a0d-abe0303011ea",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "626b1b82-2288-4cb6-85cf-b56802671149",
+      "id" : "2cc1711f-8f7a-49ff-a2ce-00cf417dc809",
       "regionName" : "navBar",
       "type" : "region"
     }, {
-      "id" : "8c738ee6-0fab-4307-bb9d-9c405038db23",
+      "id" : "93527b85-4fe5-47ff-a267-0826c98c0632",
       "regionName" : "customRegion",
       "type" : "region"
     }, {
-      "id" : "37e51f82-67e0-4e4f-9625-6e94f70327c3",
+      "id" : "f1401416-8e3b-4f0b-8fb2-a8d414f98761",
       "regionName" : "footer",
       "type" : "region"
     } ],
@@ -143,14 +143,14 @@
       "showHero" : true
     },
     "componentName" : "siteforce:themeLayoutStarter",
-    "id" : "a7794ce4-044a-4a9d-8c22-ab098bcbe1fc",
+    "id" : "3dd56fca-fd2e-4e97-aba7-94c38684749a",
     "label" : "ServiceNotAvailable",
     "regions" : [ {
-      "id" : "2546426c-724f-4956-b95a-44780ce262d3",
+      "id" : "62f99e53-9002-4bb0-99bf-ff1dd98a48b2",
       "regionName" : "themeHeader",
       "type" : "region"
     }, {
-      "id" : "36023046-e8a6-4a0b-90de-073e10d12b5e",
+      "id" : "f584192a-5e6b-40e9-89ee-2c7897a511c7",
       "regionName" : "themeFooter",
       "type" : "region"
     } ],
@@ -158,10 +158,10 @@
   }, {
     "componentAttributes" : { },
     "componentName" : "c:DubaiDreaminThemeLayout",
-    "id" : "337fa3ec-5781-473d-bfcb-8e9990d89b31",
+    "id" : "668074fc-b42f-4157-a4bd-231c30680732",
     "label" : "DubaiDreaminThemeLayout",
     "regions" : [ {
-      "id" : "3904aab0-c583-4822-b613-19ca4127b9e5",
+      "id" : "3188a704-05da-4be9-8702-37d3ec3c4e11",
       "regionName" : "customHeader",
       "type" : "region"
     }, {
@@ -193,11 +193,11 @@
           "signInActionLabel" : "Sign in to ask the community"
         },
         "componentName" : "forceCommunity:searchBox",
-        "id" : "cc087440-134a-4460-bfc0-22cbc7e38902",
+        "id" : "5eade73d-490e-4b0b-b1d9-f113034abfcd",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "9b398672-27fa-4985-a52e-13033255488a",
+      "id" : "efe56750-b05b-48c9-aa11-8ce8f3b02746",
       "regionName" : "search",
       "type" : "region"
     }, {
@@ -220,11 +220,11 @@
           "viewProfileLabel" : "My Profile"
         },
         "componentName" : "selfService:userProfileMenu",
-        "id" : "2a93a569-adaa-413f-8d03-e772527bce4e",
+        "id" : "b07b4bfd-0cee-41ae-acfc-4384d747732b",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "da1ad9ea-ae75-46c1-8095-74f30d3e6156",
+      "id" : "a624fce1-beb1-4679-af0d-c37e52f7fe33",
       "regionName" : "profileMenu",
       "type" : "region"
     }, {
@@ -235,97 +235,156 @@
           "hideHomeText" : false
         },
         "componentName" : "forceCommunity:globalNavigation",
-        "id" : "aa2f66da-c0b0-4d96-8120-3ff39a2e7bbc",
+        "id" : "6ee59880-a03f-4c4d-859f-d780ac8e9cf2",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "130aa405-efc9-40f2-8a83-31ce865d8108",
+      "id" : "6b24fa5c-6977-4506-bc84-4d423fc2d01a",
       "regionName" : "navBar",
       "type" : "region"
     }, {
-      "id" : "3f2c70b0-5d4f-4525-8669-00ee1c0aa875",
+      "id" : "c3171f95-e157-4e35-b16e-b64820c778c8",
       "regionName" : "customRegion",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:dubaiFooter",
-        "id" : "14f5adaa-b7c6-47d8-857d-3bc3d8fa7072",
+        "id" : "6b1b4ec0-1f6c-4a8a-96f8-168df3ccf0b4",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "f98f3df5-9d18-40be-b9dc-56d567a94d2d",
+      "id" : "052d9b17-68e5-48de-83c2-9304f9bc47a3",
       "regionName" : "footer",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:dubaiNavbar",
-        "id" : "dd7ffb5e-a476-4da8-869e-9547dc84fc53",
+        "id" : "ccadff3a-94bb-4c5a-9f05-0f9be0780946",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "4f3ef23d-5302-4389-b074-18635ca17b5d",
+      "id" : "46f55625-4d8b-4012-b7ab-7a950889a638",
       "regionName" : "header",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:dubaiEventHighlights",
-        "id" : "8854ba26-91fb-435e-ab59-80f9d727595a",
+        "componentName" : "c:dubaiBannerImage",
+        "id" : "4fe22a0b-50a9-4cdc-a3eb-c80956bab3ce",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "3d9eb7f3-fa9c-4827-92f4-4753a84bda32",
-      "regionName" : "Description",
+      "id" : "86bdc42b-3205-4700-ba3e-0089354b4c7d",
+      "regionName" : "BannerImage",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:dubaiFAQs",
-        "id" : "42afeebd-f4ba-4716-bfa1-77e108ef0c1a",
+        "componentName" : "c:dubaiEventHighlights",
+        "id" : "f8100ebf-462e-4086-aca4-d4dafe2e6747",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "686d7a8c-c405-4c01-b943-f5f80af05b8a",
-      "regionName" : "FAQ",
+      "id" : "ab5dc6df-1853-4b2d-bc35-d21e65ab3416",
+      "regionName" : "Description",
+      "type" : "region"
+    }, {
+      "id" : "ff05c367-c7f7-453c-97c6-713b3eb6cc9f",
+      "regionName" : "PostDescription",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:sessionSection",
+        "id" : "8e0e28c8-9c08-4e2c-bfed-0def30772d30",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "8e21f16b-8d7a-4616-943b-97e772b89cbc",
+      "regionName" : "Sessions",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
         "componentName" : "c:speakerSection",
-        "id" : "aaaace2c-7d5d-484a-ad0d-fb0bdfbe72f6",
+        "id" : "0d57305a-9536-4a89-8b2c-b696affdaa94",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "4b364561-dda7-4b7b-9097-5c03d57c277f",
+      "id" : "53ec2990-62b8-4861-962f-8403ace75afc",
       "regionName" : "Speakers",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:dubaiContactUs",
-        "id" : "b054a5ad-2eae-49d4-add1-bb3acfe5523c",
+        "componentName" : "c:dubaiFAQs",
+        "id" : "526245c2-6100-439a-bc68-d1be496aeeff",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "92c051ad-db9e-4d2f-9c9e-11ecad2547b9",
-      "regionName" : "contactUs",
+      "id" : "58ed5ab0-544a-47fe-acf9-b5ca62d94c3e",
+      "regionName" : "FAQ",
       "type" : "region"
     }, {
       "components" : [ {
         "componentAttributes" : { },
-        "componentName" : "c:dubaiBannerImage",
-        "id" : "16f3b94f-067a-44c3-9a43-814280740da5",
+        "componentName" : "c:dubaiContactUs",
+        "id" : "99df7279-154e-41b5-bedb-e2c065122d13",
         "renditionMap" : { },
         "type" : "component"
       } ],
-      "id" : "a91e575d-31de-4b66-9122-25a93def0fcb",
-      "regionName" : "BannerImage",
+      "id" : "aa9f541d-e77f-455e-b027-ceb11cafedc6",
+      "regionName" : "contactUs",
       "type" : "region"
     }, {
-      "id" : "111b648f-fc5e-4b94-a626-3651aae0dd37",
+      "id" : "f87310ba-ded0-493e-81c1-c43fcd1eb31a",
+      "regionName" : "setEventId",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:sponsorSection",
+        "id" : "53183d34-92ac-4fbf-85d0-a965fe0b08e7",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "36c2058a-6247-4140-acf3-afbb7ddb6e7b",
       "regionName" : "Sponsors",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:dubaiRSVPSection",
+        "id" : "1fbdda63-1a47-42b7-821b-93aae36c2234",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "b71a8115-9e83-4e3a-aad3-7c5071025515",
+      "regionName" : "RSVP",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:dubaiSpeakerRegistration",
+        "id" : "b9b4f473-132d-4c86-9041-6343632e5b47",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "8879fc26-1f52-4c43-a0da-0a95254b17f2",
+      "regionName" : "SpeakerRegistration",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : { },
+        "componentName" : "c:dubaiEventHighlights",
+        "id" : "11fb7bd7-fbc0-4a81-bbe2-a797bda25d3d",
+        "renditionMap" : { },
+        "type" : "component"
+      } ],
+      "id" : "bd8b4761-fbc1-44fe-9ea0-8184487ecd59",
+      "regionName" : "HighLights",
       "type" : "region"
     } ],
     "type" : "view"

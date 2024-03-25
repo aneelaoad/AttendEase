@@ -4,13 +4,18 @@ import COPYRIGHT from '@salesforce/label/c.COPYRIGHT';
 import SOCIAL_ICONS from '@salesforce/resourceUrl/SOCIAL_ICONS';
 import EVENT_ID_LMS from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { subscribe, MessageContext } from "lightning/messageService";
+
+
 export default class Footer extends LightningElement {
 copyRightLabel = COPYRIGHT;
 socialIcons = SOCIAL_ICONS;
 
  socialLinks =[];
 linksLoaded = false;
-selectedEventId
+selectedEventId;
+
+
+
  @wire(MessageContext) messageContext;
 
 
@@ -19,24 +24,41 @@ selectedEventId
   }
 
  handleMessage(eventMessage) {
+    this.linksLoaded= true
+   
     this.selectedEventId = eventMessage.eventId;
    
-    getFooterItems({ eventId:this.selectedEventId}).then(data=>{
-         if (data) {
-             this.linksLoaded= true
-            data.forEach(link => {
+   
+    // getFooterItems({ eventId:this.selectedEventId}).then(data=>{
+    //   console.log('footer data : ',data);
+    //      if (data) {
+    //        this.linksLoaded= true
+    //         data.forEach(link => {
+    //             const iconName = link.socialMediaIcon;
+    //             let socialLink = Object.assign({}, link, {socialMediaIcon: this.socialIcons + '/' + iconName});
+    //             this.socialLinks.push(socialLink);
+  
+    //           });
+    //     } else if (error) {
+    //         console.error('Error:', error);
+    //     }
+    // })
+
+  }
+
+@wire(getFooterItems, { eventId: '$selectedEventId' })
+wiredFooterItems({ error, data }) {
+  if (data) {
+    data.forEach(link => {
                 const iconName = link.socialMediaIcon;
                 let socialLink = Object.assign({}, link, {socialMediaIcon: this.socialIcons + '/' + iconName});
                 this.socialLinks.push(socialLink);
   
               });
-        } else if (error) {
-            console.error('Error:', error);
-        }
-    })
-
+  } else if (error) {
+     console.error('Error:', error);
   }
-
+}
    connectedCallback() {
     this.subscribeToMessageChannel();
   }

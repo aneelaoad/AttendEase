@@ -1,11 +1,11 @@
 {
-  "appPageId" : "dfb6d148-efb7-4fc4-8582-99807b0aa8aa",
+  "appPageId" : "037cb2ea-eff2-4b4a-8f6b-dee80b19404d",
   "componentName" : "siteforce:dynamicLayout",
   "dataProviders" : [ ],
-  "id" : "6c985ab1-265b-4ad0-aa49-d36f4e5a85a6",
+  "id" : "f862e1ce-ff22-4865-8173-6065e3e05397",
   "label" : "My Account",
   "regions" : [ {
-    "id" : "c15de8ee-9661-4f0a-959b-c98d051a5e14",
+    "id" : "150867d0-918e-48fb-a9dc-074e120786e8",
     "regionName" : "header",
     "type" : "region"
   }, {
@@ -15,9 +15,9 @@
         "backgroundOverlay" : "rgba(0,0,0,0.5)",
         "contentAreaWidth" : 100,
         "sectionConfig" : {
-          "UUID" : "127f7bcf-4edd-4f04-bddb-fafc99f794f7",
+          "UUID" : "55d2f876-eeaa-4d62-b43d-a8bded9618c7",
           "columns" : [ {
-            "UUID" : "36496c32-cd24-4c8e-ade5-e93444410008",
+            "UUID" : "4da442be-3df8-4fcf-92e8-9ecb822d1f2b",
             "columnKey" : "col1",
             "columnName" : "column 1",
             "columnWidth" : "12",
@@ -39,14 +39,14 @@
         "sectionHeight" : 32
       },
       "componentName" : "forceCommunity:section",
-      "id" : "127f7bcf-4edd-4f04-bddb-fafc99f794f7",
+      "id" : "55d2f876-eeaa-4d62-b43d-a8bded9618c7",
       "regions" : [ {
         "components" : [ {
           "componentAttributes" : {
             "recordId" : "{!CurrentUser.accountId}"
           },
           "componentName" : "forceCommunity:recordHeadline",
-          "id" : "b747cf81-6cec-4512-b757-0a92bbf6675e",
+          "id" : "b45bc342-5aea-44ee-a8d8-c4b695bd4c71",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
@@ -64,12 +64,12 @@
             "timelineTabLabel" : "Activity"
           },
           "componentName" : "forceCommunity:recordHomeTabs",
-          "id" : "bd04471b-b18a-4234-9ac7-00ecf6c49b91",
+          "id" : "42e94cc3-d268-4ab7-b1bf-1f0e394d422c",
           "renderPriority" : "NEUTRAL",
           "renditionMap" : { },
           "type" : "component"
         } ],
-        "id" : "36496c32-cd24-4c8e-ade5-e93444410008",
+        "id" : "4da442be-3df8-4fcf-92e8-9ecb822d1f2b",
         "regionLabel" : "column 1",
         "regionName" : "col1",
         "renditionMap" : { },
@@ -79,11 +79,11 @@
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "d15f8c12-d9d2-4de0-8457-66f307ac3c74",
+    "id" : "ce2cc19a-c6ef-4950-bf3c-95766818ed0b",
     "regionName" : "content",
     "type" : "region"
   }, {
-    "id" : "3aebab31-3718-4377-a637-a6d0d0405929",
+    "id" : "7619516a-dcc5-440f-bae2-5e725899c0a2",
     "regionName" : "footer",
     "type" : "region"
   } ],

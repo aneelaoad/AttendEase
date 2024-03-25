@@ -23,6 +23,8 @@
     <tabs>Question__c</tabs>
     <tabs>Question_Option__c</tabs>
     <tabs>Question_Response__c</tabs>
+    <tabs>Ticket__c</tabs>
+    <tabs>Subscription__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>AttendEase_UtilityBar</utilityBar>
 </CustomApplication>

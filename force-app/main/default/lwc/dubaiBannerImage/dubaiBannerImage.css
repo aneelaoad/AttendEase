@@ -1,8 +1,30 @@
+:host ::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+:host ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the track */
+}
+
+/* Handle */
+:host ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the handle */
+    border-radius: 6px; /* roundness of the handle */
+     background: var(--LIGHT-BLUE); 
+
+}
+
+/* Handle on hover */
+:host ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* color of the handle on hover */
+}
+
 .banner-image-container{
 	width: 100%;
-	height: 100vh;
+	height: 120vh;
 	position: relative;
-	
+	background-size: cover;
 }
 .banner-image-container img{
 
@@ -21,6 +43,7 @@
 	color: white;
     transform: translate(-50%);
 	text-align: center;
+    width: 90%;
 }
 .banner-image-container .banner-content h1{
 	font-size: 5rem;
@@ -73,12 +96,65 @@
 .input-row lightning-button {
     margin-left: 10px;
 } */
+@media (max-width: 1350px) and (min-width:1000px) {
+    .banner-image-container {
+        height: 80vh;
+    }
+    .banner-image-container .banner-content h1{
+    font-size: 3.6rem;
+    margin-bottom: 30px;
+}
+}
+@media (max-width: 1000px) and (min-width:200px) {
+    .banner-image-container {
+        height: 60vh;
+    }
+}
+@media (max-width: 500px) and (min-width:200px) {
+
+.banner-image-container .dubai-icon{
+    width: 100% !important;
+}
+}
 
 
-@media (max-width: 500px)  {
-
-.banner-image-container .banner-content h1{
+@media (max-width: 1550px) and (min-width:200px) {
+.banner-image-container .dubai-icon{
+    /* width: 100% !important; */
+    height: 50%;
+}
+/* .banner-image-container .banner-content h1{
     font-size: 3rem;
     margin-bottom: 30px;
+} */
+}
+
+
+
+@media (max-width: 860px) and (min-width:200px) {
+    .banner-content{
+        width: 90%;
+    }
+    .banner-content h3{
+        margin: 20px auto;
+    }
+    .banner-content h1{
+        font-size: 2.5rem !important; 
+    }
+}
+
+@media (max-width: 400px) and (min-width:200px) {
+    .banner-content h1{
+        top: 22%;
+
+    }
+    .banner-content h1{
+    font-size: 2rem !important;
+    }
+.banner-image-container{
+    height: 50vh;
+}
+.banner-image-container .dubai-icon{
+    width: 80%;
 }
 }

@@ -1,14 +1,14 @@
 {
-  "appPageId" : "cb541af6-45c3-403f-8004-2ad0776be1d6",
+  "appPageId" : "778d2b59-ddb4-4ab6-a973-65070878f51c",
   "componentName" : "siteforce:sldsOneColLayout",
   "dataProviders" : [ ],
-  "id" : "49966ba8-4658-4000-b73c-71f60aecaaea",
+  "id" : "f7bd70f1-4e30-4f38-8610-fe072c39d709",
   "label" : "Register",
   "regions" : [ {
     "components" : [ {
       "componentAttributes" : { },
       "componentName" : "salesforceIdentity:communityLogo2",
-      "id" : "c32e03be-5f9a-4f6d-b62f-d7254ed4d68e",
+      "id" : "cc7e8a92-4fbe-4342-b336-e8164ca48106",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -17,7 +17,7 @@
         "richTextValue" : "<div style=\"text-align: center;\" class=\"inverseTextColor\">Join the community to receive personalized information and customer support.</div>"
       },
       "componentName" : "forceCommunity:richTextInline",
-      "id" : "f2efbb4b-8276-43a4-a918-7ef58299dc2a",
+      "id" : "8bf76348-0770-41b5-bd3c-b0842924cb20",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -35,7 +35,7 @@
         "submitButtonLabel" : "Sign Up"
       },
       "componentName" : "salesforceIdentity:selfRegister2",
-      "id" : "2a4101ce-adbd-4cde-a926-ef1f0e0fd624",
+      "id" : "46bffde0-0c1c-4336-99a7-c29054f17a78",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -46,7 +46,7 @@
         "useCommunityDomainSso" : true
       },
       "componentName" : "salesforceIdentity:socialLogin2",
-      "id" : "757d4e40-e233-4f37-ab8e-5ec28eb2dbdb",
+      "id" : "6081c14a-cf9b-4cc0-acf4-2c01ea874e29",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
@@ -55,12 +55,12 @@
         "richTextValue" : "<div style=\"text-align: center;\"><a class=\"inverseTextColor\" href=\"./\">Already have an account?</a></div>"
       },
       "componentName" : "forceCommunity:richTextInline",
-      "id" : "f97a4dae-7ffd-4207-9b75-16d2a81101b8",
+      "id" : "1c76a25e-849c-4439-a953-0ba2594fd311",
       "renderPriority" : "NEUTRAL",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "b51ab18a-3ad1-47a6-80fb-942d65bba051",
+    "id" : "64b34e1c-fc50-4a41-b0f3-157ecc75b00a",
     "regionName" : "content",
     "type" : "region"
   }, {
@@ -71,11 +71,11 @@
         "title" : "Register"
       },
       "componentName" : "forceCommunity:seoAssistant",
-      "id" : "4e93df5d-3fd5-43fa-8efe-c12cda8c4d0b",
+      "id" : "8a5aab56-9c8c-4c70-a30d-1aa506d702d0",
       "renditionMap" : { },
       "type" : "component"
     } ],
-    "id" : "6bfe5f2c-aef8-45bf-8dd3-bbdc0529f6cc",
+    "id" : "26323be7-ef85-435e-9a72-f8214327abcf",
     "regionName" : "sfdcHiddenRegion",
     "type" : "region"
   } ],

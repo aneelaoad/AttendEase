@@ -4,7 +4,8 @@ import registerAttendee from '@salesforce/apex/DubaiRSVPController.registerAtten
 import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 
 export default class DubaiRSVP extends LightningElement {
-    // selectedEventId = 'a021m00001cTgUnAAK'
+
+    // selectedEventId ='a0B5j00000C8Cq4EAF';
     selectedEventId;
 
     isModalOpen = false;
@@ -19,16 +20,15 @@ export default class DubaiRSVP extends LightningElement {
     transactionId = '';
     amount = '';
 
-
+    errorMessage = '';
     @wire(getDubaiDreaminEventId)
     wiredEventId({ error, data }) {
-    if (data) {
-        
-        console.log('Dubai Dreamin Event ID:', data);
-        this.selectedEventId=data;
-    } else if (error) {
-        console.error('getDubaiDreaminEventId Error:', error);
-    }
+        if (data) {
+
+            this.selectedEventId = data;
+        } else if (error) {
+            console.error('getDubaiDreaminEventId Error:', error);
+        }
     }
 
 
@@ -47,14 +47,6 @@ export default class DubaiRSVP extends LightningElement {
 
 
 
-    @wire(getDubaiDreaminEventId)
-    wiredEventId({ error, data }) {
-    if (data) {
-       this.selectedEventId=data;
-    } else if (error) {
-        console.error('getDubaiDreaminEventId Error:', error);
-    }
-    }
     handleFieldChange(event) {
         const fieldName = event.target.label;
         const value = event.target.value;
@@ -79,25 +71,37 @@ export default class DubaiRSVP extends LightningElement {
         }
     }
 
- handleInputChange(event) {
+    handleInputChange(event) {
         const { name, value } = event.target;
         this[name] = value;
-        
+
     }
     handleRSVP() {
-
+        if (!this.lastName || !this.email || !this.transactionId || !this.amount) {
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Failure',
+                    message: 'Please fill out the form!',
+                    variant: 'warning'
+                })
+            );
+            return;
+        }
         let attendeeListObj = {
             eventId: this.selectedEventId,
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
-            transactionID: this.transactionId, 
-            amount: parseInt(this.amount )
+            transactionID: this.transactionId,
+            amount: parseInt(this.amount)
 
         }
-        console.log('attendeeListObj : ', JSON.stringify(attendeeListObj));
+
+
         registerAttendee({ attendeeInfo: JSON.stringify(attendeeListObj) })
             .then((attendeeObj) => {
+                this.closeModal();
+                this.resetForm();
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
@@ -106,10 +110,27 @@ export default class DubaiRSVP extends LightningElement {
                     })
                 );
             })
-            .catch((err) => console.error(err));
 
-        this.resetForm();
-        this.closeModal();
+            .catch((error) => {
+                if (error.body && error.body.message && error.body.message.includes('An attendee with the same email already exists.')) {
+                    console.log('error.body.message : ',error.body.message);
+                    this.errorMessage = 'An attendee with the same email already exists.';
+                    this.dispatchEvent(
+                        new ShowToastEvent({
+                            title: 'Error',
+                            message:  this.errorMessage,
+                            variant: 'error'
+                        })
+                    );
+                } else {
+
+                    console.error('Error registering attendee: ', error);
+
+                    this.errorMessage = 'An error occurred while registering attendee.';
+                }
+            });
+
+
 
     }
 
@@ -118,12 +139,12 @@ export default class DubaiRSVP extends LightningElement {
         this.firstName = '';
         this.lastName = '';
         this.email = '';
-        this.transactionId= '';
+        this.transactionId = '';
         this.amount = ' ';
         this.responsesWithQuestionIds = [];
         this.questionsList = [];
         this.formReset = true;
     }
 
-    
+
 }

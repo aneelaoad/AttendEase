@@ -14,7 +14,9 @@
         <members>Event_Speaker__c</members>
         <members>FAQ__c</members>
         <members>Navigation_Control__c</members>
-      
+        <members>REG_NAVBAR__mdt</members>
+        <members>Ticket__c</members>
+        <members>Subscription__c</members>
         <name>CustomObject</name>
     </types>
     <types>
@@ -30,14 +32,18 @@
         <members>Event_Speaker__c</members>
         <members>FAQ__c</members>
         <members>Navigation_Control__c</members>
+        <members>Subscription__c</members>
+        <members>Ticket__c</members>
     <name>CustomTab</name>
  </types>
     <types>
         <members>Event__c-Event Layout</members>
         <members>FAQ__c-FAQ Layout</members>
+      
         <members>Speaker__c-Speaker Layout</members>
         <members>Sponsor__c-Sponsor Layout</members>
-     
+       <members>Subscription__c-Subscription Layout</members>
+        <members>Ticket__c-Ticket Layout</members>
         <members>Question__c-Question Layout</members>
         <members>Question_Response__c-Question Response Layout</members>
         <members>Session__c-Session Layout</members>
@@ -55,10 +61,7 @@
         <members>Navigation_Control__c.Header_Navigation</members>
         <name>RecordType</name>
     </types>
-    <types>
-    <members>Event__c</members>
-    <name>CustomTab</name>
- </types>
+  
 	 <types>
         <members>Account.Logo__c</members>
         <members>Account.About_Us_Description__c</members>
@@ -88,15 +91,31 @@
         <members>Session__c.Session_End_Time__c</members>
         <members>Session__c.Session_Duration__c</members>
         <members>Session__c.Session_Description__c</members>
+        <members>Session__c.Session_Track__c</members>
         <members>Speaker__c.Speaker_Name__c</members>
         <members>Speaker__c.Speaker_Profile_Image__c</members>
         <members>Speaker__c.Speaker_Information__c</members>
+        <members>Speaker__c.Speaker_Role__c</members>
+        <members>Speaker__c.Speaker_Social_Media__c</members>
         <members>Speaker__c.Email__c</members>
         <members>Speaker__c.Phone_Number__c</members>
         <members>Speaker__c.Company_Name__c</members>
         <members>Speaker__c.Speaker_Title__c</members>
+        <members>Speaker__c.Parent_Speaker__c</members>
+        <members>Speaker__c.Speaker_Type__c</members>
         <members>Sponsor__c.Event__c</members>
         <members>Sponsor__c.Sponsor__c</members>
+        <members>Sponsor__c.Industry__c</members>
+        <members>Sponsor__c.Sponsor_Image__c</members>
+        <members>Sponsor__c.Sponsor_Phone__c</members>
+        <members>Sponsor__c.Sponsor_Title__c</members>
+        <members>Sponsor__c.Sponsorship_Level__c</members>
+        <members>Sponsor__c.Email__c</members>
+        <members>Sponsor__c.Company_Type__c</members>
+        <members>Sponsor__c.Company_Name__c</members>
+        <members>Sponsor__c.Company_HQ__c</members>
+        <members>Sponsor__c.Company_Description__c</members>
+        <members>Sponsor__c.Company_Website__c</members>
         <members>Attendee__c.Attendee__c</members>
         <members>Attendee__c.Event__c</members>
         <members>Attendee__c.Event__c</members>
@@ -120,28 +139,49 @@
         <members>Navigation_Control__c.Link_URL__c</members>
         <members>Navigation_Control__c.Social_Media_Type__c</members>
         <members>Navigation_Control__c.Section__c</members>
+        <members>Case.Event__c</members>
+        <members>Case.Event_Id__c</members>
+
+        <members>Ticket__c.Description__c</members>	
+        <members>Ticket__c.Ticket_Price__c</members>	
+        <members>Ticket__c.Title__c</members>	
+        <members>Ticket__c.Vat__c</members>	
+        <members>Subscription__c.Attendee__c</members>	
+        <members>Subscription__c.Quantity__c</members>	
+        <members>Subscription__c.Ticket__c</members>	
         
+
         <name>CustomField</name>
     </types>
     <types>
+        <members>EventRegPortal</members>
+        <members>AttendEasePlus</members>
         <members>DubaiDreamin</members>
         <name>CustomSite</name>
     </types>
 
     <types>
+        <members>cbEventRegPortal</members>
+        <members>cbAttendEasePlus</members>
         <members>cbDubaiDreamin</members>
         <name>NetworkBranding</name>
         </types>
      <types>
+        <members>EventRegPortal</members> 
+        <members>AttendEasePlus</members> 
         <members>DubaiDreamin</members>
         <name>Network</name>
         </types>
     <types>
+        <members>AttendEasePlus1</members>
         <members>DubaiDreamin1</members>
+        <members>EventRegPortal1</members>
         <name>ExperienceBundle</name>
     </types>
   
        <types>
+        <members>attendeesBlankLayout</members>
+        <members>EventRegistrationLayout</members>
         <members>DubaiDreaminThemeLayout</members>
         <name>AuraDefinitionBundle</name>
     </types>
@@ -151,13 +191,26 @@
     </types>
 
       <types>
-		
+		<members>navigationBar</members>
+        <members>aboutUs</members>
         <members>speakerSection</members>
-        <members>sessionSection</members>  
+        <members>sessionSection</members>
+        <members>eventHighlight</members>
+        <members>sponsorSection</members>
+        <members>bannerImage</members>
+        <members>fAQs</members>
         <members>expandableComponent</members>
-        <members>popupModal</members>
+        <members>footer</members>
+        <members>setEventId</members>
+        <members>autoOpenModal</members>
         <members>attendeeRegistrationForm</members>
-        <members>speakerRegistrationForm</members> 
+        <members>contactUs</members>
+        <members>navbarWarningMessage</members>
+        <members>regNavbar</members>
+        <members>regFooter</members>
+        <members>popupModal</members>
+        <members>speakerRegistrationForm</members>
+        <members>sponsorRegistrationForm</members>
         <members>dubaiNavbar</members>
         <members>blueButton</members>
         <members>dubaiEventHighlights</members>
@@ -166,6 +219,9 @@
         <members>dubaiFAQs</members>
         <members>dubaiFooter</members>
         <members>dubaiRSVP</members>
+        <members>dubaiRSVPSection</members>
+        <members>rsvpModal</members>
+        <members>dubaiSpeakerRegistration</members>
       	<name>LightningComponentBundle</name>
 	</types>
     
@@ -203,7 +259,7 @@
          <members>CompanyInformationSelector</members>
         <members>ContactSelector</members>
         <members>DenormalizedOption</members>
-    
+        <members>RegNavbarSelector</members>
         <members>EventTestDataFactory</members>
         <members>DubaiRSVPController</members>
         <members>AttendeeTicketPDFController</members>
@@ -219,6 +275,10 @@
         <members>FooterControllerTest</members>
         <members>ContentDocumentUtils</members>
         <members>ContentVersionSelector</members>
+        <members>TicketSelector</members>
+        <members>TicketController</members>
+        <members>DenormalizedTicket</members>
+        <members>PicklistMetadataController</members>
 		<name>ApexClass</name>
 	</types>
     
@@ -239,18 +299,26 @@
         <members>FAQ_LABEL</members>
         <members>RSVP_LABEL</members> 
         <members>COPYRIGHT</members>
-    
         <members>All_Sessions_Label</members>
         <members>All_Speakers_Label</members> 
         <members>Button_View_Label</members>
         <members>Company_Description_Label</members>
-         <members>ContactUs_Label</members>
+        <members>ContactUs_Label</members>
         <members>Session_Label</members> 
         <members>Speaker_Label</members>
         
         <name>CustomLabel</name>
     </types>
- 
+    <types>
+        <members>REG_NAVBAR.About_Us</members>
+        <members>REG_NAVBAR.Contact_Us</members>
+        <members>REG_NAVBAR.Home</members>
+        <members>REG_NAVBAR.Register_Event</members>
+        <name>CustomMetadata</name>
+
+    </types>
+
+
     <types> 
       <members>unfiled$public/Attendee_Verification_Email_1708601779750</members>
        <name>EmailTemplate</name>
@@ -263,11 +331,13 @@
 
 
     <types>
+        <members>ICONS</members>
+        <members>SOCIAL_ICONS</members>
+        <members>IMAGES</members>
         <members>DUBAI_ASSET</members>
         <members>SO_ICONS</members>
          <members>DubaiDreaminLogo</members>
-        <members>IMAGES</members>
-
+         <members>dubaibanner</members>
         <name>StaticResource</name>
     </types>
     <types>
@@ -277,7 +347,8 @@
      <types>
         <members>Prevention_Of_Duplication_Of_Speaker_Record</members>
         <members>Prevention_Duplication_of_Speaker_From_Same_Session</members>
-        <members>Payment_Verified_Flow-9</members>
+      <!--  <members>Payment_Verified_Flow</members> -->
+         <members>Assigning_Event_Value_In_Case_Record</members>
        <name>Flow</name>
     </types>
  <types>
@@ -294,6 +365,8 @@
     </types>
    <types>
         <members>DubaiDreamin Profile</members>
+        <members>AttendEasePlus Profile</members>
+        <members>EventRegPortal Profile</members>
         <name>Profile</name>
     </types>
     <version>58.0</version> 

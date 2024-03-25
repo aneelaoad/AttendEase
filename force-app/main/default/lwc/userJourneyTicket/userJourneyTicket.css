@@ -1,0 +1,38 @@
+.form-group {
+    padding: 10px;
+    border: 2px solid;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    width: 700px;
+}
+
+.form-group > label {
+    position: absolute;
+    top: -11px;
+    left: 20px;
+    background-color: white;
+    padding: 0 5px;
+}
+
+.form-group > input {
+    border: none;
+    width: calc(100% - 20px); /* Adjust as needed */
+    padding: 5px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+
+}
+.mar{
+    margin:20px
+}
+h2 {
+    font-size: 36px;
+    font-weight: 300;
+    color: #242424;
+    line-height: 42px;
+    margin: 0 0 12px;
+}
+.styled_input{
+    line-height: 22px;
+    padding: 12px 14px;
+}

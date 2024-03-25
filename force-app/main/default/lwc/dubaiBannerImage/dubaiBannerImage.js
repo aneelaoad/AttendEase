@@ -2,6 +2,7 @@ import { LightningElement, wire } from 'lwc';
 import getEventHightlight from '@salesforce/apex/EventController.getEvent';
 import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 import DUBAI_ASSET from '@salesforce/resourceUrl/DUBAI_ASSET';
+import dubaibanner from '@salesforce/resourceUrl/dubaibanner';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import { subscribe,  MessageContext } from 'lightning/messageService';
 export default class DubaiBannerImage extends LightningElement {
@@ -24,7 +25,7 @@ export default class DubaiBannerImage extends LightningElement {
     wiredEventId({ error, data }) {
     if (data) {
         
-        console.log('Dubai Dreamin Event ID:', data);
+     
         this.selectedEventId=data;
     } else if (error) {
         console.error('getDubaiDreaminEventId Error:', error);
@@ -76,10 +77,10 @@ export default class DubaiBannerImage extends LightningElement {
 
 
     connectedCallback() {
-        this.backgroundImageUrl = DUBAI_ASSET + '/bannersection.png';
+        // this.backgroundImageUrl = DUBAI_ASSET + '/bannersection.png';
+        // this.backgroundImageUrl = DUBAI_ASSET + '/bannerBg.png';
+        this.backgroundImageUrl = dubaibanner + '/dubaibanner.png';
         this.dubaiBuildingsIcon = DUBAI_ASSET + '/dubai.png';
-        console.log('clicked');
-        console.log(' this.backgroundImageUrl : ', this.backgroundImageUrl);
         this.subscribeToScrollMsg();
     }
 

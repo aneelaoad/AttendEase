@@ -26,6 +26,10 @@
                 <behavior>Required</behavior>
                 <field>Session_End_Time__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Session_Track__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
