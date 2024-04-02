@@ -5,12 +5,21 @@
 * @Last Modified by: Aneela Oad
 */
 public class DenormalizedAttendee{
-@AuraEnabled public string eventId;
-@AuraEnabled public string firstName;
-@AuraEnabled public string lastName;
-@AuraEnabled public string email;
-@AuraEnabled public string transactionID;
+@AuraEnabled public String eventId;
+@AuraEnabled public String firstName;
+@AuraEnabled public String lastName;
+@AuraEnabled public String email;
+@AuraEnabled public String transactionID;
 @AuraEnabled public Decimal amount;
+@AuraEnabled public String companyName;
+@AuraEnabled public String companySize;
+@AuraEnabled public String foodPreference;
+@AuraEnabled public String message;
+@AuraEnabled public String phone;
+@AuraEnabled public String sessionInterest;
+@AuraEnabled public String tShirtSize;
+@AuraEnabled public String designation;
+
 @AuraEnabled public List<DenormalizedResponse> responsesList;
 @AuraEnabled public List<DenormalizedQuestion> questionsList;
 @AuraEnabled public List<DenormalizedTicket> ticketsList;

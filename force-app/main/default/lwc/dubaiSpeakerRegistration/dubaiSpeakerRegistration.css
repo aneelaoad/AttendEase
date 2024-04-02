@@ -1,3 +1,23 @@
 .dummy{
 	color : black;
 }
+h1 {
+    font-weight: bold;
+    font-size: xx-large;
+}
+.centered {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    text-align: center;
+	padding:20px;
+}
+.grid{
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		/* padding:20px; */
+	
+}

@@ -14,6 +14,7 @@ public with sharing class DenormalizedSponsor {
     @AuraEnabled public String sponsorEmail;
     @AuraEnabled public String companyWebsite;
     @AuraEnabled public String sponsorImage;
+    @AuraEnabled public String sponsorImageBlob;
    // @AuraEnabled public String sponsorInformation;
     @AuraEnabled public String companyAddress;
     @AuraEnabled public String sponsorshipLevel;

@@ -10,9 +10,22 @@ import SPEAKER_OBJECT from "@salesforce/schema/Speaker__c";
 import ROLE_FIELD from "@salesforce/schema/Speaker__c.Speaker_Role__c";
 import SESSION_OBJECT from "@salesforce/schema/Session__c";
 import SESSION_TRACK_FIELD from "@salesforce/schema/Session__c.Session_Track__c";
-
+// import responsive from "./responsive.css";
+// import style from "./style.css";
 export default class SpeakerRegistrationForm extends LightningElement {
-  
+
+    // static stylesheets = [responsive, style];
+    isOpen = false;
+    // closeModal() { this.isOpen = false; document.body.style.overflow = 'auto'; }
+
+    // handleCheckout() {
+    //     document.body.style.overflow = 'hidden';
+    
+    //     this.isOpen = true;
+    //     this.showOrderSummary = true
+    //     this.showAttendeeForm = true
+    //     console.log('this.ticketsWithQuantity : ', JSON.stringify(this.ticketsWithQuantity));
+    //   }
     speakerName = '';
     speakerTitle = '';
     speakerEmail = '';
@@ -47,7 +60,12 @@ export default class SpeakerRegistrationForm extends LightningElement {
     showModal=false;
     
     showCoSpeakerFields = false;
-    showEmailValidation = false;
+    showEmailExistsValidation = false;
+    showSpeakerEmailValidation =false;
+    showSpeakerNameValidation = false;
+    showSpeakerCompanyValidation = false;
+    showSessionTitleValidation = false;
+    showSpeakerImageValidation = false;
     speakerRecordTypeId;
     speakerRoleOption;
    
@@ -113,24 +131,32 @@ export default class SpeakerRegistrationForm extends LightningElement {
         ];
     }
      openModal(event) {
-        this.showModal = true;
+           
+    
+        this.isOpen = true;
+        // this.showModal = true;
         document.body.style.overflow = 'hidden';
      }
       closeModal() {
-        this.showModal = false;
+        this.isOpen = false;
+        // this.showModal = false;
         document.body.style.overflow = 'auto';
 
     }
     handleSpeakerNameChange(event) {
         this.speakerName = event.target.value;
+        this.showSpeakerNameValidation = false;
     }
     handleSpeakerEmailChange(event) {
         this.speakerEmail = event.target.value;
-        this.showEmailValidation=false;
+        this.showEmailExistsValidation=false;
+        this.showSpeakerEmailValidation = false;
     }
 
     handleSpeakerTitleChange(event) {
         this.speakerTitle = event.target.value;
+        this.showSpeakerTitleValidation = false;
+
     }
     // handleProfileImageChange(event) {
     //     // this.speakerProfileImage = event.target.files[0];
@@ -154,6 +180,8 @@ export default class SpeakerRegistrationForm extends LightningElement {
 
     handleSessionTitleChange(event) {
         this.sessionTitle = event.target.value;
+        this.showSessionTitleValidation = false;
+
     }
 
     handleSessionStartDateChange(event) {
@@ -173,6 +201,8 @@ export default class SpeakerRegistrationForm extends LightningElement {
     }
     handleCompanyNameChange(event) {
         this.companyName = event.target.value;
+        this.showSpeakerCompanyValidation = false;
+
     }
     handleSpeakerRoleChange(event) {
         this.speakerRole = event.target.value;
@@ -180,6 +210,7 @@ export default class SpeakerRegistrationForm extends LightningElement {
     }
     handleProfileImageChange(event) {
         this.speakerImage = event.target.value;
+        
     }
     handleSpeakerSocialMediaChange(event) {
         this.speakerSocialMedia = event.target.value;
@@ -233,33 +264,74 @@ export default class SpeakerRegistrationForm extends LightningElement {
 
 
 
- handleSpeakerRegistration() {
-    // console.log('Current value of the input: ' + this.terms);
-    // const allValid = [
-    //     ...this.template.querySelectorAll('input'),
-    // ].reduce((validSoFar, inputElem) => {
-    //     if (inputElem.reportValidity) {
-    //         inputElem.reportValidity();
-    //         return validSoFar && inputElem.checkValidity();
-    //     } else {
-    //         // Fallback for browsers that don't support reportValidity()
-    //         if (!inputElem.validity.valid) {
-    //             inputElem.classList.add('slds-has-error'); // Example of adding error class for SLDS styling
-    //             return false;
-    //         }
-    //         return validSoFar;
-    //     }
-    // }, true);
+ handleSpeakerRegistration(event) {
+    event.preventDefault()
+    // this.resetValidationFlags();
+    console.log('Current value of the input: ' + this.terms);
+    const allValid = [
+        ...this.template.querySelectorAll('input'),
+    ].reduce((validSoFar, inputElem) => {
+        if (inputElem.reportValidity) {
+            inputElem.reportValidity();
+            return validSoFar && inputElem.checkValidity();
+        } else {
+            // Fallback for browsers that don't support reportValidity()
+            if (!inputElem.validity.valid) {
+                inputElem.classList.add('slds-has-error'); // Example of adding error class for SLDS styling
+                return false;
+            }
+            return validSoFar;
+        }
+    }, true);
     // if (allValid) {
     //     alert('All form entries look valid. Ready to submit!');
     // } else {
     //     alert('Please update the invalid form entries and try again.');
     // }
 
-        // if(!showCoSpeakerFields){
-        //     console.log('coSpeakerRole', this.coSpeakerRole);
+    //     if(!showCoSpeakerFields){
+    //         console.log('coSpeakerRole', this.coSpeakerRole);
 
-        // }
+    //     }
+
+
+
+
+
+
+
+
+
+
+    //     if(this.isEmpty(this.speakerName)){
+    //         // alert('name is null')
+    //         missingMsg = `${this.speakerName} is missing`
+    //         this.showSpeakerNameValidation = true;
+    //     }
+    //   if(this.isEmpty(this.companyName)){
+    //         // alert('name is null')
+    //         this.showSpeakerCompanyValidation = true;
+    //     }
+    //   if(this.speakerTitle==''){
+    //         // alert('name is null')
+    //         this.showSpeakerTitleValidation = true;
+    //     }
+    //   if(this.sessionTitle==''){
+    //         // alert('name is null')
+    //         this.showSessionTitleValidation = true;
+    //     }
+    //   if(this.speakerImage==''){
+    //         // alert('name is null')
+    //         this.showSpeakerImageValidation = true;
+    //     }
+    //   if(this.speakerEmail==''){
+    //         // alert('name is null')
+    //         this.showSpeakerEmailValidation = true;
+    //     }
+    //     if (this.hasValidationErrors()) {
+    //         return;
+    //     }
+        // else{
         let speakerInfo = {
             hasCoSpeaker: this.showCoSpeakerFields,
             speakerName:this.speakerName,
@@ -288,8 +360,20 @@ export default class SpeakerRegistrationForm extends LightningElement {
             },
             eventId: this.selectedEventId
         }
-
+       
   
+      
+
+
+
+
+
+
+
+
+
+
+
         // registerSpeaker({ speakerName: this.speakerName, speakerTitle: this.speakerTitle, selectedEventId: this.selectedEventId, speakerImage: this.speakerProfileImage, speakerInformation:this.speakerInformation })
         registerSpeaker({ speakerInfo: JSON.stringify(speakerInfo) })
             .then((data => {
@@ -298,7 +382,7 @@ export default class SpeakerRegistrationForm extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
-                        message: 'Successfully registered for event! ',
+                        message: 'Speaker Application Submitted! ',
                         variant: 'success'
                     })
                 );
@@ -307,15 +391,15 @@ export default class SpeakerRegistrationForm extends LightningElement {
             .catch((error) => {
                 if (error.body && error.body.message && error.body.message.includes('A Speaker/Co-Speaker with the same email already exists.')) {
                     console.log('error.body.message : ',error.body.message);
-                    this.showEmailValidation = true;
-                    // this.errorMessage = 'A Speaker/Co-Speaker with the same email already exists.';
-                    // this.dispatchEvent(
-                    //     new ShowToastEvent({
-                    //         title: 'Error',
-                    //         message:  this.errorMessage,
-                    //         variant: 'error'
-                    //     })
-                    // );
+                    this.showEmailExistsValidation = true;
+                    this.errorMessage = 'A Speaker/Co-Speaker with the same email already exists.';
+                    this.dispatchEvent(
+                        new ShowToastEvent({
+                            title: 'Error',
+                            message:  this.errorMessage,
+                            variant: 'error'
+                        })
+                    );
                 } else {
 
                     console.error('Error registering speaker: ', error);
@@ -324,11 +408,29 @@ export default class SpeakerRegistrationForm extends LightningElement {
                 }
 
             })
-
+        }
             // this.closeModal();
 
-    }
+    // }
 //reset form
+
+
+
+
+
+
+
+
+
+
+
+// resetValidationFlags() {
+//     this.showSpeakerNameValidation = false;
+//     this.showSpeakerCompanyValidation = false;
+//     // Reset other validation flags here
+// }
+
+
     resetForm() {
         this.speakerName = '';
         this.speakerTitle = '';
@@ -357,6 +459,28 @@ export default class SpeakerRegistrationForm extends LightningElement {
 
    }
 
+
+
+//    isEmpty(value) {
+//     return value === '';
+// }
+
+// hasValidationErrors() {
+//     return (
+//         this.showSpeakerNameValidation ||
+//         this.showSpeakerCompanyValidation
+//         // Add other validation flags here
+//     );
+// }
+
+
+
+
+
+
+
+
+
     connectedCallback() {
         // this.subscribeToMessageChannel();
 
@@ -366,7 +490,7 @@ export default class SpeakerRegistrationForm extends LightningElement {
     // speakerProfilePicBlob;
     // speakerProfilePicName;
     @api recordId;
-    fileData
+    speakerfileData=false;
     openfileUploadSpeaker(event) {
         const file = event.target.files[0]
         var reader = new FileReader()
@@ -374,6 +498,8 @@ export default class SpeakerRegistrationForm extends LightningElement {
             var base64 = reader.result.split(',')[1]
             this.speakerImageBlob=base64;
             this.speakerImage=file.name;
+            this.showSpeakerImageValidation=false;
+            // this.speakerfileData=true;
             // this.fileData = {
             //     'filename': file.name,
             //     'base64': base64,

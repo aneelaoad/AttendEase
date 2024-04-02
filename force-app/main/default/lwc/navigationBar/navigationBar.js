@@ -3,7 +3,7 @@ import getNavigationItems from '@salesforce/apex/NavigationbarController.getNavi
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import EVENT_ID_LMS from '@salesforce/messageChannel/EventIDMessageChannel__c';
 import { publish, subscribe, MessageContext } from 'lightning/messageService';
-import NAVBAR_MISSING_MESSAGE from '@salesforce/label/c.NAVBAR_MISSING_MESSAGE';
+//import NAVBAR_MISSING_MESSAGE from '@salesforce/label/c.NAVBAR_MISSING_MESSAGE';
 
 
 /**
@@ -22,7 +22,7 @@ export default class NavigationBar extends LightningElement {
     menuTab;
     isNavbarMissing = false;
     warningClass = '';
-    warningMessage = NAVBAR_MISSING_MESSAGE
+    //warningMessage = NAVBAR_MISSING_MESSAGE
     @track menuOpen = false;
 
     get menuClass() {

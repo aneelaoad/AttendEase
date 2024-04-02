@@ -7,6 +7,10 @@
 public with sharing class DenormalizedSession {
 
     @AuraEnabled 
+	public String sessionId;
+    @AuraEnabled 
+	public String sessionName;
+    @AuraEnabled 
 	public String sessionTitle;
     @AuraEnabled 
 	public String sessionDescription;
@@ -26,4 +30,26 @@ public with sharing class DenormalizedSession {
 	public List<DenormalizedSpeaker> lstOfSpeakers;
 
     public DenormalizedSession(){}
+
+
+    public void setSessionName(String sessionName){
+
+        this.sessionName = sessionName;
+    }
+    public void setSessionId(String sessionId){
+
+        this.sessionId = sessionId;
+    }
+    public void setStartTime(String sessionStartTime){
+
+        this.sessionStartTime = sessionStartTime;
+    }
+    public void setEndTime(String sessionEndTime){
+
+        this.sessionEndTime = sessionEndTime;
+    }
+    public void setSessionTitle(String sessionTitle){
+
+        this.sessionTitle = sessionTitle;
+    }
 }

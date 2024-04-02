@@ -1,20 +1,20 @@
 /**
-* @author: Muhammad Raza
-* @description: A controller class for retrieving denormalized sponsor information.
-* @since: 31/01/24
-* @Last Modified by:  Muhammad Faraz
-*/
+ * @author: Muhammad Raza
+ * @description: A controller class for retrieving denormalized sponsor information.
+ * @since: 31/01/24
+ * @Last Modified by: Muhammad Faraz
+ */
 public with sharing class SponsorController {
-    
-/**
-* 
-* @param eventId The ID of the event to filter sponsor records.
-* @return List<DenormalizedSponsor> A list of denormalized sponsor objects containing sponsor image URLs.
-* @description: Retrieves a list of denormalized sponsor information based on the specified event ID.
-*/
+
+    /**
+     * 
+     * @param eventId The ID of the event to filter sponsor records.
+     * @return List<DenormalizedSponsor> A list of denormalized sponsor objects containing sponsor image URLs.
+     * @description: Retrieves a list of denormalized sponsor information based on the specified event ID.
+     */
     @AuraEnabled(cacheable=true)
-    public static List<DenormalizedSponsor> getSponsor(String eventId){
-        List<Sponsor__c> sponsorList =new SponsorSelector().getSponsorsByEventId(eventId);
+    public static List<DenormalizedSponsor> getSponsor(String eventId) {
+        List<Sponsor__c> sponsorList = new SponsorSelector().getSponsorsByEventId(eventId);
         List<DenormalizedSponsor> denormalizedSponsorList = new List<DenormalizedSponsor>();
         
         for (Sponsor__c sponsor : sponsorList) {
@@ -22,47 +22,46 @@ public with sharing class SponsorController {
             denormalizedSponsor.sponsorImage = sponsor.Sponsor__r.Logo__c;
             denormalizedSponsorList.add(denormalizedSponsor);
         }
- 
+
         return denormalizedSponsorList;
     }
 
-
-     /**
-      * @description registers sponsor for events
-      * @param sponsorInfo 
-      */
-     @AuraEnabled
+    /**
+     * @description Registers sponsor for events
+     * @param sponsorInfo Serialized JSON string containing sponsor information.
+     */
+    @AuraEnabled
     public static void registerSponsor(String sponsorInfo) {
       DenormalizedSponsor denormalizedsponsorInfo = (DenormalizedSponsor) JSON.deserialize(sponsorInfo, DenormalizedSponsor.class);
       System.debug('sponsorInfo ---> '+ sponsorInfo);
       System.debug('denormalizedsponsorInfo ---> '+ denormalizedsponsorInfo);
     
     //  DenormalizedSession denormalizedSession =  denormalizedsponsorInfo.sessionInfo;
-    
 
-    if (sponsorExistsForEvent(denormalizedsponsorInfo.sponsorEmail, denormalizedsponsorInfo.eventId)) {
-        throw new CustomException('A Sponsor with the same email already exists.');
-   
-       }
+    
         Sponsor__c newSponsor = new Sponsor__c(
-            Name = denormalizedsponsorInfo.sponsorName,
-            Company_Name__c=denormalizedsponsorInfo.companyName,
-            Industry__c=denormalizedsponsorInfo.companyIndustry,
-            Sponsor_Title__c =denormalizedsponsorInfo.sponsorTitle,
-            Company_Type__c=denormalizedsponsorInfo.companyType,
-            Email__c=denormalizedsponsorInfo.sponsorEmail,
-            Company_Website__c=denormalizedsponsorInfo.companyWebsite,
-            Sponsor_Image__c = denormalizedsponsorInfo.sponsorImage,
-            Company_HQ__c=denormalizedsponsorInfo.companyAddress,
-            Sponsorship_Level__c= denormalizedsponsorInfo.sponsorshipLevel,
-            Sponsor_Phone__c= denormalizedsponsorInfo.companyPhone,
-            Company_Description__c= denormalizedsponsorInfo.companyDescription,
-            Event__c = denormalizedsponsorInfo.eventId
-             // Speaker_Information__c = denormalizedsponsorInfo.speakerInformation,
+            Name = denormalizedSponsorInfo.sponsorName,
+            Company_Name__c = denormalizedSponsorInfo.companyName,
+            Industry__c = denormalizedSponsorInfo.companyIndustry,
+            Sponsor_Title__c = denormalizedSponsorInfo.sponsorTitle,
+            Company_Type__c = denormalizedSponsorInfo.companyType,
+            Email__c = denormalizedSponsorInfo.sponsorEmail,
+            Company_Website__c = denormalizedSponsorInfo.companyWebsite,
+            // Sponsor_Image__c = denormalizedSponsorInfo.sponsorImage,
+            Company_HQ__c = denormalizedSponsorInfo.companyAddress,
+            Sponsorship_Level__c = denormalizedSponsorInfo.sponsorshipLevel,
+            Sponsor_Phone__c = denormalizedSponsorInfo.companyPhone,
+            Company_Description__c = denormalizedSponsorInfo.companyDescription,
+            Event__c = denormalizedSponsorInfo.eventId
         );
         system.debug(newSponsor);
          insert newSponsor;
         
+
+         if( denormalizedSponsorInfo.sponsorImage!=''){
+            ContentVersion cvSponsor = createContentVersion(denormalizedSponsorInfo.sponsorImageBlob, denormalizedSponsorInfo.sponsorImage);
+            ContentDocumentLink cdlSponsor = createContentLink(cvSponsor.Id, newSponsor.Id);
+           }
         // // Create Event Speaker record
         // Event_Speaker__c newEventSpeaker = new Event_Speaker__c(
         //     Event__c = denormalizedspeakerInfo.eventId,
@@ -81,16 +80,36 @@ public with sharing class SponsorController {
         // );
         // insert newSession;
 }
+private static ContentVersion createContentVersion(String base64, String filename) {
+    ContentVersion cv = new ContentVersion();
+    cv.VersionData = EncodingUtil.base64Decode(base64);
+    cv.Title = filename;
+    cv.PathOnClient = filename;
+    try {
+      insert cv;
+      return cv;
+    } catch(DMLException e) {
+      System.debug(e);
+      return null;
+    }
+  }
 
-private static Boolean sponsorExistsForEvent(String email, Id eventId) {
-    // Query Sponsor__c records for the given email and event
-    Integer count = [SELECT COUNT()  FROM Sponsor__c WHERE Email__c = :email AND Event__c=:eventId];
-
-    // Integer juncCount  = [SELECT COUNT() FROM Event_Speaker__c WHERE Event__r.id=:eventid AND Speaker__r.Email__c=:email];
-    return count > 0 ;
-    
-}
-
-public class CustomException extends Exception {}
+  
+  private static ContentDocumentLink createContentLink(String contentVersionId, String recordId) {
+              if (contentVersionId == null || recordId == null) { return null; }
+                ContentDocumentLink cdl = new ContentDocumentLink();
+                cdl.ContentDocumentId = [  SELECT ContentDocumentId  FROM ContentVersion  WHERE Id =: contentVersionId ].ContentDocumentId;
+                cdl.LinkedEntityId = recordId;
+                // ShareType is either 'V', 'C', or 'I'
+                // V = Viewer, C = Collaborator, I = Inferred
+                cdl.ShareType = 'V';
+                try {
+                  insert cdl;
+                  return cdl;
+                } catch(DMLException e) {
+                  System.debug(e);
+                  return null;
+                }
+              }
 
 }

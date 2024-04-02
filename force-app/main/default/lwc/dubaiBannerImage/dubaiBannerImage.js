@@ -3,6 +3,7 @@ import getEventHightlight from '@salesforce/apex/EventController.getEvent';
 import getDubaiDreaminEventId from '@salesforce/apex/EventController.getDubaiDreaminEventId';
 import DUBAI_ASSET from '@salesforce/resourceUrl/DUBAI_ASSET';
 import dubaibanner from '@salesforce/resourceUrl/dubaibanner';
+import DESIGN_IMAGES from '@salesforce/resourceUrl/DESIGN_IMAGES';
 import SCROLL_MESSAGE from '@salesforce/messageChannel/ScrollMessageChannel__c';
 import { subscribe,  MessageContext } from 'lightning/messageService';
 export default class DubaiBannerImage extends LightningElement {
@@ -20,6 +21,12 @@ export default class DubaiBannerImage extends LightningElement {
     eventTime;
     eventStartDateTime;
     eventEndDateTime;
+
+
+    main_banner;
+    bannerLogo;
+    calenderIcon;
+    mapIcon;
 
     @wire(getDubaiDreaminEventId)
     wiredEventId({ error, data }) {
@@ -77,11 +84,19 @@ export default class DubaiBannerImage extends LightningElement {
 
 
     connectedCallback() {
+        this.subscribeToScrollMsg();
         // this.backgroundImageUrl = DUBAI_ASSET + '/bannersection.png';
         // this.backgroundImageUrl = DUBAI_ASSET + '/bannerBg.png';
         this.backgroundImageUrl = dubaibanner + '/dubaibanner.png';
         this.dubaiBuildingsIcon = DUBAI_ASSET + '/dubai.png';
-        this.subscribeToScrollMsg();
+
+
+        this.main_banner = DESIGN_IMAGES + '/designImages/main_banner.png';
+        this.bannerLogo = DESIGN_IMAGES + '/designImages/bannerLogo.png';
+        this.calenderIcon = DESIGN_IMAGES + '/designImages/calender-icon.png';
+        this.mapIcon = DESIGN_IMAGES + '/designImages/map-icon.png';
+        console.log(' this.main_banner : ', this.main_banner);
+
     }
 
     get backgroundImageStyle() {

@@ -1,70 +1,418 @@
 <template>
-	<section class="tickets-section">
-		<div class="left-side">
-			<template if:true={showTickets}>
-				<div class="ticket-container">
-					<h1>DUBAI DREAMIN </h1>
-					<h3>COMMUNITY-LED CONFERENCE UNITING PASSION, PURPOSE, AND SALESFORCE</h3>
-					<template if:true={tickets}>
-						<template for:each={tickets} for:item="ticket">
-							<div key={ticket.id} class="ticket-card">
-								<div class="ticket-title">
-									<h2>{ticket.ticketTitle}</h2>
-									<p> <span>$ {ticket.ticketPrice}</span> + $ {ticket.ticketVatTex} </p>
-								</div>
 
-								<div class="ticket-quantity">
-									<lightning-combobox name="Quantity" label="Quantity" value={ticket.quantity}
-										placeholder={ticket.quantity} options={options} data-ticketid={ticket.id}
-										onchange={handleQuantityChange}>
-									</lightning-combobox>
-
-
-								</div>
+	<div class="earlySchedule_section lightBlue_bg">
+		<section>
+			<!-- location section  -->
+			<div class="locationSchedule">
+				<div class="auto_container">
+					<div class="locationSchedule_detail">
+						<div class="locationSchedule_data">
+							<div class="location_info addseprator padd_r_40">
+								<span><img src="images/calender_icon.png" alt="#" /></span>
+								<strong>09-11-2024</strong>
 							</div>
-						</template>
-						<div class="ticket-footer">
-							<ul class="terms-and-conditions">
-								<li>● Event ends on 12th November. </li>
-								<li>● Sales end this date Read our Terms and condition policy </li>
-								<li>● Before placing the order please read carefully our <a href="/">Refund Policy</a>
-								</li>
-							</ul>
-							<lightning-button variant="success" label="Checkout" title="Checkout"
-								onclick={handleCheckout}>
-							</lightning-button>
+							<div class="location_info padd_l_40">
+								<span><img src="images/map_icon.png" alt="#" /></span>
+								<strong>Dubai Expo</strong>
+							</div>
 						</div>
-					</template>
-					<template if:false={tickets}>
-						<div class="no-tickets">No tickets available</div>
-					</template>
+					</div>
 				</div>
+			</div>
+		</section>
 
-			</template>
-		</div>
-		<div class="right-side">
+		<section>
+			<!-- tickects process section  -->
+			<div class="ticketsProcess_section" id="goto_register">
+				<div class="auto_container">
+					<div class="ticketsProcess_detail">
+						<div class="ticket_table">
+							<div class="ticket_table_fl">
+								<div class="ticket_table_flShow">
+									<div class="ticket-title">
+										<h3><strong>DUBAI </strong> DREAMIN</h3>
+										<p>CUMMUNITY- LED CONFERENCE UNITING PASSION, PURPOSE, AND SALESFORCE
+											EXCELLENCE.</p>
+									</div>
 
-			<section class="order-summary">
-				<template if:true={showOrderSummary}>
-					<h3>Order Summary</h3>
-					<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
-						<div key={ticketWithQuantity.id}>
-							<div class="ticket-details">
-								<p> <span>{ticketWithQuantity.ticketTitle} x {ticketWithQuantity.quantity} </span>
-									<span>{ticketWithQuantity.ticketPrice}</span> </p>
-								<p> <span>VAT</span> <span>{ticketWithQuantity.ticketVatTex}</span> </p>
-								<p> <span>Total</span> <span>{totalTicketPrice}</span> </p>
+									<div class="ticketProcess_form">
+										<ul>
+											<template for:each={tickets} for:item="ticket">
+
+												<li key={ticket.id}>
+													<div class="ticketTable_row earlyRow_bg">
+														<div class="ticketTable_rowText">
+															<strong>{ticket.nickname}</strong>
+															<p>Early bird Ticket inculed early arrivals with Tearms and
+																contions polices.</p>
+														</div>
+														<div class="vat_info">
+															<strong>${ticket.unitAmount}</strong>
+															<small>+ VAT $ {ticket.vatTax}</small>
+														</div>
+														<div class="quantity_info">
+															<lightning-combobox name="Quantity" label="Quantity"
+																value={ticket.quantity} placeholder={ticket.quantity}
+																options={options} data-ticketid={ticket.id}
+																onchange={handleQuantityChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
 
 
+											</template>
+										</ul>
+									</div>
+
+									<div class="checkout_row">
+										<p>Please Read carefully our Terms and condition and refund polices before check
+											out. Events ends at 15 Nov 2024.</p>
+										<!-- <button class="checkoutBtnn btnDefault">CHECK OUT</button> -->
+										<button class="checkoutBtnn btnDefault" onclick={toggleCheckOut}>CHECK OUT</button>
+									</div>
+								</div>
+
+								<div class="attendee-form">
+									<!-- <div class="ticket_table_flCheckout"> -->
+									<div class="">
+										<div class="ticket_table_fl_tittle">
+											<h3><strong>DUBAI </strong> DREAMIN</h3>
+
+											<div class="checkoutTittle">
+												<a href="javascript:void(0)"
+													class="backtoCheckout" onclick={reverseToggle}><img src="images/checkout_arrow.png" alt="#" /> Check Out</a>
+													<!-- <strong>Time Left:<small>  29:00</small></strong> -->
+											</div>
+										</div>
+
+
+										<div class="ticketProcess_checkoutform">
+											<ul>
+												<li>
+													<div class="customInput_col">
+													
+														<div class="customInput_field">
+															<lightning-input type="text" value=""
+																placeholder="Name" onchange={handleFieldChange}
+																label="FIRST NAME"> </lightning-input>
+															<!-- <input type="text" value="FirstName" placeholder="Full Name" onchange={handleFieldChange} label="FirstName" > </input> -->
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="Name on TAX Receipt"
+																label="TAX RECEIPT">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li>
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="Title Name" label="Last Name">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li>
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="Address" label="Address">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li>
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="Confirm email address"
+																label="EMAIL">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li>
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="country" label="COUNTRY"
+																options={countryOptions} onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+												<li>
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="registrationType"
+																label="REGISTRATION TYPE"
+																options={registrationTypeOptions}
+																onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+												<li class="w-25">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="townCity" label="TOWN/CITY"
+																options={townCityOptions} onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+												<li class="w-25">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="" label="POSTAL CODE">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li class="">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="" label="PHONE NUMBER">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li class="">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="sessionInterest"
+																label="WHICH TYPE OF SESSIONS ARE YOU MOST INTERESTED IN?"
+																options={sessionInterestOptions}
+																onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+												<li class="">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input type="text" value="" placeholder=""
+																onchange={handleFieldChange} label="COMPANY NAME">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li class="w-25">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="foodPreference"
+																label="FOOD PREFERENCE" options={foodPreferenceOptions}
+																onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+												<li class="w-25">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="tshirtSize" label="T-SHIRT SIZE"
+																options={tshirtSizeOptions}
+																onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+												<li class="">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-input onchange={handleFieldChange} type="text"
+																value="" placeholder="Designation"
+																label="YOUR ROLE IN COMPANY">
+															</lightning-input>
+														</div>
+													</div>
+												</li>
+
+												<li class="">
+													<div class="customInput_col">
+														<div class="customInput_field">
+															<lightning-combobox name="companySize" label="COMPANY SIZE"
+																options={companySizeOptions}
+																onchange={handleFieldChange}>
+															</lightning-combobox>
+														</div>
+													</div>
+												</li>
+
+
+												<li class="w-100">
+													<div class="customInput_col">
+													
+														<div class="customInput_field">
+															<lightning-textarea placeholder="Message" aria-label="TERMS & CONDITIONS POLICY"  onchange={handleFieldChange} ></lightning-textarea>
+														</div>
+													</div>
+
+													<div class="customCheckbox">
+														<label><input type="checkbox"  onchange={handleFieldChange}  />I agree to the above additional terms.</label>
+													</div>
+												</li>
+
+												<!-- 
+
+                                                            <li class="">
+                                                                <div class="customInput_col">
+                                                                    <strong> Creadit card  </strong>
+                                                                    <div class="customInput_field">
+                                                                        <input type="text" value="" placeholder="Card Number" />
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="w-25">
+                                                                <div class="customInput_col">
+                                                                    <strong> Expiry Date</strong>
+                                                                    <div class="customInput_field">
+                                                                        <input type="text" value="" placeholder="MM/YY" />
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="w-25">
+                                                                <div class="customInput_col">
+                                                                    <strong> Postcode </strong>
+                                                                    <div class="customInput_field">
+                                                                        <input type="text" value="" placeholder="MM/YY" />
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+
+                                                            <li class="">
+                                                                <div class="customInput_col">
+                                                                    <strong> Security Code  </strong>
+                                                                    <div class="customInput_field">
+                                                                        <input type="password" value="000" placeholder="" />
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="customCheckbox">
+                                                                    <label><input type="checkbox" />Submit means you are agree to our  Terms of Registration Policy</label>
+                                                                </div>
+                                                            </li> -->
+
+
+												<li class="w-100">
+													<div class="formSubmitBtn">
+														<button class="btnDefault" onclick={handlePayNow}>Place Order</button>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="ticket_table_fr">
+								<div class="summary_section">
+									<div class="registerProcess">
+										<span><img src="images/bannerLogo.png" alt="#" /></span>
+									</div>
+									<template if:true={showOrderSummary}>
+										<div class="summary_table">
+											<h4>Order Summery</h4>
+
+											<div class="summary_table_list">
+												<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
+													<ul key={ticketWithQuantity.id}>
+														<li>
+															<div class="summary_table_listText">
+																<p>{ticketWithQuantity.nickname} x
+																	{ticketWithQuantity.quantity}</p>
+																<small>${ticketWithQuantity.ticketPrice}</small>
+															</div>
+														</li>
+														<li>
+															<div class="summary_table_listText">
+																<p>Subtotal</p>
+																<small>{ticketWithQuantity.ticketPrice}</small>
+															</div>
+														</li>
+														<li>
+															<div class="summary_table_listText">
+																<p>+VAT</p>
+																<small>{ticketWithQuantity.ticketPrice}</small>
+															</div>
+														</li>
+														<li>
+															<div class="summary_table_listText">
+																<p><strong>Total </strong></p>
+																<small><strong>$ {totalTicketPrice}</strong></small>
+															</div>
+														</li>
+													</ul>
+												</template>
+											</div>
+										</div>
+									</template>
+									<div class="termText">
+										<p>Terms and conditions and refund policy.</p>
+										<p>Rate vary the time and local tax please read carefully our policy.</p>
+									</div>
+								</div>
 							</div>
 						</div>
-					</template>
-				</template>
-			</section>
-		</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-	</section>
 
+
+
+		<section>
+			<!-- become speaker section  -->
+			<div class="becomeSpeaker_section">
+				<div class="shapeFl"></div>
+				<div class="shapeFr"></div>
+				<div class="auto_container">
+					<div class="becomeSpeaker_section_detail">
+						<div class="becomeSpeaker_info">
+							<h2>Unlock the Power of Salesforce in the Heart of Dubai</h2>
+							<p>Discover the power of AI, Innovation, Collaboration, and Transformation at the most
+								anticipated event of the year – the Biggest Salesforce Conference in Dubai! Join
+								Industry Leaders, TrAIlblazers, and Visionaries from around the Globe as we converge to
+								explore the limitless possibilities of the Salesforce ecosystem in the globalized city
+								of Dubai!</p>
+							<!-- <button class="btnDefault speakerBtn">Become speaker</button> -->
+							<div class="RSVP-section Speaker-Registration-section">
+                                    <c-speaker-registration-form selected-event-id={selectedEventId}>
+                                    </c-speaker-registration-form>
+                                </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
 
 	<!-- ----tickets section ends here----- -->
 
@@ -77,51 +425,65 @@
 			</div>
 			<div class="modal-body">
 				<div class="scrollable-content">
-					<div class="left-side">
+					<div class="sides-container">
+						<div class="left-side">
 
-					<section style="overflow: auto; " class="RSVP-form">
-						<template if:true={showAttendeeForm}>
-							<div class="form-details">
-								<div style="">
+							<section style="overflow: auto; " class="RSVP-form">
+								<template if:true={showAttendeeForm}>
+									<div class="form-details">
+										<div style="">
 
-									<form>
-										<lightning-messages>
-										</lightning-messages>
+											<form>
+												<lightning-messages>
+												</lightning-messages>
 
-										<lightning-input field-name="FirstName" label="FirstName"
-											onchange={handleFieldChange}>
-										</lightning-input>
-										<lightning-input field-name="LastName" label="LastName"
-											onchange={handleFieldChange}>
-										</lightning-input>
-										<lightning-input field-name="Email" label="Email" onchange={handleFieldChange}>
-										</lightning-input>
-
-									</form>
-								</div>
-							</div>
-						</template>
-					</section>
-					</div>
-					<div class="right-side">
-
-						<section class="order-summary">
-							<template if:true={showOrderSummary}>
-								<h3>Order Summary</h3>
-								<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
-									<div key={ticketWithQuantity.id}>
-										<div class="ticket-details">
-											<p> <span>{ticketWithQuantity.ticketTitle} x {ticketWithQuantity.quantity} </span>
-												<span>{ticketWithQuantity.ticketPrice}</span> </p>
-											<p> <span>VAT</span> <span>{ticketWithQuantity.ticketVatTex}</span> </p>
-											<p> <span>Total</span> <span>{totalTicketPrice}</span> </p>
-
+												<lightning-input field-name="FirstName" label="FirstName"
+													onchange={handleFieldChange}>
+												</lightning-input>
+												<lightning-input field-name="LastName" label="LastName"
+													onchange={handleFieldChange}>
+												</lightning-input>
+												<lightning-input field-name="Email" label="Email"
+													onchange={handleFieldChange}>
+												</lightning-input>
+												<!-- <lightning-input type="number" label="Amount" value={amount}
+												onchange={handleFieldChange}></lightning-input>
+											<lightning-input type="text" label="Card Number" value={cardNumber}
+												onchange={handleFieldChange}></lightning-input>
+											<lightning-input type="text" label="Expiry Date (MM/YY)" value={expiryDate}
+												onchange={handleFieldChange}></lightning-input>
+											<lightning-input type="text" label="CVC" value={cvc}
+												onchange={handleFieldChange}></lightning-input> -->
+											</form>
+											<!-- <button> <a href="https://buy.stripe.com/bIY28a8uI2iy3lKfYY" > Pay Now </a> </button> -->
+											<!-- <button> <a href={paymentPageLink} > Pay Now </a> </button> -->
+											<button onclick={handlePayNow}> Pay Now </button>
 
 										</div>
 									</div>
 								</template>
-							</template>
-						</section>
+							</section>
+						</div>
+						<div class="right-side">
+
+							<section class="order-summary">
+								<template if:true={showOrderSummary}>
+									<h3>Order Summary</h3>
+									<template for:each={ticketsWithQuantity} for:item="ticketWithQuantity">
+										<div key={ticketWithQuantity.id}>
+											<div class="ticket-details">
+												<p> <span>{ticketWithQuantity.ticketTitle} x {ticketWithQuantity.quantity} </span>
+													<span>{ticketWithQuantity.ticketPrice}</span> </p>
+												<p> <span>VAT</span> <span>{ticketWithQuantity.ticketVatTex}</span> </p>
+												<p> <span>Total</span> <span>{totalTicketPrice}</span> </p>
+
+
+											</div>
+										</div>
+									</template>
+								</template>
+							</section>
+						</div>
 					</div>
 				</div>
 

@@ -306,13 +306,6 @@
       "regionName" : "Sessions",
       "type" : "region"
     }, {
-      "components" : [ {
-        "componentAttributes" : { },
-        "componentName" : "c:speakerSection",
-        "id" : "0d57305a-9536-4a89-8b2c-b696affdaa94",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
       "id" : "53ec2990-62b8-4861-962f-8403ace75afc",
       "regionName" : "Speakers",
       "type" : "region"
@@ -328,13 +321,6 @@
       "regionName" : "FAQ",
       "type" : "region"
     }, {
-      "components" : [ {
-        "componentAttributes" : { },
-        "componentName" : "c:dubaiContactUs",
-        "id" : "99df7279-154e-41b5-bedb-e2c065122d13",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
       "id" : "aa9f541d-e77f-455e-b027-ceb11cafedc6",
       "regionName" : "contactUs",
       "type" : "region"
@@ -365,24 +351,10 @@
       "regionName" : "RSVP",
       "type" : "region"
     }, {
-      "components" : [ {
-        "componentAttributes" : { },
-        "componentName" : "c:dubaiSpeakerRegistration",
-        "id" : "b9b4f473-132d-4c86-9041-6343632e5b47",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
       "id" : "8879fc26-1f52-4c43-a0da-0a95254b17f2",
       "regionName" : "SpeakerRegistration",
       "type" : "region"
     }, {
-      "components" : [ {
-        "componentAttributes" : { },
-        "componentName" : "c:dubaiEventHighlights",
-        "id" : "11fb7bd7-fbc0-4a81-bbe2-a797bda25d3d",
-        "renditionMap" : { },
-        "type" : "component"
-      } ],
       "id" : "bd8b4761-fbc1-44fe-9ea0-8184487ecd59",
       "regionName" : "HighLights",
       "type" : "region"

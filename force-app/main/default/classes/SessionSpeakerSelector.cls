@@ -16,7 +16,7 @@ public with sharing class SessionSpeakerSelector {
     
     public  List<Session_Speaker__c> getSessionSpeakersList(String whereClause){
         String clause =  String.IsEmpty(whereClause)?'':'WHERE '+whereClause;
-        String queryOnSessionSpeaker = 'SELECT Speaker__r.Id, Speaker__r.Speaker_Name__c, Speaker__r.Speaker_Title__c, Speaker__r.Email__c, Speaker__r.Phone_Number__c, Speaker__r.Speaker_Information__c, Speaker__r.Speaker_Profile_Image__c ' +
+        String queryOnSessionSpeaker = 'SELECT Speaker__r.Id, Speaker__r.Speaker_Name__c, Speaker__r.Speaker_Title__c, Speaker__r.Email__c, Speaker__r.Phone_Number__c, Speaker__r.Speaker_Information__c, Speaker__r.Speaker_Profile_Image__c, Session__c ' +
             'FROM Session_Speaker__c '
             + clause  ;
         List<Session_Speaker__c> sessionSpeakers = Database.query(queryOnSessionSpeaker);
@@ -43,6 +43,24 @@ public with sharing class SessionSpeakerSelector {
             }
         }
         return lstOfSpeakers; 
+    } 
+
+
+
+
+    /**
+     * @description gets session Session Speaker by speaker id (Speaker__c)
+     * @param speakerId 
+     * @return  `List<Session_Speaker__c>`
+     */
+    public  List<Session_Speaker__c> getSessionSpeakerBySpeakerId(String speakerId){
+        String clause = 'Speaker__c  = \''+speakerId+'\' ';
+        List<Session_Speaker__c> sessionSpeakers = getSessionSpeakersList(clause);
+        
+        if (sessionSpeakers.size() > 0) {
+            return sessionSpeakers;
+        }
+        return sessionSpeakers; 
     } 
     
 }

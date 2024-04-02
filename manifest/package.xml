@@ -52,7 +52,7 @@
         <members>Event_Speaker__c-Event Speaker Layout</members>
         <members>Navigation_Control__c-Navigation Control Layout</members>
         <members>Navigation_Control__c-Navigation Footer Menu</members>
-       
+        <members>Lead-Lead Layout</members>
 
         <name>Layout</name>
     </types>
@@ -103,6 +103,7 @@
         <members>Speaker__c.Speaker_Title__c</members>
         <members>Speaker__c.Parent_Speaker__c</members>
         <members>Speaker__c.Speaker_Type__c</members>
+        <members>Speaker__c.Approval_Status__c</members>
         <members>Sponsor__c.Event__c</members>
         <members>Sponsor__c.Sponsor__c</members>
         <members>Sponsor__c.Industry__c</members>
@@ -120,7 +121,6 @@
         <members>Attendee__c.Event__c</members>
         <members>Attendee__c.Event__c</members>
         <members>Attendee__c.Amount__c</members>
-        <members>Attendee__c.TransactionID__c</members>
         <members>Attendee__c.Payment_Verified__c</members>
         <members>Attendee__c.Attendee_Full_Name__c</members>	
         <members>Event_Speaker__c.Event__c</members>
@@ -149,6 +149,10 @@
         <members>Subscription__c.Attendee__c</members>	
         <members>Subscription__c.Quantity__c</members>	
         <members>Subscription__c.Ticket__c</members>	
+        
+        <members>Lead.Sponsorship_Level__c</members>
+        <members>Lead.Company_HQ__c</members>
+        <members>Lead.Company_Type__c</members>
         
 
         <name>CustomField</name>
@@ -222,6 +226,7 @@
         <members>dubaiRSVPSection</members>
         <members>rsvpModal</members>
         <members>dubaiSpeakerRegistration</members>
+        <members>setSessionTime</members>
       	<name>LightningComponentBundle</name>
 	</types>
     
@@ -279,9 +284,25 @@
         <members>TicketController</members>
         <members>DenormalizedTicket</members>
         <members>PicklistMetadataController</members>
+        <members>PaymentController</members>
+        <members>SpeakerHandler</members>
+        <members>Price</members>
+        <members>PriceParser</members>
+        <members>ApprovalProcessController</members>
+        <members>ApprovalProcessSelector</members>
+
 		<name>ApexClass</name>
 	</types>
-    
+     <types>
+		<members>SpeakerTrigger</members>
+		<members>CreateTicketFromStripeEvent</members>
+		<name>ApexTrigger</name>
+	</types>
+
+     <types>
+		<members>SpeakerTrigger</members>
+		<name>ApexTrigger</name>
+	</types>
      <types>
 		<members>ScrollMessageChannel</members>
 		<members>EventIDMessageChannel</members>
@@ -291,6 +312,9 @@
         <types>
 		<members>Event_Record_Page</members>
 		<members>AttendEase_UtilityBar</members>
+		<members>Speaker_Record_Page</members>
+		<members>Session_Record_Page</members>
+		<members>Approval_Request_Record_Page1</members>
 		<name>FlexiPage</name>
 	</types>
 
@@ -321,6 +345,9 @@
 
     <types> 
       <members>unfiled$public/Attendee_Verification_Email_1708601779750</members>
+      <members>unfiled$public/Send_Notification_To_Admin_1711530822151</members>
+      <members>unfiled$public/Send_Sponser_Lead_Auto_Response_Email_1711465411409</members>
+      <members>unfiled$public/Dubai_Dreamin_Speaker_Approval</members>
        <name>EmailTemplate</name>
     </types>
 
@@ -338,19 +365,26 @@
         <members>SO_ICONS</members>
          <members>DubaiDreaminLogo</members>
          <members>dubaibanner</members>
+         <members>DESIGN_IMAGES</members>
+         <members>dubaiCss</members>
+         <members>dubaiJs</members>
+         <members>dubaiImage</members>
         <name>StaticResource</name>
     </types>
-    <types>
-        <members>Attendee__c.Transaction_Verified </members>
-        <name>QuickAction</name>
-    </types>
+   
      <types>
         <members>Prevention_Of_Duplication_Of_Speaker_Record</members>
         <members>Prevention_Duplication_of_Speaker_From_Same_Session</members>
       <!--  <members>Payment_Verified_Flow</members> -->
          <members>Assigning_Event_Value_In_Case_Record</members>
+         <members>sendCongratulatoryEmail</members>
+         <members>Send_Approved_or_Rejected_Email_to_Speaker</members>
        <name>Flow</name>
     </types>
+ <!--<types>
+        <members>Send_Approved_or_Rejected_Email_to_Speaker</members>
+       <name>FlowDefinition</name>
+    </types> -->
  <types>
         <members>Speaker__c.Speaker_Duplicity</members>
        <name>DuplicateRule</name>
@@ -358,6 +392,14 @@
      <types>
         <members>Speaker__c.Speaker_Duplicity_matching_rule</members>
        <name>MatchingRule</name>
+    </types>
+     <types>
+        <members>Lead.Standard</members>
+       <name>AssignmentRule</name>
+    </types>
+     <types>
+        <members>Lead.Sponser Web To Lead</members>
+       <name>AutoResponseRule</name>
     </types>
     <types>
         <members>AttendEase</members>
@@ -369,5 +411,29 @@
         <members>EventRegPortal Profile</members>
         <name>Profile</name>
     </types>
+    <types>
+    <members>Dubai_Dreaming_Email_Banner/Dubai_Email_Banner</members>
+        <name>Document</name>
+    </types>
+    <types>
+    <members>Dubai_Dreamin_Letterhead</members>
+        <name>Letterhead</name>
+    </types>
+   
+    <types> 
+    <members>Speaker__c.Approve_Speaker</members>
+        <name>ApprovalProcess</name>
+    </types>
+     <types>
+        <members>Speaker__c</members>
+        <name>Workflow</name>
+  </types>
+  <types>
+        <members>Speaker__c.Update_Approval_Status</members>
+        <members>Speaker__c.Update_Approval_Status_To_Rejected</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+    
+  
     <version>58.0</version> 
 </Package>

@@ -17,7 +17,7 @@ public with sharing class SessionSelector {
     
     public  List<Session__c> getSessionsList(String whereClause){
         String clause =  String.IsEmpty(whereClause)?'':'WHERE '+whereClause;
-        String queryOnEventSpeaker = 'SELECT Id, Session_Title__c, Session_Start_Time__c, Session_End_Time__c, Session_Start_Date__c, Session_End_Date__c, Session_Duration__c, Session_Description__c, Event__r.Id '
+        String queryOnEventSpeaker = 'SELECT Id, Name, Session_Title__c, Session_Start_Time__c, Session_End_Time__c, Session_Start_Date__c, Session_End_Date__c, Session_Duration__c, Session_Description__c, Event__r.Id '
             +' FROM Session__c '
             + clause  ;
         List<Session__c> lstofSessions = Database.query(queryOnEventSpeaker);
@@ -42,4 +42,38 @@ public with sharing class SessionSelector {
         }
         return null;    
     } 
+
+
+
+    /**
+     * 
+     * @param id 
+     * @return  `List<Session__c>`
+     * @description retruns Sessions List by Session Id
+     */
+    public  List<Session__c> getSessionById(String id){
+        String clause = 'Id = \''+id+'\' ';
+        List<Session__c> sessions = getSessionsList(clause);
+        
+        if (sessions.size() > 0) {
+            return sessions;
+        }
+        return null;    
+    }
+
+
+    /**
+     * @description gets session by name field
+     * @param id 
+     * @return  `List<Session__c>`
+     */
+    public  List<Session__c> getSessionByName(String Name){
+        String clause = 'Name = \''+Name+'\' ';
+        List<Session__c> sessions = getSessionsList(clause);
+        
+        if (sessions.size() > 0) {
+            return sessions;
+        }
+        return null;    
+    }
 }
